@@ -1,0 +1,38 @@
+{
+	auto_https disable_redirects
+}
+
+:{$FRONT_PORT} {
+	@nostaticFile {
+		method GET
+		not path_regexp static \.(js|svg|gif|png|html|ttf|woff|ico|jpg|jpeg|css)$
+	}
+	rewrite @nostaticFile /
+	root * /var/www
+	file_server
+
+	log {
+		output stdout
+		format filter {
+			wrap json
+			fields {
+				common_log delete
+				resp_headers delete
+				request>headers>Referer delete
+				request>headers>Sec-Ch-Ua-Mobile delete
+				request>headers>Sec-Fetch-Site delete
+				request>headers>Sec-Fetch-Dest delete
+				request>headers>Accept-Language delete
+				request>headers>Connection delete
+				request>headers>Sec-Ch-Ua delete
+				request>headers>Sec-Fetch-Mode delete
+				request>headers>Accept-Encoding delete
+				request>headers>If-None-Match delete
+			}
+		}
+	}
+	route {
+		uri strip_prefix /schemes
+		header Cache-Control "no-store, must-revalidate"
+	}
+}

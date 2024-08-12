@@ -1,0 +1,12 @@
+.rectangle {
+	--zIndex: 100;
+	--stroke-color: var(--color-yellow-7);
+	--stroke-width: 2px;
+	stroke: var(--stroke-color);
+	stroke-width: var(--stroke-width);
+}
+
+.corner {
+	--corner-fill-color: var(--color-yellow-7);
+	fill: var(--corner-fill-color);
+}

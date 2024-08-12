@@ -1,0 +1,58 @@
+.fields {
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+	padding: 16px;
+	font-size: 0.857em;
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.textarea {
+	position: relative;
+}
+
+.comment {
+	min-height: 82px;
+	font-family: inherit;
+	font-size: inherit;
+	width: 100%;
+	border-radius: 4px;
+	border: 1px solid var(--color-gray-20);
+	color: var(--color-gray-10);
+	padding: 7px 12px 15px 12px;
+	box-sizing: border-box;
+}
+
+.text {
+	--input-static-padding: 8px 10px 8px 12px;
+}
+
+.text :global([class*='label']) {
+	top: -1.2em;
+	left: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.label {
+	display: inline-block;
+	position: absolute;
+	top: -1em;
+	line-height: 1em;
+	font-size: 0.867em;
+	border: none;
+	color: var(--color-gray-7);
+	background-color: var(--color-gray-f);
+	pointer-events: none;
+	padding: 0;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 42px;
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}

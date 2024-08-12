@@ -1,0 +1,265 @@
+.select {
+	--select-height: 30px;
+	--pane-height: 550px;
+	--pane-width: 100%;
+	--pane-left: 0;
+	--pane-right: 0;
+	--pane-top: calc(100% + 1px);
+	--pane-padding: 10px;
+	--select-border-radius: 4px;
+	--select-border-color: var(--color-gray-40);
+	--select-border-color-hover: var(--color-gray-50);
+	--select-border-color-active: var(--ui-yellow-60);
+	--select-border-color-inactive: var(--ui-gray-20);
+	--select-toggle-background-color: var(--color-gray-f);
+	--select-toggle-icon-color: var(--ui-gray-20);
+	--select-body-background-color: var(--color-gray-f);
+	position: relative;
+	margin: 10px 0;
+	font-weight: 375;
+	width: max-content;
+}
+
+.select__legend {
+	font-weight: 100;
+	font-size: 0.6em;
+	line-height: normal;
+	position: absolute;
+	top: -0.6em;
+	left: 15px;
+	padding: 0 5px;
+	color: var(--color-gray-6);
+	background-color: var(--color-gray-f);
+}
+
+.select__legend_error {
+	color: var(--color-red-80);
+}
+
+.select__legend_error::after {
+	content: '*';
+	color: var(--color-red-80);
+}
+
+.select__error {
+	font-size: 0.65em;
+	line-height: 0.933em;
+	position: absolute;
+	bottom: -1em;
+	left: 0;
+	color: var(--color-red-80);
+	margin-left: 1px;
+}
+
+.select__body {
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: row nowrap;
+	overflow: hidden;
+	border: 1px solid var(--select-border-color);
+	border-radius: var(--select-border-radius);
+	background: var(--select-body-background-color);
+	font-weight: inherit;
+	width: 100%;
+}
+
+.select .select_option__inactive {
+	--select-border-color: var(--select-border-color-inactive);
+}
+
+.select .select__body:hover {
+	border-color: var(--select-border-color-hover);
+}
+
+.select .select__active,
+.select .select__active:hover {
+	--select-border-color: var(--select-border-color-active);
+	--select-border-color-hover: var(--select-border-color-active);
+}
+
+.select__multiple {
+	min-height: 25px;
+}
+
+.select__single {
+	min-width: 100px;
+	align-items: center;
+	height: var(--select-height);
+}
+
+.select__field {
+	font-family: GT Eesti Pro Text, sans-serif;
+	overflow: hidden;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding-left: 1em;
+	font-size: 0.75em;
+	font-weight: inherit;
+	text-align: left;
+}
+
+.select .select__field:hover {
+	background-color: transparent;
+}
+
+.select__field_interactive {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+.select__action {
+	width: 24px;
+}
+
+.select__field::-webkit-scrollbar {
+	height: 4px;
+}
+
+.select__toggle {
+	outline: none;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: var(--select-height);
+}
+
+.select .select__toggle:hover {
+	background-color: transparent;
+}
+
+.select .select__toggle svg path {
+	fill: var(--select-toggle-icon-color);
+}
+
+.select__toggle::before {
+	content: '|';
+	position: absolute;
+	left: -2px;
+	color: var(--select-toggle-icon-color);
+}
+
+.select__placeholder {
+	font-weight: 375;
+	color: var(--color-gray-6);
+}
+
+.select__disabled {
+	pointer-events: none;
+	filter: opacity(60%);
+}
+
+.select__required {
+	border-color: var(--color-red-80);
+}
+
+.select__tags {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 5px;
+	padding: 5px;
+	overflow-x: auto;
+}
+
+.tag {
+	display: inline-flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 13px;
+	height: 19px;
+	background-color: var(--color-yellow-6);
+	color: var(--color-gray-9);
+	border-radius: 4px;
+	padding: 0 8px 0 10px;
+}
+
+.tag__button {
+	outline: none;
+	background-color: transparent;
+	border: none;
+}
+
+.pane {
+	box-sizing: border-box;
+	z-index: 1000;
+	display: flex;
+	flex-flow: column nowrap;
+	background-color: var(--color-gray-f);
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.21);
+	border-radius: 4px;
+	max-height: var(--pane-height);
+	width: max-content;
+	max-width: 30em;
+	position: absolute;
+	left: var(--pane-left);
+	right: var(--pane-right);
+	top: var(--pane-top);
+	padding: var(--pane-padding);
+	overflow-x: auto;
+}
+
+.pane::-webkit-scrollbar {
+	width: 6px;
+	border-radius: 3px;
+}
+
+.pane__multiple > .pane__item:first-child {
+	border-bottom: 1px solid var(--color-gray-4);
+}
+
+.pane__item {
+	font-family: GT Eesti Pro Text, sans-serif;
+	outline: none;
+	border: none;
+	background-color: var(--color-gray-f);
+	text-align: left;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 34px;
+	padding: 8px 12px;
+	font-weight: 375;
+}
+
+.pane__item > span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.select .pane__item:hover {
+	background-color: var(--color-yellow-1);
+	border-radius: var(--select-border-radius);
+}
+
+.tag__icon {
+	width: 10px;
+	height: 10px;
+}
+
+.label {
+	position: absolute;
+	top: -2em;
+	left: 0;
+	font-size: 0.75em;
+	font-weight: 375;
+	color: var(--color-gray-60);
+	padding-left: 0;
+	background-color: transparent;
+	white-space: nowrap;
+}
+
+.label > span:first-child {
+	margin-right: 0.25em;
+}
+
+.required_marker {
+	color: var(--color-red-5);
+}

@@ -1,0 +1,82 @@
+.root {
+  position: relative;
+  display: flex;
+}
+
+.root .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 1.4rem;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  position: relative;
+}
+
+.root .button:not(:last-child) {
+  margin-right: 1.75em;
+}
+
+.root .button:hover {
+  background-color: transparent;
+}
+
+.root .button:hover > p {
+  color: var(--ui-gray-80);
+}
+
+.root .button:hover::before {
+  display: block;
+  position: absolute;
+  background-color: var(--ui-gray-green-20);
+  width: 100%;
+  height: 2px;
+  top: calc(100% + 1em + 2px);
+  content: '';
+}
+
+.title {
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 375;
+  margin: 0;
+  white-space: nowrap;
+  color: var(--color-gray-7);
+}
+
+.root .active {
+  color: var(--ui-gray-90);
+  border-color: var(--ui-yellow-60);
+}
+.root .active:hover {
+  border-color: var(--ui-yellow-60);
+  color: var(--ui-gray-90);
+}
+
+.dropdown:global(.UI_dropdown) {
+  --menu-max-height: none;
+  --dropdown-height: 100%;
+  --dropdown-font-size: 15px;
+  --option-color: var(--color-gray-90);
+}
+
+.dropdown :global([class*='menu']) {
+  top: 37px;
+}
+
+.dropdown:global(.UI_dropdown) > button {
+  border: none;
+  white-space: nowrap;
+}
+
+.root .dropdown:global(.UI_dropdown):hover::before {
+  display: block;
+  position: absolute;
+  background-color: var(--ui-gray-green-20);
+  width: 100%;
+  height: 2px;
+  top: calc(100% + 1em - 1px);
+  content: '';
+}

@@ -1,0 +1,105 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	padding: 0.75em 1em 1em;
+	box-sizing: border-box;
+	min-height: calc(100vh - var(--header-height));
+	height: calc(100vh - var(--header-height));
+	max-height: calc(100vh - var(--header-height));
+	max-width: 100vw;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 0.5em;
+	font-weight: 375;
+}
+
+.header .calendar {
+	padding: 0.25em 0.375em;
+	box-sizing: border-box;
+	max-height: 1.875em;
+}
+
+.header_left {
+	display: flex;
+	gap: 5px;
+	background-color: var(--color-gray-f);
+	align-items: center;
+	padding-right: 3px;
+}
+
+.header_button {
+	background-color: var(--color-yellow-50);
+	display: flex;
+	border: none;
+	gap: 3px;
+	font-size: 12px;
+	padding: 0.4384612em 1.077em;
+}
+
+.refresh {
+	height: 12px;
+}
+
+.select {
+	--select-height: 22px;
+	--select-toggle-background-color: var(--color-yellow-40);
+	--select-body-background-color: var(--color-gray-f-transparent);
+	--select-border-color: none;
+	--select-toggle-icon-color: var(--ui-gray-100);
+	--pane-top: 23px;
+	position: relative;
+	width: 122px;
+	margin: 0;
+}
+
+.select__active {
+	--select-body-background-color: var(--color-yellow-40);
+}
+
+.select button {
+	font-family: inherit;
+	font-size: 0.813em;
+	font-weight: 375;
+}
+
+.radiogroup {
+	background: var(--color-gray-f);
+	padding: 0.25em 0.375em;
+	border-radius: 0.25em;
+}
+
+.radiogroup .switcher {
+	--item-background-color: var(--color-gray-4);
+	--item-font-size: 0.8125em;
+	--item-font-weight: 375;
+	background-color: var(--color-gray-4);
+	gap: 0;
+	padding: 0;
+}
+
+.radiogroup .switcher :global([class*='switcher_item']) {
+	padding: 0.31em 0.77em;
+}
+
+button.button {
+	background-color: var(--color-gray-4);
+	padding: 0.31em 0.77em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	border: none;
+	border-radius: 0.31em;
+	font-weight: 375;
+	user-select: none;
+}
+
+button.button__active {
+	background-color: var(--color-yellow-40);
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}

@@ -1,0 +1,52 @@
+@import "src/Styles/vars";
+
+
+.modal {
+	> div {
+		max-width: 560px;
+		max-height: 225px;
+		height: fit-content;
+		padding-bottom: 30px;
+		padding-top: 30px;
+		> div {
+			&:first-child {
+				padding-top: 0;
+				padding-bottom: 20px ;
+			}
+		}
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.text {
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 375;
+
+	&__title {
+		font-size: 20px;
+		line-height: 23px;
+		font-weight: 500;
+	}
+
+	&__bold {
+		font-weight: 500;
+	}
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+
+.buttons .submit_button {
+		background-color: var(--color-yellow-7);
+		&:hover {
+			background-color: var(--color-yellow-8);
+		}
+}

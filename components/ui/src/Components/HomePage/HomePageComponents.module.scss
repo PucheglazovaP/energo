@@ -1,0 +1,86 @@
+.header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 32px);
+  top: 0;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+  background: #FAFAFA;
+  padding: 7px 16px;
+  align-items: center;
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  &__filters {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+		position: relative;
+  }
+	&__menu {
+		right: 0 !important;
+		width: auto;
+		left: auto !important;
+		padding: 7px;
+	}
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.buttonHistory {
+  height: 24px;
+  padding: 5px 15px 4px;
+  border-radius: 4px;
+  border: 1px solid #FAB82E;
+  background: none;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+}
+.buttonMore {
+  border: none;
+  background: none;
+  padding: 0;
+	&__container{
+		position: relative;
+	}
+}
+.buttonParams {
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  &__active {
+    background-color: #FAB82E;
+  }
+  &__disabled {
+    border: 1px solid #FAB82E;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+  }
+}
+.switcher {
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	background: none;
+	border: none;
+	width: auto;
+	justify-content: start;
+	flex-direction: row-reverse;
+	&:hover {
+		background: none;
+		border: none;
+	}
+}

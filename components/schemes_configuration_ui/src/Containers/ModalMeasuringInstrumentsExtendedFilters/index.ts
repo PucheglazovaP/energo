@@ -1,0 +1,3 @@
+import ModalMeasuringInstrumentsExtendedFilters from './ModalMeasuringInstrumentsExtendedFilters';
+
+export default ModalMeasuringInstrumentsExtendedFilters;

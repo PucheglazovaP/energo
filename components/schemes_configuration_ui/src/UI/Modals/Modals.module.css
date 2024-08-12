@@ -1,0 +1,100 @@
+.root {
+	z-index: 100;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.532);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_window {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	background: var(--color-gray-f);
+	padding: 30px;
+	border-radius: 4px;
+	max-height: 90vh;
+	max-width: 95%;
+}
+
+.modal_window_hidden {
+	display: none;
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.title p {
+	color: var(--color-gray-0);
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 25px;
+	user-select: none;
+}
+
+.title .icon_close {
+	display: flex;
+	align-items: center;
+}
+
+.modal_body {
+	flex-grow: 1;
+	overflow-x: hidden;
+}
+
+.body_with__overflow {
+	overflow-x: visible;
+}
+
+.icon_button_close {
+	width: 25px;
+	height: 25px;
+	background: var(--color-gray-f);
+	border: 0;
+	cursor: pointer;
+}
+
+.icon_button_close svg {
+	width: 25px;
+	height: 25px;
+	background: var(--color-gray-f);
+	border: 0;
+	cursor: pointer;
+}
+
+.icon_button_close svg {
+	width: 15px;
+	height: 15px;
+}
+
+.icon_button_close svg path {
+	fill: var(--color-gray-6);
+}
+
+.icon_button_close svg path {
+	fill: var(--color-gray-6);
+}
+
+.icon_button_close:active .icon_button_svg {
+	border: 1px solid var(--color-gray-20);
+	border-radius: 4px;
+	background: var(--color-gray-f);
+}
+
+.icon_button_search {
+	margin-left: 15px;
+}
+
+.icon_button_search:active {
+	border-bottom: 2px solid var(--color-gray-f);
+}

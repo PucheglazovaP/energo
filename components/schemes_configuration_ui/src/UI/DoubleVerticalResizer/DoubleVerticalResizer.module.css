@@ -1,0 +1,41 @@
+.root {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	--resizer-border-color: var(--color-gray-13);
+	--resizer-element-color: var(--color-gray-20);
+	box-sizing: border-box;
+	flex-flow: row nowrap;
+}
+
+.resizer {
+	position: relative;
+	min-width: 6px;
+	height: 100%;
+	border-left: 1px solid var(--resizer-border-color);
+	border-right: 1px solid var(--resizer-border-color);
+	cursor: col-resize;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.resizer::after {
+	content: '';
+	position: absolute;
+	background-color: var(--resizer-element-color);
+	width: 2px;
+	height: 10%;
+}
+
+.content_wrapper {
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+}
+
+.content_wrapper_centered {
+	flex: 1;
+	overflow: hidden;
+	display: flex;
+}

@@ -1,0 +1,309 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.avaible_layers {
+	overflow-y: auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	padding-bottom: 0.55em;
+}
+
+.header:after {
+	position: absolute;
+	background-color: var(--color-gray-4);
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	content: '';
+}
+
+.plus {
+	height: 14px;
+	margin-right: 0.5em;
+	--icon-fill-color: var(--color-gray-70);
+}
+
+.add_button {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5em;
+	color: var(--color-gray-70);
+	font-weight: 375;
+	height: 1.375em;
+	position: relative;
+}
+
+.add_button:after {
+	position: absolute;
+	background-color: var(--color-gray-14);
+	width: 0.063em;
+	height: 100%;
+	top: 0;
+	left: -20%;
+	content: '';
+}
+
+.header_title {
+	font-weight: 500;
+}
+
+.header_searchable {
+	border: none;
+	padding: 0;
+}
+
+.sort_icon path,
+.filter_icon path {
+	fill: var(--color-gray-20);
+}
+
+.sort_icon:hover path,
+.filter_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.sort_icon_asc path:last-child {
+	fill: var(--color-yellow-7);
+}
+
+.sort_icon_desc path:first-child {
+	fill: var(--color-yellow-7);
+}
+
+.root .table {
+	height: 100%;
+	padding-right: 10px;
+	--table-border-spacing: 0 4px;
+	--table-active-row-background-color: var(--color-vinous-10);
+}
+
+.root .table::-webkit-scrollbar {
+	width: 5px;
+}
+
+.root .table table {
+	height: fit-content;
+}
+
+.root .table thead th {
+	padding: 10px 10px;
+	top: 0px;
+}
+
+.root .table thead th:first-child {
+	padding-left: 12px;
+}
+
+.root .table thead th:not(:first-child) {
+	min-width: 70px;
+}
+
+.root .table thead th,
+.root .table thead th span {
+	color: var(--color-gray-70);
+	font-weight: 400;
+}
+
+.root .table th,
+.root .table td {
+	font-size: 14px;
+	height: fit-content;
+}
+
+.root .table tbody tr:nth-child(odd):not(:global([class*='_active_row'])),
+.root .table tbody tr:nth-child(even):not(:global([class*='_active_row'])) {
+	background-color: var(--color-gray-1);
+}
+
+.root .table td {
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.root .table td:first-child {
+	border-radius: 4px 0 0 4px;
+	border-left: 1px solid var(--color-gray-14);
+}
+
+.root .table td:last-child {
+	border-radius: 0 4px 4px 0;
+	border-right: 1px solid var(--color-gray-14);
+}
+
+.root .table td > div {
+	padding: 7px 10px;
+	display: flex;
+	align-items: center;
+}
+
+.root .table tbody tr {
+	height: fit-content;
+}
+
+.root .table .checkbox {
+	--root-width: 16px;
+}
+
+.root .table .checkbox.checked::before {
+	width: 50%;
+	height: 25%;
+}
+
+.root .table .checkbox.indeterminate::before {
+	width: 9px;
+	height: 9px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.comment_icon path:first-child {
+	fill: var(--color-gray-15);
+}
+
+.comment_icon path:last-child {
+	fill: none;
+}
+
+.comment_icon.comment_icon__active path {
+	fill: var(--color-yellow-40);
+}
+
+.table thead .comment_icon path:first-child {
+	fill: var(--color-gray-70);
+}
+
+.show_btn {
+	border: none;
+	padding: 4px 10px 4px 6px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+}
+
+.show_btn:hover {
+	background: transparent;
+}
+
+.eye_icon {
+	--icon-fill-color: var(--color-gray-40);
+	height: 1.1em;
+}
+
+.tree {
+	margin-top: 0.625em;
+}
+
+.tree_item:hover .link_btn__visible {
+	display: flex;
+}
+
+.tree :global([class*='Tree_item']) {
+	padding: 0.438em 0 0.438em 0.625em;
+	box-sizing: border-box;
+}
+
+.tree_item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.context_menu {
+	z-index: 100;
+}
+/* .tree :global([class*='Tree_item--active']) {
+    background-color: var(--color-vinous-10);
+    border-color: var(--color-vinous-20);
+} */
+
+/* .tree :global([class*='Tree_item--active']):hover {
+    background-color: var(--color-vinous-10);
+    border-color:var(--color-vinous-20);
+} */
+/* .tree :global([class*='Tree_item--active']) .tree_item {
+    background-color: var(--color-vinous-10);
+    border-color: var(--color-vinous-20);
+}
+.tree :global([class*='Tree_item']) {
+    background-color: var(--color-gray-1);
+    border-color: var(--color-gray-14);
+}
+
+.tree :global([class*='Tree_item']):hover {
+    background-color: var(--color-vinous-15);
+}
+.tree :global([class*='Tree_item']):hover .tree_item {
+    background-color: var(--color-vinous-15);
+}
+.tree :global([class*='Tree_item--active']):hover{
+    background-color: var(--color-vinous-10);
+    border-color: var(--color-vinous-20);
+}
+.tree :global([class*='Tree_item--active']):hover  .tree_item{
+    background-color: var(--color-vinous-10);
+    border-color: var(--color-vinous-20);
+}
+.tree :global([class*='Tree_item']):focus {
+    background-color: var(--color-vinous-10);
+    border-color: var(--color-vinous-14);
+}
+ */
+.header_searchable :global([class*='MultiselectDropdown_input_container']) {
+	--input-static-padding: 5px 10px 5px 0px;
+}
+
+.search_icon {
+	width: 1em;
+}
+
+.search_icon path {
+	fill: var(--color-gray-16);
+}
+
+.context_menu_icon {
+	--icon-fill-color: var(--color-violet-40);
+}
+
+.context_menu_item {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.tree_item_buttons {
+	display: flex;
+}
+
+.link_btn {
+	box-sizing: border-box;
+	padding: 0.1em;
+	height: 2em;
+	width: 2em;
+	background-color: var(--color-gray-f);
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.icon {
+	--icon-fill-color: var(--color-gray-0);
+	width: 1.5em;
+}

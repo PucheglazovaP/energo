@@ -1,0 +1,55 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	padding: 0.75em 1em 1em;
+	box-sizing: border-box;
+	min-height: calc(100vh - var(--header-height));
+	height: calc(100vh - var(--header-height));
+	max-height: calc(100vh - var(--header-height));
+	max-width: 100vw;
+}
+
+.header {
+	display: flex;
+	justify-content: flex-end;
+	padding-bottom: 0.5em;
+}
+
+.radiogroup {
+	background: var(--color-gray-f);
+	padding: 0.25em 0.375em;
+	border-radius: 0.25em;
+}
+
+.radiogroup .switcher {
+	--item-background-color: var(--color-gray-4);
+	--item-font-size: 0.8125em;
+	--item-font-weight: 375;
+	background-color: var(--color-gray-4);
+	gap: 0;
+	padding: 0;
+}
+
+.radiogroup .switcher :global([class*='switcher_item']) {
+	padding: 0.31em 0.77em;
+}
+
+button.button {
+	background-color: var(--color-gray-4);
+	padding: 0.31em 0.77em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	border: none;
+	border-radius: 0.31em;
+	font-weight: 375;
+	user-select: none;
+}
+
+button.button__active {
+	background-color: var(--color-yellow-40);
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}

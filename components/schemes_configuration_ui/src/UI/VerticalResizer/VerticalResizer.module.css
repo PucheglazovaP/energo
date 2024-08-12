@@ -1,0 +1,32 @@
+.root {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	--resizer-border-color: var(--color-gray-13);
+	--resizer-element-color: var(--color-gray-20);
+}
+
+.resizer {
+	position: relative;
+	min-width: 6px;
+	height: 100%;
+	border-left: 1px solid var(--resizer-border-color);
+	border-right: 1px solid var(--resizer-border-color);
+	cursor: col-resize;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0.5em;
+}
+
+.resizer::after {
+	content: '';
+	position: absolute;
+	background-color: var(--resizer-element-color);
+	width: 2px;
+	height: 10%;
+}
+
+.part {
+	height: 100%;
+}

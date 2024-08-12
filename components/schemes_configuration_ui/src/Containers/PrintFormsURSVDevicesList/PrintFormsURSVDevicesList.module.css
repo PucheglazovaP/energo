@@ -1,0 +1,16 @@
+.tree {
+	height: 650px;
+	overflow-y: auto;
+}
+
+.search_wrapper {
+	position: sticky;
+	top: 0;
+	padding: 10px 5px;
+	background: var(--color-gray-f);
+	z-index: 2;
+	font-size: 14px;
+}
+.search {
+	width: 100%;
+}

@@ -1,0 +1,57 @@
+div.connection {
+	--title-bar-background-color: var(--color-vinous-15);
+}
+
+div.connection__hidden {
+	--body-padding: 0;
+}
+
+.panel {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.panel_button {
+	--accent-color: transparent;
+	display: flex;
+	align-items: center;
+	rotate: -90deg;
+	border: none;
+	padding: 0 0.684em;
+}
+
+.panel_button__expanded {
+	rotate: 0deg;
+}
+
+.panel_body {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 3fr 1fr;
+	height: 260px;
+}
+
+.panel_header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.panel_title {
+	font-size: 0.75em;
+	font-weight: 500;
+}
+
+.panel_report {
+	height: 100%;
+}
+
+.percentage {
+	color: var(--color-gray-40);
+}
+
+.calendar div:nth-child(2) div {
+	right: -10px;
+	top: 10px;
+}

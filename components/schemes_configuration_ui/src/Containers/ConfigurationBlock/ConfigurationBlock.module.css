@@ -1,0 +1,105 @@
+.root {
+	height: 100%;
+	background-color: var(--color-gray-f);
+}
+
+.list {
+	box-sizing: border-box;
+	overflow-y: auto;
+	margin-top: 1em;
+	height: calc(97% - 42px);
+	width: 100%;
+}
+
+.list-item {
+	padding: 0;
+	margin: -8px 0;
+	box-sizing: border-box;
+	width: 99%;
+	border: none;
+	background: none;
+}
+
+.group {
+	width: 310px;
+	height: 16px;
+	font-size: 18px;
+	line-height: 16px;
+	font-weight: 400;
+}
+
+.line {
+	width: 1px;
+	height: 26px;
+	background: var(--color-gray-14);
+}
+
+.alignment {
+	width: 100%;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 10px;
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.button_alignment {
+	border: none;
+	background-color: var(--color-gray-f);
+	cursor: pointer;
+}
+
+.switcher_wrapper {
+	background: linear-gradient(180deg,
+			var(--color-gray-f-transparent) 73.44%,
+			var(--color-gray-21) 100%);
+	padding-bottom: 0.125em;
+	height: 2em;
+}
+
+.switcher {
+	padding: 0;
+}
+
+.item_info {
+	margin-top: 1em;
+}
+
+.switcher_wrapper :global(.kit_switcher) {
+	background-color: var(--color-gray-4);
+	padding: 0;
+	gap: 0;
+}
+
+.switcher_wrapper :global(.kit_switcher)>button {
+	flex-grow: 1;
+	display: block;
+	width: 50%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 13px;
+}
+
+.tree {
+	overflow-y: auto;
+	margin-top: 1.5em;
+	height: calc(100% - 56px);
+}
+
+.tree :global([class*='kit_button']:hover) {
+	background-color: var(--color-gray-2);
+}
+
+.name {
+	width: 99%;
+	height: 20px;
+	border: none;
+	border-radius: 4px;
+	outline: none;
+}

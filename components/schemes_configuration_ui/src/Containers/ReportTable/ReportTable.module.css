@@ -1,0 +1,318 @@
+.root {
+	margin-left: 8px;
+	height: 100%;
+}
+
+.report_table .root {
+	padding: 0 10px;
+	width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.devices_radio_button_text {
+	color: var(--color-gray-100);
+	font-family: GT Eesti Pro Text;
+	font-size: 0.875em;
+	font-style: normal;
+	font-weight: 375;
+	margin-left: 10px;
+}
+
+button.header_button {
+	border: 1px solid var(--color-yellow-60);
+	padding: 4px 10px 4px 6px;
+	border-radius: 4px;
+	font-weight: 375;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	color: var(--color-gray-100);
+	gap: 6px;
+	background: var(--color-gray-f);
+	user-select: none;
+}
+
+.report_table__header {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 0 10px 0;
+	background: linear-gradient(
+		180deg,
+		var(--color-gray-f-transparent) 73.44%,
+		var(--color-gray-21) 100%
+	);
+}
+
+.table {
+	overflow: auto;
+	height: calc(100% - 22px);
+}
+
+.table::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.report_table {
+	--table-width: 100%;
+	height: max-content;
+	max-height: max-content;
+	display: contents;
+	--table-active-row-background-color: var(--color-vinous-10);
+}
+
+.report_table table {
+	border-spacing: 0 4px;
+}
+
+.report_table table thead {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	box-shadow: 0 -3px 0 0 var(--color-gray-f);
+}
+
+.report_table :global([class*='header__cell']) {
+	font-size: 0.8125em;
+	font-weight: 375;
+	color: var(--color-gray-70);
+	position: relative;
+	z-index: unset;
+}
+
+.report_table :global([class*='cell']) {
+	padding: 0;
+}
+
+/* ячейки 1 колонки без текста */
+.report_table :global([class*='cell-data']) {
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+}
+
+/* ячейки для 2 и 3 колонки с текстом, чтобы при схлопывании было многоточие */
+.report_table td:not(:first-child) div,
+.report_table td:not(:first-child) div > span {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+/* внутренние теги ячеек 2 и 3 колонки с текстом, чтобы при схлопывании 
+также работало многоточие */
+.report_table :global([class*='cell-data']) p,
+.report_table :global([class*='cell-data']) span {
+	word-break: break-all;
+	color: var(--color-gray-100);
+	font-family: GT Eesti Pro Text;
+	font-size: 0.875em;
+	font-style: normal;
+	font-weight: 375;
+}
+
+.report_table tr {
+	background-color: var(--color-gray-1);
+	height: min-content;
+}
+
+.report_table tr:hover {
+	background-color: var(--color-vinous-10);
+}
+
+.report_table td {
+	background-color: transparent;
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.report_table td:first-child {
+	border-left: 1px solid var(--color-gray-14);
+	border-radius: 3px 0 0 3px;
+}
+
+.report_table td:last-child {
+	border-right: 1px solid var(--color-gray-14);
+	border-radius: 0 3px 3px 0;
+}
+
+.report_table tr:hover td {
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.report_table tr:hover td:first-child {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+.report_table tr:hover td:last-child {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+/* ячейки ряда выбранного прибора */
+.report_table tr.device__active td {
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+/* первые ячейки в ряду выбранного прибора */
+.report_table tr.device__active td:first-child {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+/* последние ячейки в ряду выбранного прибора */
+.report_table tr.device__active td:last-child {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+.row {
+	cursor: pointer;
+}
+
+.report_table .sort_icon_asc path:last-child {
+	fill: var(--color-yellow-7);
+}
+
+.report_table .sort_icon_desc path:first-child {
+	fill: var(--color-yellow-7);
+}
+
+.sort_icon path {
+	fill: var(--color-gray-16);
+}
+
+.sort_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.spinner {
+	margin-top: 20px;
+	height: 30px;
+	width: 30px;
+}
+
+/* Modal body */
+
+.modal_body {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal_body .buttons {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1.25em;
+	border-top: 2px solid var(--color-gray-14);
+}
+
+.modal_body .buttons button {
+	width: 120px;
+	border-color: var(--color-yellow-40);
+}
+
+.modal_body .buttons button:hover {
+	background-color: var(--color-yellow-50);
+	border-color: var(--color-yellow-50);
+}
+
+.modal_body .buttons button:last-child {
+	background-color: var(--color-yellow-40);
+}
+
+.modal_body .buttons button:last-child:hover {
+	background-color: var(--color-yellow-50);
+	border-color: var(--color-yellow-50);
+}
+
+.modal_body .calendar_container {
+	padding: 0.375em 0 1.25em;
+}
+
+.modal_body .calendar_container__flattened {
+	padding-bottom: 1em;
+}
+
+.heat_system {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-bottom: 1.25em;
+}
+
+.heat_system_text {
+	color: var(--color-gray-50);
+	font-family: GT Eesti Pro Text;
+	font-size: 0.75em;
+	font-style: normal;
+	font-weight: 375;
+	line-height: normal;
+	min-width: 10em;
+}
+
+.heat_system_divider {
+	border-bottom: 0.0625em dashed var(--color-gray-15);
+	width: 100%;
+}
+
+.selector {
+	--select-border-color: var(--color-gray-40);
+	--select-height: 1.625em;
+	position: relative;
+	top: 0.25em;
+	margin: 0;
+	margin-left: 0.125em;
+	width: 5.625em;
+}
+
+.selector :global([class*='select__toggle'])::before {
+	content: '';
+}
+
+.selector :global([class*='select__single']) {
+	min-width: 5.625em;
+}
+
+.selector path {
+	fill: var(--color-gray-20);
+}
+
+.filter_control :global([class*='filter_control_context_menu']) {
+	right: 0;
+	/* Пришлось применить !important, так как в ContextMenu 
+	применяется инлайн-стилизация через js */
+	left: unset !important;
+	top: unset !important;
+}
+
+.filter_control :global([class*='filter_control_button']) {
+	padding: 0.539em 0;
+}
+
+.filter_control :global([class*='icon_path']) {
+	fill: var(--color-gray-16);
+}
+
+.report_table .header_searchable {
+	padding: 0 0.92em 0.154em;
+	margin-bottom: 0.154em;
+	border-bottom: none;
+}
+
+.header_searchable :global([class*='MultiselectDropdown_input_container']) {
+	--input-static-padding: 5px 10px 5px 0px;
+}
+
+.search_icon path {
+	fill: var(--color-gray-20);
+}
+
+.container {
+	height: 100%;
+}

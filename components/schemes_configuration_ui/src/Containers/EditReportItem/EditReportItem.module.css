@@ -1,0 +1,79 @@
+.fields {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	background: var(--color-gray-1);
+	padding: 24px 16px 8px;
+	align-items: center;
+}
+
+.input_wrapper {
+	padding-bottom: 32px;
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.side_left,
+.side_right {
+	flex-grow: 1;
+}
+
+.side_right {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.side_right > div {
+	flex-grow: 1;
+}
+
+.text :global([class*='label']) {
+	top: -1.2em;
+	left: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.selector {
+	margin: 0;
+	width: 100%;
+	max-width: 12.5em;
+}
+
+.selector :global([class*='Select_pane']) {
+	width: max-content;
+	top: 2em;
+	max-height: 31.5em;
+}
+
+.selector :global([class*='Select_pane__item']) {
+	width: 100%;
+}
+
+.selector :global([class*='select__field']) {
+	text-align: left;
+	padding-left: 1em;
+	font-size: 0.8125em;
+}
+
+.selector :global([class*='Select_label']) {
+	left: 0;
+	top: -1.5em;
+	background-color: transparent;
+	padding: 0;
+	font-size: 0.688em;
+}
+
+.selector > div {
+	width: 100%;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 27px;
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}

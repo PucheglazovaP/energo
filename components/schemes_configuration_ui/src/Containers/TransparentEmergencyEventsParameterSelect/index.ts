@@ -1,0 +1,2 @@
+import TransparentEmergencyEventsParameterSelect from './TransparentEmergencyEventsParameterSelect';
+export default TransparentEmergencyEventsParameterSelect;

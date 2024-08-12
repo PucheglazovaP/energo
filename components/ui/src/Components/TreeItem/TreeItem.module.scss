@@ -1,0 +1,209 @@
+@import "src/Styles/vars";
+
+.tree {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 3px;
+	}
+	&__body {
+
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		padding-left: 25px;
+
+	}
+	&__noDropdownBtn {
+		margin-left: 23px;
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	gap: 3px ;
+	align-items: center;
+	width: 100%;
+	height: 30px;
+	background-color: #FAFAFA;
+	border-radius: 3px;
+	border: 1px solid #F5F5F5;
+	&__body {
+		font-weight: 375;
+		font-size: 14px;
+		line-height: 16px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		gap: 7px;
+		padding-left: 12px;
+		align-items: center;
+	}
+	&__item {
+		display: flex;
+		align-self: center;
+	}
+	&__last {
+		border: 1px solid $yellow-2;
+		border-radius: 3px;
+		background: $yellow-1;
+	}
+	&__title {
+		display: -webkit-box;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 1;
+		max-height: 20px;
+		-webkit-box-orient: vertical;
+		-webkit-flex: auto;
+		flex: auto;
+		margin-right: 10px;
+	}
+	&__active {
+		border: 1px solid $yellow-5;
+
+	}
+}
+
+.icon {
+	min-width: 16px;
+}
+.overflowItem {
+	width: 100%;
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	word-break: break-all;
+}
+
+.groupItem {
+	&__number {
+		min-width: 65px;
+	}
+	&__number_reverse {
+		min-width: 112px;
+	}
+	&__number_ework {
+		color: $gray-6;
+	}
+	&__count {
+		display: flex;
+		min-width: 40px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	&__rightItems {
+		margin-right: 5px;
+		display: flex;
+		justify-content: flex-end;
+		gap: 11px;
+		min-width: 60px;
+	}
+}
+
+.channelItem {
+	&__number {
+		min-width: 90px;
+	}
+
+	&__coefficient {
+		display: flex;
+		background-color: $gray-1;
+		align-items: center;
+		min-width: 160px;
+		gap: 5px;
+		div {
+			background: $gray-3;
+			border-radius: 4px;
+			width: 40px;
+			padding: 2px 8px;
+			text-align: center;
+		}
+	}
+	&__includeFlag {
+		min-width: 9px;
+		min-height: 9px;
+		margin-right: 11px;
+		border-radius: 100px;
+		background-color: $red-4;
+
+	}
+	&__includeFlag_active {
+		background-color: $green-4;
+	}
+}
+
+.deviceItem {
+	&__number {
+		min-width: 90px;
+	}
+	&__count {
+		display: flex;
+		min-width: 40px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	&__rightItems {
+		margin-right: 5px;
+		display: flex;
+		justify-content: flex-end;
+		gap: 11px;
+		min-width: 60px;
+	}
+}
+
+.formula {
+	height: 20px;
+	padding: 0 3px;
+	&__active {
+		background-color: $main-color;
+		text-align: center;
+		border-radius: 3px;
+	}
+}
+
+.favouriteBtn {
+	padding: 0 !important;
+	border: none !important;
+	&__active {
+		background-color: $main-color !important;
+		border-radius: 3px !important;
+	}
+	&:hover {
+		border: 1px solid $gray-8 !important;
+		margin: -1px;
+	}
+}
+
+.btn {
+	width: 20px;
+	height: 20px;
+	border: none;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	background: url("../../Assets/images/ArrowDownLogo.svg");
+	&__hide {
+		background: url("../../Assets/images/ArrowRightLogo.svg");
+	}
+}
+
+.intersection {
+	position: absolute;
+	border: 1px solid #fff;
+	&__top {
+		top: 200px;
+	}
+	&__bottom {
+		bottom: 200px;
+	}
+}
+

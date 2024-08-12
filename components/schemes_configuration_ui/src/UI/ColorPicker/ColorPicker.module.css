@@ -1,0 +1,27 @@
+button:global(.button__empty).picker {
+	--picker-border: 1px solid var(--color-gray-40);
+	--picker-width: 16px;
+	--picker-height: 16px;
+	position: relative;
+	border: var(--picker-border);
+	width: var(--picker-width);
+	height: var(--picker-height);
+}
+
+button:global(.button__empty).picker:hover {
+	border: var(--picker-border);
+	background: unset;
+}
+
+.pane {
+	position: absolute;
+	z-index: 10;
+}
+
+button:global(.button__empty).cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

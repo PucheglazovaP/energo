@@ -1,0 +1,52 @@
+.fields {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 16px 0;
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.input_wrapper {
+	padding-bottom: 32px;
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.text {
+	--input-static-padding: 8px 10px 8px 12px;
+}
+
+.text :global([class*='label']) {
+	top: -1.2em;
+	left: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.label {
+	display: inline-block;
+	position: absolute;
+	top: -1em;
+	line-height: 1em;
+	font-size: 0.867em;
+	border: none;
+	color: var(--color-gray-7);
+	background-color: var(--color-gray-f);
+	pointer-events: none;
+	padding: 0;
+}
+
+.fields h4 {
+	font-size: 1.071em;
+	margin: 0;
+	font-weight: 375;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 27px;
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}

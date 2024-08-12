@@ -1,0 +1,157 @@
+.root {
+	background-color: var(--color-gray-f);
+}
+
+.body {
+	display: flex;
+	margin-top: 1.25em;
+}
+
+.editor {
+	overflow: scroll;
+	border: 1px solid var(--color-gray-5);
+	border-radius: 0.25em;
+	max-height: 15rem;
+}
+
+.editor::-webkit-scrollbar {
+	height: 0.25em;
+	width: 0.25em;
+}
+
+.editor::-webkit-scrollbar-track {
+	background-color: var(--color-gray-2);
+	border-radius: 0.125em;
+}
+
+.editor::-webkit-scrollbar-thumb {
+	background-color: var(--color-gray-13);
+	border-radius: 0.125em;
+}
+
+.numpad {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.375em;
+	width: fit-content;
+}
+
+.buttons_group {
+	display: grid;
+	gap: 0.375em;
+	width: fit-content;
+}
+
+.root .numpad_button {
+	align-content: center;
+	background-color: var(--color-gray-2);
+	border: none;
+	border-radius: 0.231em;
+	color: var(--color-gray-8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.813em;
+	line-height: 1.154em;
+	font-weight: 375;
+	padding: 0.385em;
+}
+
+.root .numpad_button:hover {
+	background-color: var(--color-gray-13);
+}
+
+.numpad_button:disabled {
+	background-color: var(--color-gray-1);
+	color: var(--color-gray-6);
+}
+
+.numpad_empty_space {
+	color: var(--color-blue-5);
+}
+
+.root .systems_button {
+	align-content: center;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+}
+
+.root .fraction_button {
+	align-content: center;
+	display: grid;
+	justify-content: center;
+}
+
+.systems_sign {
+	grid-row: span 2;
+	align-self: end;
+	transform: translateY(20%);
+}
+
+.fraction_separator {
+	border-bottom: 1px solid var(--color-gray-0);
+}
+
+.toolbar {
+	margin-top: 22px;
+	display: flex;
+	column-gap: 0.625em;
+}
+
+.root .separator {
+	background-color: var(--color-gray-3);
+	width: 0.125em;
+}
+
+.sup {
+	display: block;
+	transform: translateY(-20%);
+}
+
+.data_tabs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--color-gray-2);
+	height: fit-content;
+	border-radius: 4px;
+	padding: 3px;
+	width: fit-content;
+}
+
+.tab_button {
+	padding: 4px 14px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.tab_button__active {
+	background: var(--color-yellow-60);
+}
+
+.data_items {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 2fr);
+	column-gap: 20px;
+	row-gap: 12px;
+	min-height: 70px;
+}
+
+.formula_input {
+	border: 1px solid black;
+	margin: 50px 0;
+	font-size: 1em;
+	font-weight: 350;
+	width: 100%;
+}
+
+.submit_container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.params_input_container {
+	width: 180px;
+}

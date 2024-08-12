@@ -1,0 +1,28 @@
+.channels {
+	/* 42px - height of the tree buttons */
+	height: calc(100% - 42px);
+}
+
+.search {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 0.4em;
+	padding: 0.357em 1%;
+}
+
+.tree {
+	/* 42px - height of the search */
+	height: calc(100% - 42px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.rollup {
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+}
+
+.field {
+	flex-grow: 1;
+}

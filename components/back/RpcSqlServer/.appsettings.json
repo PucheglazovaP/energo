@@ -1,0 +1,9 @@
+﻿{
+	"ConnectionStrings": {
+		"SQLConnection": "Data Source=KOY-1\\SQLEXPRESS;Initial Catalog=DemoSSIS_Target;;Integrated Security=True;TrustServerCertificate=True",
+		"RabbitConnection": "amqp://guest:guest@localhost:5672/%2f"
+	},
+	"RabbitSettings": {
+		"QueueName":  "rpc_sql_queue"
+	}
+}

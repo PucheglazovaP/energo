@@ -1,0 +1,32 @@
+.search {
+	background-color: var(--color-gray-f);
+	/* element need to overlap tree items. 1% serves it */
+	padding: 0.357em 1%;
+}
+
+.devices {
+	/* 42px - the height of the buttons for the tree */
+	height: calc(100% - 42px);
+}
+
+.tree {
+	/* 37px - search height */
+	height: calc(100% - 37px);
+	overflow-y: auto;
+}
+
+.search {
+	display: flex;
+}
+
+.search:nth-child(2) {
+	flex-grow: 1;
+}
+
+.rollup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+}

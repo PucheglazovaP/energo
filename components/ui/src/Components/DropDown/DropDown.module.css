@@ -1,0 +1,30 @@
+.root {
+	--pane-align-left: auto;
+	--pane-align-right: auto;
+	--pane-background-color: #fff;
+	--pane-border-radius: 0.25em;
+	--pane-max-width: 18.75em;
+	--pane-padding: 1em;
+	position: relative;
+}
+
+button.drop_button {
+	box-sizing: content-box;
+	display: block;
+	line-height: 1em;
+	min-width: 1em;
+	padding: 0.5em;
+}
+
+.pane {
+	background-color: var(--pane-background-color);
+	border-radius: var(--pane-border-radius);
+	box-shadow: 0 0.25em 1.5em 0 rgba(0, 0, 0, 0.1);
+	left: var(--pane-align-left);
+	overflow-x: hidden;
+	padding: var(--pane-padding);
+	position: absolute;
+	right: var(--pane-align-right);
+	max-height: 50vh;
+	max-width: var(--pane-max-width);
+}

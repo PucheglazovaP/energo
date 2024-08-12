@@ -1,0 +1,37 @@
+@import 'src/Styles/vars';
+
+.modal {
+  &#{&} {
+    --width: 560px;
+    --height: 434px;
+    --content-height: 315px;
+  }
+}
+
+.button {
+  &__action {
+    cursor: pointer;
+    display: flex;
+    border: 1px solid $yellow-60;
+    border-radius: 4px;
+    padding: 4px;
+  }
+}
+
+.table {
+  margin-top: 0;
+  max-height: 280px;
+
+  &__id {
+    width: 90%;
+  }
+}
+
+.table table {
+  margin: 0;
+}
+
+.modal .select {
+  width: 10em;
+  margin-top: 1em;
+}

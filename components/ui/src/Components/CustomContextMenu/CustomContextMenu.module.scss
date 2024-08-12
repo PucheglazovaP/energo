@@ -1,0 +1,50 @@
+@import "src/Styles/vars";
+
+.contextMenu {
+	background-color: white;
+	z-index: 1000;
+	position: fixed;
+	box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	padding: 10px;
+	width: 255px;
+
+	&__itemContainer {
+		position: relative;
+	}
+	&__item {
+		display: flex;
+		gap: 10px;
+		border-radius: 5px;
+		font-weight: 375;
+		font-size: 14px;
+		line-height: 16px;
+		cursor: pointer;
+		color: $gray-10;
+		padding: 8px 10px;
+		width: 100%;
+		&:hover {
+			background-color: $yellow-1;
+			border-radius: 5px;
+		}
+	}
+	&__disabledItem {
+		color: $gray-7;
+		&:hover {
+			background-color: inherit;
+			border-radius: 5px;
+		}
+	}
+	&__icon {
+		width: 16px;
+		min-width: 16px;
+		height: 16px;
+	}
+	&__separator{
+		z-index: 10;
+		height: 1px;
+		width: 100%;
+		background-color: $gray-4;
+		position: absolute;
+	}
+}

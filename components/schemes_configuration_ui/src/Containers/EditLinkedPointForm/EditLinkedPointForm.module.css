@@ -1,0 +1,331 @@
+.linked_points {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	position: relative;
+	height: 750px;
+}
+
+.linked_points_table {
+	--table-width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	font-size: 0.875em;
+	line-height: 1em;
+	font-weight: 400;
+	border-spacing: 3px;
+	margin-top: 5px;
+	border-bottom: 2px solid var(--color-gray-2);
+	padding-bottom: 10px;
+}
+
+.linked_points_table table {
+	border-spacing: 0 4px;
+	height: fit-content;
+}
+
+.linked_points_table > div {
+	position: relative;
+}
+
+.linked_points_table > div > div:first-child {
+	--cell-min-width: 50px;
+	--header-z-index: 10;
+	position: sticky;
+	top: 0;
+}
+
+.linked_points_table::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.linked_points_table :global([class*='header__cell']) {
+	font-size: 0.813em;
+	color: var(--color-gray-70);
+	padding: 0;
+}
+
+.linked_points_table :global([class*='cell-data']) {
+	border-left: 0;
+	border-right: 0;
+	border-radius: 3px;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.linked_points_table tr {
+	background-color: var(--color-gray-1);
+	height: min-content;
+}
+
+.linked_points_table tr:hover,
+.linked_points_table tr:focus {
+	background-color: var(--color-vinous-10);
+}
+
+.linked_points_table td {
+	background-color: transparent;
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	cursor: pointer;
+}
+
+.linked_points_table td:first-child {
+	border-left: 1px solid var(--color-gray-14);
+	border-radius: 3px 0 0 3px;
+}
+
+.linked_points_table td {
+	padding: 0 15px;
+}
+
+.linked_points_table td:last-child {
+	border-right: 1px solid var(--color-gray-14);
+	border-radius: 0 3px 3px 0;
+}
+
+.linked_points_table tr:hover td,
+.linked_points_table tr:focus td {
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.linked_points_table tr:hover td:first-child,
+.linked_points_table tr:focus td:first-child {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+.linked_points_table tr:hover td:last-child,
+.linked_points_table tr:focus td:last-child {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+.linked_points_table .header_searchable {
+	margin-bottom: 0;
+}
+
+.header_searchable :global([class*='MultiselectDropdown_input_container']) {
+	--input-static-padding: 5px 10px 5px 0px;
+}
+
+.filter_wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.filter_wrapper .filter_header button {
+	padding: 0;
+}
+
+.filter_wrapper .filter_icon {
+	--icon-fill-color: var(--color-gray-30);
+}
+
+.filter_header:hover .filter_icon {
+	--icon-fill-color: var(--color-gray-40);
+}
+
+.filter_body {
+	z-index: 100000;
+}
+
+.filter_wrapper .filter_header div {
+	left: auto !important;
+	right: 0 !important;
+	top: 100% !important;
+}
+
+.linked_points_table .table_text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+	display: block;
+	align-items: center;
+	color: var(--color-gray-90);
+	font-size: 1em;
+	width: 100%;
+}
+
+.linked_points_table .table_text__left {
+	align-items: flex-start;
+}
+
+.sort_icon path {
+	fill: var(--color-gray-16);
+}
+
+.sort_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.btn {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	background-color: var(--color-gray-f);
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	margin-bottom: 5px;
+	margin-left: 15px;
+}
+
+.btn:hover .arrow path {
+	fill: var(--color-gray-84);
+}
+
+.arrow {
+	transition: all 0.3s;
+}
+
+.arrow path {
+	fill: var(--color-gray-80);
+}
+
+.btn .arrow {
+	transform: rotate(-90deg);
+}
+.btn .arrow--down {
+	transform: rotate(0deg);
+}
+
+.linked_points_table .linked_cell p {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 1em;
+	padding: 1px 5px;
+	width: 30px;
+}
+
+.linked_cell {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 0.875em;
+	padding: 1px 5px;
+	width: 30px;
+}
+
+.linked_points_table .linked_cell__active p {
+	background: var(--color-green-11);
+	color: var(--color-gray-f);
+	width: 25px;
+}
+
+.header_comment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.comment_icon path:first-child {
+	fill: var(--color-gray-15);
+}
+
+.comment_icon path:last-child {
+	fill: var(--color-gray-f);
+}
+
+.comment_icon__active path {
+	fill: var(--color-yellow-40);
+}
+
+.comment_icon__active path:first-child {
+	fill: var(--color-yellow-40);
+}
+
+.comment_icon__active path:last-child {
+	fill: var(--color-yellow-40);
+}
+
+.comment:hover .comment_icon__active path {
+	fill: var(--color-yellow-50);
+}
+
+.comment {
+	display: flex;
+	align-items: center;
+}
+
+.linked_points_table :global([class*='cell-data']) .comment_cell {
+	display: flex;
+}
+
+.linked_points_table table .device_info {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	gap: 5px;
+}
+
+.info_icon path {
+	fill: var(--color-gray-20);
+}
+
+.info_icon:hover path {
+	fill: var(--color-gray-40);
+}
+
+.linked_points_table :global([class*='cell-data']) .link_wrapper {
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.link_button {
+	font-family: inherit;
+	font-size: inherit;
+	color: var(--ui-violet-60);
+	background: none;
+	border: none;
+	border-bottom: 1px dotted var(--ui-violet-60);
+	padding: 0;
+	cursor: pointer;
+	max-width: 270px;
+}
+
+.link_button_text {
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+	text-overflow: ellipsis;
+}
+
+.sort_icon_asc path:last-child {
+	fill: var(--color-yellow-7);
+}
+
+.sort_icon_desc path:first-child {
+	fill: var(--color-yellow-7);
+}
+
+.linked_points_table .row__active {
+	background-color: var(--color-vinous-15);
+}
+
+.radiogroup {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 5px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+}

@@ -1,0 +1,41 @@
+.form {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.icon {
+	--icon-fill-color: var(--color-red-100) !important;
+}
+
+.heading {
+	font-size: 1.313em;
+	font-weight: 500;
+	line-height: 1.143em;
+	margin: 0.688em 0 0 0;
+}
+
+.title {
+	font-size: 0.938em;
+	line-height: 1.2em;
+	color: var(--color-gray-70);
+	margin: 0.357em 0 0 0;
+}
+
+.separator {
+	height: 1px;
+	width: 100%;
+	background-color: var(--color-gray-6);
+	margin: 1.25em 0;
+}
+
+.controllers {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 1.25em;
+	width: 100%;
+}
+
+.button {
+	width: 100%;
+}

@@ -1,0 +1,49 @@
+.root .body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.body .subtitle {
+	font-size: 0.938em;
+	font-weight: 375;
+	line-height: 0.938em;
+	color: var(--color-gray-70);
+	text-align: center;
+	margin: 0 0 25px;
+}
+
+.body .title {
+	font-size: 1.313em;
+	font-weight: 600;
+	line-height: 1.313em;
+	text-align: center;
+	margin: 10px 0 5px;
+}
+
+.body .info {
+	height: 27px;
+	width: 27px;
+}
+
+.body .info path {
+	fill: var(--color-orange-6);
+}
+
+.root .controls {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	border-top: 2px solid var(--color-gray-14);
+}
+
+.root .controls button {
+	border-color: var(--color-yellow-40);
+	background-color: var(--color-yellow-40);
+}
+
+.root .controls button:hover {
+	background-color: var(--color-yellow-50);
+	border-color: var(--color-yellow-50);
+}

@@ -1,0 +1,26 @@
+@import "../../Styles/vars";
+
+.container {
+	z-index: 10;
+	position: absolute;
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 10px;
+	font-size: 0.813em;
+	background-color: $gray-f;
+	border-radius: 4px;
+	box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+	text-align: left;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	padding: 7px;
+}
+
+.item:hover {
+	border-radius: 4px;
+	background-color: $yellow-2;
+}

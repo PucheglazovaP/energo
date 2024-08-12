@@ -1,0 +1,14 @@
+.switcher {
+	align-items: center;
+	column-gap: 0.875em;
+	display: inline-flex;
+	position: relative;
+}
+
+.switcher__input {
+	display: none;
+}
+
+.switcher__label {
+	font-size: 0.875em;
+}

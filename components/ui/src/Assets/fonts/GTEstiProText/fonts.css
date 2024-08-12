@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url(./GTEestiProText-Book.woff2);
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url(./GTEestiProText-Medium.woff2);
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'GT Eesti Pro Text';
+	src: url(./GTEestiProText-Light.woff2);
+	font-weight: 300;
+}

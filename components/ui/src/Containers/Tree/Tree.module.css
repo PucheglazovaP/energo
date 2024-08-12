@@ -1,0 +1,52 @@
+.root {
+	padding-left: 10px;
+}
+
+.root .item {
+	height: 30px;
+	background-color: #f5f5f5;
+	box-sizing: border-box;
+	border-radius: 3px;
+	padding-left: 12px;
+	cursor: pointer;
+	flex-grow: 2;
+	text-align: left;
+	font-size: 14px;
+	font-weight: 375;
+	border: 0.077em solid transparent;
+}
+.root .item--last {
+	margin-left: 20px;
+}
+.root .item--active {
+	border-color: var(--color-yellow-7);
+}
+.root .item:focus {
+	background: var(--color-yellow-4);
+}
+
+.wrapper {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.btn {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	background-color: var(--color-gray-1);
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.arrow {
+	transition: all 0.3s;
+}
+.btn .arrow {
+	transform: rotate(-90deg);
+}
+.btn .arrow--down {
+	transform: rotate(0deg);
+}

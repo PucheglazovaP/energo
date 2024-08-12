@@ -1,0 +1,273 @@
+@import "src/Styles/vars";
+
+.listContainer {
+  padding: 15px 0 0;
+  height: calc(100% - 150px);
+  color: $gray-10;
+}
+
+.listHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 2px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #EAEAEA;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #595959;
+  justify-content: space-between;
+
+  &__unused {
+    justify-content: flex-start;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 7px 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
+    &:first-child {
+      padding: 7px 12px 7px 0;
+      min-width: 140px;
+      max-width: 140px;
+    }
+
+    &:last-child {
+      min-width: 140px;
+      max-width: 140px;
+    }
+
+  }
+
+  &__deviceNumberItem {
+    &:first-child {
+      min-width: 165px;
+    }
+  }
+}
+
+.commonList {
+  height: 100%;
+}
+
+.listWithChannels {
+  //max-height: 75%;
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  justify-content: space-between;
+
+  &__content {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    max-height: calc(100% - 76px);
+    height: max-content;
+    padding: 0 6px 10px 0;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background-color: var(--color-gray-15);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--color-gray-20);
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 6px;
+    }
+  }
+
+  &__contentDevices {
+    height: calc(100% + 20px);
+  }
+
+  &__sort {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    margin-left: 15px;
+  }
+
+  &__rightBlock {
+    height: 100%;
+  }
+
+  &__button {
+    display: flex;
+    cursor: pointer;
+  }
+}
+
+.listBtn {
+  min-width: 20px;
+  height: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  background: url("../../Assets/images/ArrowDownLogo.svg");
+
+  &__hide {
+    background: url("../../Assets/images/ArrowRightLogo.svg");
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: calc(100% - 10px);
+  padding: 10px;
+  overflow: auto;
+  animation: show 0.5s ease-in-out;
+
+  &__hide {
+    height: 0;
+    padding: 0;
+    animation: hide 0.5s ease-in-out;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+  }
+
+}
+
+.contentHeader {
+  padding: 8px 12px;
+  background: #FAFAFA;
+  border: 1px solid #F5F5F5;
+  border-radius: 3px;
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.unusedChannels {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  min-height: 250px;
+  position: relative;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17px;
+    padding: 9.5px 16px;
+    background: #F5F5F5;
+  }
+
+  &__btn {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: url("../../Assets/images/LogoMore.svg") no-repeat 50%;
+  }
+}
+
+.header {
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  &__title {
+    white-space: nowrap;
+  }
+}
+
+
+.listUnused {
+  justify-content: flex-start;
+  width: 25%;
+
+  &:first-child {
+    min-width: 165px;
+  }
+}
+
+.sortButton {
+  &__reverse {
+    transform: rotate(180deg);
+  }
+
+  &__default {
+    path {
+      fill: $gray-15;
+    }
+  }
+
+  path {
+    &:hover {
+      fill: $gray-30;
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    height: 0;
+    scale: 0;
+  }
+  100% {
+    height: auto;
+    scale: 1 1;
+    opacity: 1;
+  }
+}
+
+.header {
+  &__menu {
+    right: 5px !important;
+    width: auto;
+    left: auto !important;
+    padding: 7px;
+  }
+}
+
+
+@keyframes hide {
+  0% {
+    scale: 1 1;
+    height: auto;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    scale: 0 0;
+    opacity: 0;
+  }
+}

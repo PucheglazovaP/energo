@@ -1,0 +1,11 @@
+.root {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+.root::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}

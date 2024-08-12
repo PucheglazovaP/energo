@@ -1,0 +1,181 @@
+.root {
+	background: linear-gradient(180deg,
+			var(--color-gray-f-transparent) 73.44%,
+			var(--color-gray-21) 100%);
+	max-height: 1.5em;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+}
+
+.btns {
+	max-height: 100%;
+	margin-left: auto;
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+}
+
+.btns__chart {
+	justify-content: flex-end;
+}
+
+.root .menu {
+	width: 20em;
+	padding: 7px;
+}
+
+.root .menu_item {
+	width: 100%;
+	border: none;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 375;
+}
+
+.root .button {
+	display: flex;
+	align-items: center;
+}
+
+.root .menu_item:hover {
+	background-color: var(--color-yellow-1);
+}
+
+.menu_icon {
+	filter: invert(83%) sepia(89%) saturate(563%) hue-rotate(193deg) brightness(85%) contrast(85%);
+	width: 1em;
+	height: 1em;
+	margin-right: 0.4375em;
+}
+
+.root .menu_btn {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.7em;
+	padding: 0;
+	margin-left: 1em;
+}
+
+.root .checkbox {
+	flex-direction: row-reverse;
+	padding: 0;
+	justify-content: start;
+	max-height: 1.375em;
+	box-sizing: border-box;
+}
+
+.root .checkbox span {
+	border: 1px solid var(--color-gray-20);
+	box-sizing: border-box;
+	margin-right: 0.5em;
+	height: 1em;
+	width: 1em;
+}
+
+.multichart_controller {
+	display: flex;
+	flex-flow: row nowrap;
+	/* TODO: change to 'em' */
+	gap: 10px;
+}
+
+.multichart_separator {
+	height: 100%;
+	width: 1px;
+	margin: 0 6px;
+	background-color: var(--color-gray-14);
+}
+
+.multichart_select {
+	--select-height: 22px;
+	--pane-top: 1em;
+	--pane-width: 225px;
+	width: inherit;
+}
+
+.root .multichart_button {
+	--accent-color: var(--color-gray-2);
+	background-color: var(--color-gray-2);
+	border: 1px solid var(--color-gray-13);
+	max-height: 100%;
+	padding: 0.5em;
+	color: var(--color-gray-70);
+	font-weight: 375;
+}
+
+.root .multichart_button:disabled {
+	background-color: var(--color-gray-f);
+	color: var(--color-gray-13);
+	border: 1px solid var(--color-gray-13);
+}
+
+.multichart_button:disabled>svg {
+	--icon-fill-color: var(--color-gray-13);
+}
+
+.multichart_icon {
+	--icon-fill-color: var(--color-gray-40);
+}
+
+.navigation {
+	margin-right: auto;
+}
+
+.settings {
+	display: flex;
+	height: 1.5em;
+	align-items: center;
+}
+
+.root .selector {
+	--select-height: 1.375em;
+	--select-toggle-background-color: var(--color-yellow-40);
+	--select-border-color: none;
+	--pane-top: 1.375em;
+	--select-body-background-color: var(--color-yellow-40);
+	--pane-padding: 0;
+	width: 7em;
+	border-radius: 4px;
+	border: none;
+	margin: 0 1em;
+}
+
+.root .selector button {
+	font-weight: 500;
+	font-family: inherit;
+}
+
+.selector.selector_discrete {
+	position: relative;
+	margin: 0;
+	padding-right: 1em;
+}
+
+.root .calendar {
+	--button-background-color: var(--color-yellow-40);
+	box-sizing: border-box;
+	max-height: 1.375em;
+	background-color: transparent;
+	padding: 0;
+	padding-right: 1em;
+	position: relative;
+}
+
+.root .edititng_menu:global([class*='ContextMenu_item']) {
+	padding: 0;
+}
+.root .menu {
+	right: 0 !important;
+	width: 14em;
+	left: auto !important;
+	padding: 7px;
+}

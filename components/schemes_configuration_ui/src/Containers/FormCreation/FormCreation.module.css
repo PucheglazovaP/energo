@@ -1,0 +1,39 @@
+.container {
+	display: flex;
+	flex-flow: column nowrap;
+	height: 100%;
+}
+.body {
+	flex-grow: 1;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 10px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.section {
+	margin: 8px 0;
+}
+
+.section__title {
+	font-size: 0.938em;
+	font-weight: 500;
+}
+
+.section__radio {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 8px 0;
+}
+
+.switcher__disabled {
+	opacity: 0.5;
+}
+.selector {
+	width: 100%;
+}

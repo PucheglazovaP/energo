@@ -1,0 +1,14 @@
+.root {
+	padding: 0.25rem 0;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	background: linear-gradient(
+		180deg,
+		var(--color-gray-f-transparent) 73.44%,
+		var(--color-gray-21) 100%
+	);
+}
+

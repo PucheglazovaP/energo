@@ -1,0 +1,48 @@
+.checkbox_wrapper {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.checkbox_wrapper .checkbox {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.emergency_events {
+	position: absolute;
+	border-radius: 11px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-gray-f);
+	font-size: 0.8em;
+	font-weight: 500;
+	border: none;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-family: inherit;
+	max-width: 1.2em;
+	background-color: transparent;
+	min-width: 14px;
+	min-height: 14px;
+}
+
+.checkbox span {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	box-sizing: border-box;
+	border-color: transparent;
+	background-color: transparent !important;
+}

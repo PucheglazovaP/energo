@@ -1,0 +1,173 @@
+@import 'src/Styles/vars';
+
+.modal :global([class*='modal__container']) {
+  width: 750px;
+}
+
+.table__cell {
+  &#{&} {
+    background-color: transparent;
+  }
+}
+
+.table table thead tr th:first-child {
+  width: 5.2%;
+}
+
+.table table thead tr th {
+  width: 35%;
+}
+
+.table table tbody tr td {
+  opacity: 1;
+}
+
+.row {
+  &#{&} {
+    border-left: none;
+  }
+
+  & td {
+    width: 33.3%;
+  }
+
+  & td:first-child {
+    width: 1%;
+  }
+
+  &_isCollapsed {
+    & td:not(:first-child) {
+      background-color: $pink-1;
+      border-top: 1px solid $pink-2;
+      border-bottom: 1px solid $pink-2;
+    }
+
+    & td:nth-child(2) {
+      border-left: 1px solid $pink-2;
+      border-top-left-radius: 3px;
+    }
+
+    & td:last-child {
+      border-right: 1px solid $pink-2;
+      border-top-right-radius: 3px;
+    }
+  }
+}
+
+
+.inner__table {
+  &#{&} {
+    width: 98%;
+    margin: 0 0 0 auto;
+    padding: 0 0 15px 0;
+    border-left: 1px solid $pink-2;
+    border-right: 1px solid $pink-2;
+    border-bottom: 1px solid $pink-2;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+
+  & thead tr th {
+    width: 47% !important;
+  }
+
+  & thead tr th:last-child {
+    width: 1%;
+  }
+
+  & tbody tr td {
+    width: 47%;
+  }
+
+  & tbody tr td:last-child {
+    width: 1%;
+    padding: 0;
+  }
+
+  & tr th {
+    position: inherit;
+  }
+}
+
+
+.icon_delete {
+  cursor: pointer;
+}
+
+.inner__table .button_delete {
+  border: none;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 2px solid $gray-2;
+
+  &__apply {
+    margin-left: auto;
+  }
+}
+
+.types {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.calendar {
+  & ul > li > button {
+    line-height: 1;
+  }
+}
+
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+
+  &__subheading {
+    color: $gray-8;
+    font-size: 0.75em;
+  }
+}
+
+
+.analyticRange {
+  &__button {
+    position: absolute;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__button svg {
+    height: 16px;
+  }
+
+  &__icon_disabled path {
+    fill: $gray-6;
+  }
+
+  &__button span {
+    font-size: 13px;
+  }
+
+  td {
+    display: inline-flex;
+    width: 100%;
+    height: 24px;
+    padding-left: 15px;
+  }
+
+  h3 {
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+

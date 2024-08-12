@@ -1,0 +1,4 @@
+.path {
+	fill: var(--path-fill);
+	fill-rule: evenodd;
+}

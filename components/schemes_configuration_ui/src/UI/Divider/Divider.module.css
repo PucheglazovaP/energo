@@ -1,0 +1,17 @@
+.root {
+	--divider-vertical-height: 22px;
+	--divider-background: var(--color-gray-14);
+	--divider-horizontal-width: 100%;
+}
+
+.divider__vertical {
+	height: var(--divider-vertical-height);
+	width: 1px;
+	background: var(--divider-background);
+}
+
+.divider__horizontal {
+	width: var(--divider-horizontal-width);
+	height: 1px;
+	background: var(--divider-background);
+}

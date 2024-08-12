@@ -1,0 +1,156 @@
+.root {
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+	gap: 3px;
+}
+
+.fields_wrapper {
+	display: flex;
+	align-items: flex-start;
+	flex: 1;
+	gap: 3px;
+}
+
+.field_wrapper {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	padding: 3px 15px 3px 0;
+	box-sizing: border-box;
+}
+.field_wrapper:nth-child(1) {
+	width: 290px;
+}
+.field_wrapper:nth-child(2) {
+	width: 60px;
+	justify-content: center;
+}
+
+.field_wrapper:nth-child(3),
+.field_wrapper:nth-child(4) {
+	flex: 1;
+}
+
+.delete_button {
+	width: 22px;
+	min-width: 22px;
+	flex: 0;
+	padding: 10px 0;
+	border: none;
+	outline: none;
+	background: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.delete_button:hover .icon_close path,
+.delete_button:focus .icon_close path {
+	fill: var(--color-gray-60);
+}
+.icon_close path {
+	fill: var(--color-gray-40);
+}
+
+.field_wrapper .textarea {
+	--textarea-width: 100%;
+	--textarea-max-width: 100%;
+	--textarea-height: 50px;
+	--textarea-resize: vertical;
+	--textarea-min-height: 40px;
+	--textarea-max-height: 100px;
+	--textarea-border-color: var(--color-gray-20);
+	--textarea-border-color-hover: var(--color-gray-50);
+	--textarea-font-size: 12px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.textarea textarea {
+	box-sizing: border-box;
+}
+.textarea textarea:hover:not(:focus) {
+	border: 1px solid var(--color-gray-50);
+}
+.icon {
+	width: 16px;
+	height: auto;
+}
+
+.icon_check path {
+	fill: var(--color-green-11);
+}
+.icon_cross path {
+	fill: var(--color-gray-20);
+}
+
+.field_wrapper .checkbox {
+	--root-width: 16px;
+}
+
+.field_wrapper .checkbox:checked:before {
+	width: 50%;
+	height: 25%;
+}
+.field_wrapper .calendar {
+	padding: 0;
+}
+
+.field_wrapper .calendar {
+	--button-background-color: var(--color-gray-f);
+	--button-background-color-hover: var(--color-gray-f);
+	padding: 0;
+}
+
+.calendar :global([class*='_open_pane_button']) {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	border: 1px solid var(--color-gray-20);
+	height: 26px;
+	font-weight: 400;
+	width: 100px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.calendar :global([class*='_date_input_wrapper']) {
+	min-width: 0;
+}
+.calendar :global([class*='_open_pane_button']):focus {
+	border: 1px solid var(--color-yellow-40);
+}
+.calendar :global([class*='_pane_float']) {
+	right: 0;
+}
+
+.calendar :global([class*='_open_pane_button']):disabled {
+	background-color: var(--color-gray-1);
+	color: var(--color-gray-20);
+	cursor: default;
+}
+
+.calendar :global([class*='_open_pane_button']):disabled:hover {
+	border-color: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_button']):focus:hover {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_icon_calendar']) {
+	fill: var(--color-gray-20);
+	overflow: visible;
+}
+
+.calendar :global([class*='_open_pane_group']) > button:hover {
+	border-color: var(--color-gray-50);
+}
+
+.calendar :global([class*='_vertical_divider']) {
+	display: none;
+}
+
+.no_end_date_message {
+	font-size: 12px;
+}

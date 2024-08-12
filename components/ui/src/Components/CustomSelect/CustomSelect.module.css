@@ -1,0 +1,107 @@
+* {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+:root {
+	--select-border: 4px;
+	--select-focus: var(--color-yellow-60);
+}
+
+.customSelect {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+
+.customSelect__params {
+	width: 100%;
+	min-width: 90px;
+	display: flex;
+	flex-direction: column;
+	font-weight: 375;
+	font-size: 13px;
+	line-height: 15px;
+	position: relative;
+}
+
+.container {
+	width: 100%;
+	position: relative;
+	z-index: 10;
+}
+
+.header {
+	padding: 10px 10px 10px 15px;
+	border: 1px solid var(--color-gray-5);
+	border-radius: 4px;
+	background-image: url('../../Assets/images/ArrowDown.svg');
+	background-repeat: no-repeat;
+	background-position: 95% 50%;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.header__inactive {
+	color: #8e8e8e;
+}
+
+.header__label {
+	position: absolute;
+	top: -10px;
+	left: 12px;
+	font-weight: 375;
+	font-size: 12px;
+	line-height: 14px;
+	color: #868686;
+	background: var(--color-gray-f);
+	padding: 4px 0 0 4px;
+	white-space: nowrap;
+}
+
+.header__small {
+	padding: 5px 12px 5px 15px;
+}
+
+.dropdown {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: calc(100% - 20px);
+	list-style: none;
+	border-radius: 4px;
+	text-align: center;
+
+	padding-inline-start: 0;
+	box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+	font-size: 15px;
+	font-weight: 400;
+	background-color: var(--color-gray-f);
+	padding: 10px;
+}
+
+.dropdown__absolute {
+	position: absolute;
+}
+
+.dropdown__item {
+	width: calc(100% - 15px);
+	display: flex;
+	align-items: center;
+	text-align: start;
+	padding-left: 15px;
+	height: 34px;
+	cursor: pointer;
+	font-weight: 375;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.dropdown__item:hover {
+	background-color: var(--color-yellow-13);
+}

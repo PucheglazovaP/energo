@@ -1,0 +1,53 @@
+.root {
+	height: 660px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.tree_item {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.tree_item .checkbox {
+	--root-width: 16px;
+}
+
+.tree_item .checkbox.checked::before {
+	width: 50%;
+	height: 25%;
+}
+
+.tree_item .checkbox.indeterminate::before {
+	width: 9px;
+	height: 9px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.root .tree {
+	height: 600px;
+	overflow: auto;
+}
+
+.root
+	.tree
+	button:global([class*='_item']):not(:global([class*='_item--active'])) {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-14);
+}
+
+.buttons_row {
+	position: sticky;
+	bottom: 0;
+	padding-top: 20px;
+	border-top: 2px solid var(--color-gray-14);
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+	background: var(--color-gray-f);
+}

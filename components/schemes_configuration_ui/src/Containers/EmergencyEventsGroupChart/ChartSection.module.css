@@ -1,0 +1,116 @@
+.root {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.spinner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading {
+	width: 10rem;
+	height: 10rem;
+}
+
+.loading div {
+	border-width: 0.8rem;
+}
+
+.root .table {
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+}
+
+.root .table table {
+	border-spacing: 0 0.313em;
+	width: 100%;
+}
+
+.wrapper {
+	height: calc(100% - 1.2em);
+	display: flex;
+	flex-direction: column;
+}
+
+.channel__cell {
+	display: flex;
+	align-items: center;
+}
+
+.channel__cell_status {
+	padding: 0.1em;
+	color: var(--color-gray-f);
+	border-radius: 4px;
+	margin-left: 1em;
+}
+
+.channel__cell_value {
+	width: 6.25em;
+}
+
+.root .table td div {
+	padding: 0;
+}
+
+.root .table td:first-child div {
+	padding-left: 0.938em;
+}
+
+.root .chart_settings {
+	display: flex;
+	margin-top: 1em;
+	width: 15em;
+	justify-content: space-between;
+}
+
+.root .selector {
+	width: 7em;
+	border-radius: 4px;
+	border: none;
+	margin: 0;
+	--select-height: 1.375em;
+	--select-toggle-background-color: var(--color-yellow-40);
+	--select-border-color: none;
+	--pane-top: 1.375em;
+	--select-body-background-color: var(--color-yellow-40);
+	--pane-padding: 0;
+}
+
+.root .selector button {
+	font-weight: 500;
+	font-family: inherit;
+}
+.title {
+	margin: 0;
+}
+
+.title_section {
+	display: flex;
+	justify-content: space-between;
+}
+
+button.close_btn {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+button.close_btn .icon {
+	width: 15px;
+	height: 15px;
+}
+.icon {
+	--icon-fill-color: var(--color-gray-6);
+}
+button.close_btn:hover {
+	background-color: transparent;
+	border: none;
+}
+.resizer {
+	height: 90%;
+}

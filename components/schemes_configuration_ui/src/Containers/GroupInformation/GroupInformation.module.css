@@ -1,0 +1,181 @@
+.root {
+	margin-top: -0.25em;
+}
+
+.info_icon {
+	--icon-fill-color: var(--color-violet-40);
+}
+
+.no_data {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.no_data_message {
+	font-weight: 500;
+	font-size: 1.313em;
+	margin-top: 1em;
+}
+
+.title {
+	font-size: 1.125em;
+	font-weight: 375;
+	color: var(--color-gray-70);
+}
+
+.root .table {
+	--enclosure-white-space: initial;
+	--column-gap: 0;
+	margin: 0;
+}
+.table_wrapper {
+	max-height: 240px;
+	overflow: auto;
+	margin-top: 1em;
+}
+.root .table > div:first-child {
+	position: sticky;
+	top: 0;
+	z-index: 11;
+	background-color: var(--color-gray-f);
+}
+
+.root .row {
+	height: 1.875em;
+	background-color: var(--color-gray-1);
+	border-radius: 3px;
+}
+
+button.link {
+	border: none;
+	background-color: transparent;
+	color: var(--ui-violet-60);
+	text-decoration: underline dotted var(--color-violet-40);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: auto;
+	padding: 0;
+	font-size: 0.9em;
+}
+
+button.link:hover {
+	background-color: transparent;
+}
+
+.formula_input {
+	border: 1px solid black;
+	margin: 50px 0;
+	font-size: 1em;
+	font-weight: 350;
+	width: 100%;
+}
+
+.formula {
+	height: 10em;
+}
+
+.root .table_cell {
+	border: none;
+	background-color: var(--color-gray-1);
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.root .table_cell_name {
+	padding-left: 0.938em;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	border-radius: 3px 0 0 3px;
+	border-left: 1px solid var(--color-gray-14);
+}
+
+.root .table_cell_coef {
+	border-radius: 0px 3px 3px 0;
+	border-right: 1px solid var(--color-gray-14);
+}
+
+.root .table_header_cell {
+	text-align: center;
+}
+
+.root .table_cell_name_wrapper {
+	display: flex;
+	align-items: center;
+	margin-right: 0.375em;
+}
+
+.modal {
+	z-index: 100;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.532);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_window {
+	box-sizing: border-box;
+	width: 50em;
+	height: 17em;
+	background-color: white;
+	padding: 1.25em;
+}
+
+.chart_modal_window {
+	box-sizing: border-box;
+	width: 95%;
+	height: 80%;
+	background-color: white;
+	padding: 1.25em;
+}
+
+.modal_title {
+	margin: 0;
+}
+
+.modal_title_section {
+	display: flex;
+	justify-content: space-between;
+}
+
+button.close_btn {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+button.close_btn .icon {
+	width: 15px;
+	height: 15px;
+}
+.icon {
+	--icon-fill-color: var(--color-gray-6);
+}
+button.close_btn:hover {
+	background-color: transparent;
+	border: none;
+}
+
+.modal_hidden {
+	display: none;
+}
+.no_info {
+	display: flex;
+	margin-top: 1em;
+	align-items: center;
+	background-color: var(--color-yellow-13);
+	border-radius: 5px;
+	padding: 0.65em;
+}
+.no_info p {
+	margin-left: 1em;
+}
+.notification_icon {
+	--icon-fill-color: var(--color-yellow-40);
+}

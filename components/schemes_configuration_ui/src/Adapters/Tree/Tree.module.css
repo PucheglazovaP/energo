@@ -1,0 +1,16 @@
+.display_name {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	line-height: normal;
+}
+
+.display_name_icon {
+	--icon-fill-color: var(--color-gray-30);
+	width: 16px;
+	height: auto;
+}
+
+.display_name_icon path {
+	fill: var(--color-gray-30);
+}

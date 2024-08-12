@@ -1,0 +1,388 @@
+.root {
+	background-color: white;
+}
+
+.tableParams {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.tableParams__header {
+	padding: 9px 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 50px;
+	align-items: center;
+	background-color: #f5f5f5;
+}
+
+.activeParams {
+	animation: show 0.5s ease-in-out forwards;
+	min-width: 340px;
+	width: 100%;
+}
+
+.disabledParams {
+	width: 0;
+	animation: hide 0.3s ease-in backwards;
+	scale: 0;
+}
+
+.header__title {
+	width: 100%;
+	font-weight: 500;
+	font-size: 15px;
+	line-height: 17px;
+	white-space: nowrap;
+}
+
+.header__input {
+	padding: 3.5px 15px 3.5px 31px;
+	width: 100%;
+	border: 1px solid #fab82e;
+	border-radius: 4px;
+	background: url('../../Assets/images/SearchLogo.svg') no-repeat 10px 50% #fff;
+	cursor: default;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.header__input::placeholder {
+	display: flex;
+	align-items: center;
+}
+
+.paramsBody {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	overflow: hidden;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.paramsBody__content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-right: 5px;
+	overflow: auto;
+
+}
+.paramsBody__content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.paramsBody__content::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  height: 50px;
+  background-color: var(--color-gray-15);
+}
+.paramsBody__content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gray-20);
+}
+
+.paramsBody__content::-webkit-scrollbar-track {
+  border-radius: 6px;
+}
+
+.paramsBody__buttons {
+	border-top: 1px solid #f0f0f0;
+	padding: 20px 10px 0 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.button {
+	padding: 13px 15px 12px 15px;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	border-radius: 4px;
+	background: none;
+	cursor: pointer;
+}
+
+.button__cancelBtn {
+	border: 1px solid #fee5ba;
+	color: #000;
+}
+
+.button__saveBtn {
+	border: none;
+	background-color: #fab82e;
+	color: #000;
+}
+
+.buttons {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	background: none;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+}
+
+.buttons__copyBtn {
+	height: 24px;
+	width: 24px;
+	padding: 0 !important;
+	background: url('../../Assets/images/CopyLogo.svg') no-repeat 50%;
+}
+
+.buttons__hideBtn {
+	background: url('../../Assets/images/ParamsLogoDown.svg') no-repeat 50%;
+	rotate: 90deg;
+}
+
+.item_container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.buttons__dropBtn {
+	background: url('../../Assets/images/ParamsLogoDown.svg') no-repeat 50%;
+}
+
+.buttons__plusBtn {
+	cursor: pointer;
+}
+
+.buttons__plusBtn:hover {
+	background: var(--color-gray-1);
+}
+
+.paramsItem {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	position: relative;
+	width: 100%;
+}
+
+.paramsItem__content {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.paramsItem__contentItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 10px 10px 15px;
+	border: 1px solid #d9dada;
+	border-radius: 4px;
+	color: #bfbfbf;
+	flex: 1;
+}
+
+.paramsItem__small {
+	padding: 5px 12px 5px 15px;
+}
+
+.paramsItem__input {
+	border: none;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	font-weight: 375;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.paramsItem__label {
+	position: absolute;
+	top: -10px;
+	left: 14px;
+	font-weight: 375;
+	font-size: 12px;
+	line-height: 14px;
+	color: var(--color-gray-60);
+	background: white;
+	padding: 4px 0 0 4px;
+}
+
+.paramsItem__container {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.paramsItem__item {
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	font-weight: 375;
+	font-size: 13px;
+	line-height: 15px;
+	color: var(--color-gray-10);
+	background: #fafafa;
+	border-radius: 4px;
+	min-height: 30px;
+	justify-content: space-between;
+}
+
+.paramsItem__scroll {
+	height: 162px;
+	overflow-y: scroll;
+}
+
+.line {
+	width: 100%;
+	background: var(--color-gray-4);
+	height: 1px;
+}
+
+.paramsItem .button_close {
+  border: none;
+}
+.paramsItem .button_close:hover {
+  background: transparent;
+}
+
+
+.iconClose {
+	height: 9px;
+	cursor: pointer;
+}
+
+.iconClose path {
+	stroke: var(--color-gray-6);
+}
+
+.dropdown {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	top: 47px;
+	z-index: 10000;
+	max-height: 158px;
+	overflow: auto;
+	padding-right: 5px;
+	background-color: #ffffff;
+}
+
+.dropdown__dropped {
+	width: 100%;
+}
+
+.dropdown__hide {
+	opacity: 0;
+	width: 0;
+	padding: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.dropdown__item {
+	cursor: pointer;
+	display: flex;
+	margin-left: 20px;
+	padding: 10px 10px 10px 15px;
+	border-radius: 4px;
+	border: 1px solid #d9dada;
+	background-color: #ffffff;
+}
+
+.dropdown__item:hover {
+	background-color: #f5f5f5;
+}
+
+.search {
+	display: flex;
+	gap: 5px;
+	font-size: 0.813em;
+	font-weight: 500;
+	white-space: nowrap;
+	cursor: pointer;
+	background-color: white;
+	padding: 0.25em 0.938em;
+	border: 1px solid var(--color-gray-60);
+	border-radius: 4px;
+}
+
+.calendar {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	max-height: 1.375em;
+	background-color: transparent;
+	padding: 0;
+	--button-background-color: var(--color-yellow-7);
+	border: 1px solid #d9dada;
+	min-height: 29px;
+	border-radius: 4px;
+}
+
+.calendar > div {
+	padding: 0;
+	display: flex;
+	align-items: center;
+	height: 29px;
+	justify-content: space-between;
+}
+
+.calendar > div > div {
+	color: var(--color-gray-10);
+	border-radius: 3px;
+	background: none;
+	height: 25px;
+}
+
+.calendar > div > div > button {
+	background: none;
+	font-size: 13px;
+	line-height: 15px;
+	font-weight: 375;
+}
+
+.calendar > div > div > button:hover {
+	background: var(--color-gray-2);
+}
+
+.calendar > div > div > button > div {
+	background: var(--color-gray-10);
+}
+
+@keyframes show {
+	0% {
+		width: 0;
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		width: 25%;
+	}
+}
+
+@keyframes hide {
+	0% {
+		display: flex;
+		opacity: 1;
+		width: 25%;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 0;
+		display: none;
+		width: 0;
+	}
+}

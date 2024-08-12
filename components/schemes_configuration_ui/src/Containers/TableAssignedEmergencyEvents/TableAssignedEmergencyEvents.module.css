@@ -1,0 +1,168 @@
+.root {
+	flex: 1;
+	overflow: hidden;
+}
+
+.header_searchable {
+	border: none;
+	padding: 0;
+}
+
+.sort_icon path,
+.filter_icon path {
+	fill: var(--color-gray-20);
+}
+
+.sort_icon:hover path,
+.filter_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.sort_icon_asc path:last-child {
+	fill: var(--color-yellow-7);
+}
+
+.sort_icon_desc path:first-child {
+	fill: var(--color-yellow-7);
+}
+
+.root .table {
+	height: 100%;
+	padding-right: 10px;
+	--table-border-spacing: 0 4px;
+	--table-active-row-background-color: var(--color-vinous-10);
+}
+.root .table::-webkit-scrollbar {
+	width: 5px;
+}
+
+.root .table table {
+	height: fit-content;
+}
+
+.root .table thead th {
+	padding: 10px 10px;
+	top: 0px;
+}
+
+.root .table thead th:first-child {
+	padding-left: 12px;
+}
+
+.root .table thead th:not(:first-child) {
+	min-width: 70px;
+}
+
+.root .table thead th,
+.root .table thead th span {
+	color: var(--color-gray-70);
+	font-weight: 400;
+}
+
+.root .table th,
+.root .table td {
+	font-size: 14px;
+	height: fit-content;
+}
+
+.root .table tbody tr:nth-child(odd):not(:global([class*='_active_row'])),
+.root .table tbody tr:nth-child(even):not(:global([class*='_active_row'])) {
+	background-color: var(--color-gray-1);
+}
+
+.root .table td {
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.root .table td:first-child {
+	border-radius: 4px 0 0 4px;
+	border-left: 1px solid var(--color-gray-14);
+}
+
+.root .table td:last-child {
+	border-radius: 0 4px 4px 0;
+	border-right: 1px solid var(--color-gray-14);
+}
+
+.root .table td > div {
+	padding: 7px 10px;
+	display: flex;
+	align-items: center;
+}
+
+.root .table tbody tr {
+	height: fit-content;
+}
+
+.root .table .checkbox {
+	--root-width: 16px;
+}
+
+.root .table .checkbox.checked::before {
+	width: 50%;
+	height: 25%;
+}
+
+.root .table .checkbox.indeterminate::before {
+	width: 9px;
+	height: 9px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.filter_wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.filter_icon {
+	width: 15px;
+	height: auto;
+}
+
+.filter_wrapper .filter_header div {
+	left: auto !important;
+	right: 0 !important;
+	top: 100% !important;
+}
+
+.comment_icon path:first-child {
+	fill: var(--color-gray-15);
+}
+
+.comment_icon path:last-child {
+	fill: none;
+}
+
+.comment_icon.comment_icon__active path {
+	fill: var(--color-yellow-40);
+}
+
+.table thead .comment_icon path:first-child {
+	fill: var(--color-gray-70);
+}
+
+.status {
+	padding: 1px 5px;
+	font-size: 12px;
+	line-height: normal;
+	border-radius: 2px;
+	background: var(--color-gray-3);
+}
+
+.status.new {
+	color: var(--color-gray-f);
+	background: var(--color-green-11);
+}
+
+.status.acknowledged {
+	color: var(--color-gray-70);
+	background: var(--color-gray-15);
+}
+.setpoint {
+	text-decoration: underline dotted;
+}

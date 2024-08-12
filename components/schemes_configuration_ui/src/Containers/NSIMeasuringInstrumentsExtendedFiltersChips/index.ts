@@ -1,0 +1,3 @@
+import NSIMeasuringInstrumentsExtendedFiltersChips from './NSIMeasuringInstrumentsExtendedFiltersChips';
+
+export default NSIMeasuringInstrumentsExtendedFiltersChips;

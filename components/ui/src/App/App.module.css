@@ -1,0 +1,35 @@
+.root {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100%;
+}
+
+.aside {
+	align-items: center;
+	column-gap: 1em;
+	display: flex;
+	height: 40px;
+	width: 100%;
+	justify-content: flex-end;
+}
+.root .title_bar {
+	left: 0;
+	position: sticky;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 16px;
+}
+
+.root .logo svg {
+	height: 23px;
+	min-height: 23px;
+}
+
+.nav_bar ul {
+	display: flex;
+	gap: 5px;
+	white-space: nowrap;
+}

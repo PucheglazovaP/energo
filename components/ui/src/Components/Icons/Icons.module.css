@@ -1,0 +1,16 @@
+.direction__right {
+	transform: rotate(0deg);
+}
+.direction__left {
+	transform: rotate(180deg);
+}
+.direction__up {
+	transform: rotate(-90deg);
+}
+.direction__down {
+	transform: rotate(90deg);
+}
+
+.root {
+	--icon-fill-color: var(--color-gray-0);
+}

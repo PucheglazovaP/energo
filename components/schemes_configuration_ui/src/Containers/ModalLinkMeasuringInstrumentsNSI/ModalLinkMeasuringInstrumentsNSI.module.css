@@ -1,0 +1,115 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.info_row {
+	display: flex;
+	gap: 16px;
+}
+
+.title {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.divider {
+	height: auto;
+}
+
+.left_col,
+.right_col {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.left_col {
+	height: 230px;
+}
+
+.right_col {
+	flex: 1;
+}
+
+.select button {
+	height: fit-content;
+}
+
+.root .divider_horizontal {
+	height: 2px;
+}
+
+.buttons_row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.root .table {
+	--table-border-spacing: 0 4px;
+	max-height: calc(100vh - 300px);
+	overflow: auto;
+	height: fit-content;
+}
+
+.table table thead tr th {
+	font-size: 13px;
+	color: var(--color-gray-70);
+	font-weight: 400;
+	top: 4px;
+}
+
+.table table thead tr th:last-child,
+.table table tbody tr td:last-child {
+	width: 22px;
+}
+
+.root .table table tbody tr {
+	height: fit-content;
+	background: none;
+}
+
+.root .table table tbody tr td:not(:last-child) {
+	background: var(--color-gray-1);
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	font-size: 14px;
+	padding: 7px 15px;
+}
+
+.root .table tbody tr td div {
+	padding: 0;
+}
+
+.root .table td:first-child {
+	border-radius: 4px 0 0 4px;
+	border-left: 1px solid var(--color-gray-14);
+}
+
+.root .table td:nth-child(4) {
+	border-radius: 0 4px 4px 0;
+	border-right: 1px solid var(--color-gray-14);
+}
+
+.root .table .remove_equipment_button {
+	padding: 0;
+	margin: 0;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+}
+
+.root .table .remove_equipment_button:hover,
+.root .table .remove_equipment_button:hover {
+	background: var(--color-gray-f);
+}
+
+.remove_equipment_button_icon path {
+	fill: var(--color-gray-40);
+	height: 12px;
+	width: auto;
+}

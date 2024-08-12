@@ -1,0 +1,43 @@
+/* StatusIndicator */
+.chart_wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.chart_info_section {
+	height: fit-content;
+	background-color: #ffffff;
+	z-index: 999999;
+	min-height: 24%;
+	font-size: 12px;
+}
+
+.chart {
+	max-height: 89%;
+}
+
+.chart_info_d2_value {
+	position: absolute;
+	transform: translate(0, -100%);
+	right: 5px;
+}
+
+.chart_1 {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	font-size: 14px;
+	font-weight: 500;
+	position: relative;
+}
+
+.tooltip {
+	background-color: var(--color-gray-f);
+	color: var(--color-gray-0);
+	padding: 1em;
+	font-weight: 500;
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}

@@ -1,0 +1,159 @@
+.root {
+	display: inline-flex;
+	flex-flow: row wrap;
+	background-color: var(--color-gray-f);
+	padding: 0 0.5em;
+	border-radius: 4px;
+	width: auto;
+	align-items: center;
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+.root::-webkit-scrollbar {
+	height: 0.8em;
+}
+
+.root::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+	border: 3px solid var(--color-gray-f);
+}
+
+.root::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-gray-20);
+}
+
+.item {
+	padding: 3.5px 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: var(--color-gray-4);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 6em;
+	max-width: 9em;
+	margin: 0.3em 0;
+	box-sizing: border-box;
+}
+
+.root .btn {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	cursor: default;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.root .btn:hover {
+	background-color: transparent;
+}
+
+.item:hover {
+	background-color: var(--color-yellow-1);
+}
+
+.item.active {
+	background-color: var(--color-yellow-40);
+}
+
+.item.active:hover {
+	background-color: var(--color-yellow-50);
+}
+
+.root .close_btn {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin-left: 0.4em;
+}
+
+.root .close_btn:hover {
+	background-color: transparent;
+	border: none;
+}
+
+.root .close_btn:hover .icon > * {
+	stroke: var(--color-gray-84);
+}
+
+.icon {
+	width: 0.7em;
+	height: 0.7em;
+	--icon-fill-color: var(--color-gray-70);
+}
+
+.icon > * {
+	stroke: var(--color-gray-70);
+}
+
+.menu_icon {
+	--icon-fill-color: var(--color-violet-40);
+}
+
+.menu_item {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.add_icon {
+	width: 0.7em;
+	height: 0.7em;
+	--icon-fill-color: var(--color-gray-40);
+}
+
+.root .add_tab {
+	position: relative;
+	background-color: var(--color-gray-1);
+	min-width: 1.65em;
+	height: 1.65em;
+	border-color: var(--color-gray-13);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 2em;
+	padding: 0;
+}
+
+.root .add_tab:disabled {
+	background-color: var(--color-gray-f);
+	border: 1px solid var(--color-gray-13);
+}
+
+.root .add_tab:disabled .add_icon {
+	--icon-fill-color: var(--color-gray-13);
+}
+
+.root .add_tab:hover {
+	background-color: var(--color-gray-14);
+}
+
+.root .add_tab:disabled:hover {
+	background-color: var(--color-gray-13);
+}
+
+.root .add_tab:hover .add_icon {
+	--icon-fill-color: var(--color-gray-80);
+}
+
+.root .add_tab:disabled:hover .add_icon {
+	--icon-fill-color: var(--color-gray-20);
+}
+
+.root .add_tab:before {
+	content: '';
+	width: 1px;
+	height: 1.375em;
+	background-color: var(--color-gray-14);
+	position: absolute;
+	top: 0;
+	left: -1em;
+}
+
+.tooltip {
+	--root-arrow-size: 3px;
+}

@@ -1,0 +1,20 @@
+.tooltip {
+	--root-arrow-size: 3px;
+}
+
+.btn {
+	background-color: var(--color-gray-1);
+	border-color: var(--color-gray-13);
+	position: relative;
+	height: 1.625em;
+}
+
+.btn:hover {
+	background-color: var(--color-gray-14);
+}
+
+.icon {
+	--icon-fill-color: var(--color-gray-40);
+	width: 16px;
+	height: 16px;
+}

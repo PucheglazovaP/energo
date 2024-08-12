@@ -1,0 +1,124 @@
+.diagnostic {
+	height: 100%;
+}
+
+.diagnostic table {
+	width: 100%;
+}
+
+.diagnostic table thead {
+	position: sticky;
+	z-index: 10;
+	top: 0;
+	background-color: var(--color-gray-f);
+}
+
+.diagnostic :global([class*='header__cell']) {
+	position: inherit;
+}
+
+.diagnostic :global([class*='table_section']) {
+	display: block;
+}
+
+button.link {
+	border: none;
+	background-color: transparent;
+	color: var(--ui-violet-60);
+	text-decoration: underline dotted var(--color-violet-40);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}
+
+button.link:hover {
+	background-color: transparent;
+}
+
+svg.sort_icon,
+svg.filter {
+	--icon-fill-color: var(--color-gray-40);
+}
+svg.filter__applied {
+	--icon-fill-color: var(--color-yellow-60);
+}
+
+svg.sort_icon_asc path:first-child {
+	--icon-fill-color: var(--color-yellow-60);
+}
+
+svg.sort_icon_desc path:last-child {
+	--icon-fill-color: var(--color-yellow-60);
+}
+
+.table_row {
+	font-size: 0.875em;
+	height: 30px;
+}
+
+.table_row :global([class*='Table_cell-data']) {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.header_cell {
+	font-size: 0.722em;
+	color: var(--color-gray-70);
+	font-weight: 375;
+	white-space: pre;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid var(--color-gray-4);
+	height: 30px;
+}
+
+.header_cell > *:last-child {
+	margin-left: auto;
+}
+
+.header_filter {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.header_sort {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	gap: 0.5em;
+}
+
+.header_selection {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	gap: 0.5em;
+}
+
+.header_selection button:last-of-type {
+	margin-left: auto;
+}
+
+.header_selection :global([class='button__empty']) {
+	padding: 0 0.5em;
+}
+
+.text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}
+
+tr.supheader {
+	height: 24px;
+}
+
+th.supheader__grouped {
+	background-color: var(--color-gray-6);
+	font-size: 14px;
+	font-weight: 375;
+	text-align: center;
+}

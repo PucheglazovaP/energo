@@ -1,0 +1,10 @@
+.username {
+  white-space: nowrap;
+	font-size: 0.875em;
+	font-weight: 500;
+}
+
+.role {
+	font-size: 0.75em;
+	line-height: 1.167em;
+}

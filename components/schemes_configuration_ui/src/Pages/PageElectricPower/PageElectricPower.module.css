@@ -1,0 +1,32 @@
+.root {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.root .common {
+	width: 100%;
+}
+
+.edit {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 44px;
+	height: 44px;
+	border-radius: 24px;
+	background-color: var(--color-yellow-40);
+	border: none;
+	cursor: pointer;
+	box-shadow: -5px 2px 20px 0 rgba(0, 0, 0, 0.1),
+		0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.edit:hover {
+	background-color: var(--color-yellow-50);
+}

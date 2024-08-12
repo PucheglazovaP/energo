@@ -1,0 +1,211 @@
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: IT_DevOps/azure-templates
+      ref: refs/heads/main
+      endpoint: azure-templates-connection
+
+trigger:
+  - main
+  - develop
+
+variables:
+  # Обязательные переменные
+  DevDeployment: $[eq( variables['Build.SourceBranchName'], 'develop')]
+  ProdDeployment: $[eq( variables['Build.SourceBranchName'], 'main')]
+  IsPr: $[eq( variables['Build.Reason'], 'PullRequest')]
+  Region: ural
+  RegistryServer: registry.ural.evraz.com
+  DockerRegistryServer: registry.ural.evraz.com
+  appscreener: appScreener-ural
+  Namespace: $(Project)-$(Stage)
+  Tag: $(Stage)_$(Build.BuildId)
+  # Проектные переменные
+  PRP: "9505"
+  KE: '[""]'
+  Project: ural-9505
+  App: energy-management
+  serverImageName: $(App)-server
+  serverFolder: back
+  frontImageName: $(App)-front
+  frontFolder: ui
+  schemesImageName: $(App)-schemes
+  schemesFolder: schemes_configuration_ui
+
+pool: ural
+
+stages:
+  - stage: Linters
+    condition: and(succeeded(), eq(variables['IsPr'], True))
+
+    jobs:
+      - template: code-check/v1/appscreener.yml@templates
+        parameters:
+          ProjectUuid: "e73369cb-99f4-464a-a932-21de9fb50a32"
+
+      - template: code-check/v1/linters.yml@templates
+
+  - stage: DevTestDeploy
+    condition: and(or(eq(variables['DevDeployment'], True), eq(variables['ProdDeployment'], True)), eq(variables['IsPr'], False))
+    variables:
+      IngressURI: apps.osd.ural.evraz.com
+      ${{ if eq( variables['Build.SourceBranchName'], 'develop') }}:
+        Stage: dev
+        HelmOpts: |
+          --set imagePullSecrets.$(Namespace)=$(JSONCONFIG) \
+          --set app.rabbit.RABBITMQ_USER=$(RABBIT_USER_DEV) \
+          --set app.rabbit.RABBITMQ_PASS=$(RABBIT_PASS_DEV) \
+          -f deployment/helm/values.dev.yml
+        SecretEnvs: |
+          DATABASE_PASS: $(DATABASE_PASS_TEST)
+          VAULT_TOKEN: $(VAULT_TOKEN)
+
+      ${{ if eq( variables['Build.SourceBranchName'], 'main') }}:
+        Stage: test
+        HelmOpts: |
+          --set imagePullSecrets.$(Namespace)=$(JSONCONFIG) \
+          --set app.rabbit.RABBITMQ_USER=$(RABBIT_USER_TEST) \
+          --set app.rabbit.RABBITMQ_PASS=$(RABBIT_PASS_TEST) \
+          -f deployment/helm/values.test.yml
+        SecretEnvs: |
+          DATABASE_PASS: $(DATABASE_PASS_TEST)
+          VAULT_TOKEN: $(VAULT_TOKEN)
+
+    jobs:
+      - deployment: buildserver
+        environment: WithoutApproval
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  clean: True
+
+                - template: service/v1/envs.yml@templates
+                - template: service/v1/secrets.yml@templates
+
+                - template: service/v1/replacer.yml@templates
+                  parameters:
+                    targetFiles: |
+                      apt/*.conf
+                      apt/sources.list
+                      $(serverFolder)/nuget.config => ../../components/$(serverFolder)/nuget.config
+                    rootDirectory: "$(Build.Repository.LocalPath)/deployment/"
+
+                - template: build/v1/docker.yml@templates
+                  parameters:
+                    DockerfilePath: deployment/$(serverFolder)/Dockerfile
+                    ImageName: $(serverImageName)
+
+      - deployment: buildfront
+        environment: WithoutApproval
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  clean: True
+
+                - template: service/v1/envs.yml@templates
+                - template: service/v1/secrets.yml@templates
+
+                - template: service/v1/replacer.yml@templates
+                  parameters:
+                    targetFiles: |
+                      apt/*.conf
+                      apt/sources.list
+                      $(frontFolder)/settings
+                      $(frontFolder)/.yarnrc.yml => $(Build.Repository.LocalPath)/components/$(frontFolder)/.yarnrc.yml
+                    rootDirectory: "$(Build.Repository.LocalPath)/deployment/"
+
+                - template: build/v1/docker.yml@templates
+                  parameters:
+                    DockerfilePath: deployment/$(frontFolder)/Dockerfile
+                    ImageName: $(frontImageName)
+
+      - deployment: buildschemes
+        environment: WithoutApproval
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  clean: True
+
+                - template: service/v1/envs.yml@templates
+                - template: service/v1/secrets.yml@templates
+
+                - template: service/v1/replacer.yml@templates
+                  parameters:
+                    targetFiles: |
+                      apt/*.conf
+                      apt/sources.list
+                      $(schemesFolder)/settings
+                      $(schemesFolder)/.yarnrc.yml => $(Build.Repository.LocalPath)/components/$(schemesFolder)/.yarnrc.yml
+                    rootDirectory: "$(Build.Repository.LocalPath)/deployment/"
+
+                - template: build/v1/docker.yml@templates
+                  parameters:
+                    DockerfilePath: deployment/$(schemesFolder)/Dockerfile
+                    ImageName: $(schemesImageName)
+
+      - deployment: deployOsh
+        environment: WithoutApproval
+        dependsOn:
+          - buildserver
+          - buildfront
+          - buildschemes
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  clean: True
+
+                - template: service/v1/envs.yml@templates
+                - template: service/v1/secrets.yml@templates
+                - template: deploy/v1/openshift.yml@templates
+
+  - stage: ProdDeploy
+    dependsOn: DevTestDeploy
+    condition: and(eq(dependencies.DevTestDeploy.result,'Succeeded'), eq( variables['ProdDeployment'], True), eq(variables['IsPr'] ,False))
+    jobs:
+      - deployment: ProdDeploy
+        environment: WithApproval-ural-9505
+        variables:
+          IngressURI: apps.osp.ural.evraz.com
+          Stage: prod
+          TestStage: test
+          HelmOpts: |
+            --set imagePullSecrets.$(Namespace)=$(JSONCONFIG) \
+            --set app.rabbit.RABBITMQ_USER=$(RABBIT_USER_PROD) \
+            --set app.rabbit.RABBITMQ_PASS=$(RABBIT_PASS_PROD) \
+            -f deployment/helm/values.prod.yml
+          SecretEnvs: |
+            DATABASE_PASS: $(DATABASE_PASS_PROD)
+            VAULT_TOKEN: $(VAULT_TOKEN)
+
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - checkout: self
+                  clean: True
+
+                - template: service/v1/envs.yml@templates
+                - template: service/v1/secrets.yml@templates
+
+                - template: build/v1/retag.yml@templates
+                  parameters:
+                    ImageName: $(serverImageName)
+
+                - template: build/v1/retag.yml@templates
+                  parameters:
+                    ImageName: $(frontImageName)
+
+                - template: build/v1/retag.yml@templates
+                  parameters:
+                    ImageName: $(schemesImageName)
+
+                - template: deploy/v1/openshift.yml@templates

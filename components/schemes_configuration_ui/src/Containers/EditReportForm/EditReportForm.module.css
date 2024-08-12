@@ -1,0 +1,282 @@
+.root {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: space-between;
+}
+
+.root .close {
+	display: flex;
+	margin-left: auto;
+	align-items: center;
+	height: 1.6em;
+	width: 7.5em;
+	justify-content: space-between;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.groups {
+	display: flex;
+	margin-left: 1.25em;
+	max-height: 96%;
+	gap: 1em;
+	margin-top: 1em;
+}
+
+.title {
+	margin: 0;
+	font-size: 0.875em;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+.group_list {
+	width: 100%;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: column nowrap;
+	height: 100%;
+	width: 100%;
+}
+
+.root .table {
+	--row-height: 40px;
+	--cell-min-width: 50px;
+	--cell-max-width: auto;
+	height: calc(100% - 50px);
+	overflow-y: auto;
+	--cell-background-color: var(--color-gray-1);
+	height: 100%;
+}
+
+.checkbox {
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.checkbox span {
+	box-sizing: border-box;
+	height: 1.2em;
+	width: 1.2em;
+}
+
+.switcher_dropdown :global([class*='select__toggle']) {
+	background-color: transparent;
+}
+
+.switcher_dropdown :global([class*='select__toggle']):before {
+	display: none;
+}
+
+.switcher_dropdown {
+	width: min-content;
+	min-width: 144px;
+	border-radius: 4px;
+	pointer-events: none;
+	margin: 0;
+	--select-height: 24px;
+	--select-border-color: transparent;
+	font-weight: 500;
+}
+
+.switcher_dropdown :global([class*='select__field']) {
+	font-size: 12px;
+	font-weight: 500;
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.switcher_dropdown__active,
+.switcher_dropdown__active :global([class*='select__toggle']) {
+	background-color: var(--color-yellow-40);
+	pointer-events: all;
+}
+
+.switcher_dropdown_container {
+	position: relative;
+}
+
+.switcher_dropdown_handler {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: transparent;
+	border: none;
+}
+
+.switcher:global(.kit_switcher) {
+	background-color: var(--color-gray-4);
+	padding: 0;
+}
+
+.panel {
+	display: flex;
+	align-items: center;
+}
+
+.root .btn {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5em;
+	color: var(--color-gray-70);
+	font-weight: 375;
+	height: 1.375em;
+}
+
+.devices_checkbox {
+	height: 3em;
+	z-index: 1;
+}
+
+.root .filter_btn {
+	background: none;
+	border: none;
+	max-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5em;
+	color: var(--color-gray-70);
+	font-weight: 375;
+	height: 1.375em;
+}
+.root .filter_btn:hover {
+	background: none;
+	border: none;
+}
+.btns {
+	display: flex;
+	margin-left: auto;
+	position: relative;
+}
+
+.btn:not(:last-child) {
+	margin-right: 1em;
+}
+
+.root .btn:disabled {
+	border-color: var(--color-gray-3);
+}
+
+.icon {
+	--icon-fill-color: var(--color-gray-40);
+	margin-right: 0.5em;
+}
+
+.btns {
+	background: linear-gradient(
+		180deg,
+		var(--color-gray-f-transparent) 73.44%,
+		var(--color-gray-21) 100%
+	);
+}
+.method_cell {
+	display: flex;
+	justify-content: center;
+	color: var(--color-gray-f);
+	border-radius: 4px;
+}
+.root .filter_header {
+	position: inherit;
+	padding: 0;
+	display: flex;
+}
+.root .filter_header button {
+	padding: 0;
+}
+.root .filter_header:hover .filter_icon {
+	--icon-fill-color: var(--color-gray-30);
+}
+.filter_body {
+	z-index: 100000;
+}
+.root .filter_header div {
+	left: auto !important;
+	right: 0 !important;
+	top: 100% !important;
+}
+.table_devices div {
+	--cell-min-width: 50px;
+	--header-z-index: 99999;
+}
+.root :global([class*='ContextMenu_item']) {
+	padding: 0;
+}
+
+.root .menu_btn {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	max-height: 100%;
+	height: 1.7em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.7em;
+	padding: 0;
+	position: relative;
+	margin-left: 8px;
+}
+
+.root .menu {
+	right: 0 !important;
+	width: 14em;
+	left: auto !important;
+	padding: 7px;
+	z-index: 999999;
+}
+
+.root .menu_item {
+	width: 100%;
+	border: none;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 375;
+}
+
+.root .menu_item:hover {
+	background-color: var(--color-yellow-1);
+}
+
+.menu_icon {
+	filter: invert(83%) sepia(89%) saturate(563%) hue-rotate(193deg) brightness(85%) contrast(85%);
+	width: 1em;
+	height: 1em;
+	margin-right: 0.4375em;
+}
+.root .checkbox {
+	flex-direction: row-reverse;
+	padding: 0;
+	justify-content: start;
+	max-height: 1.375em;
+	box-sizing: border-box;
+}
+
+.root .checkbox span {
+	box-sizing: border-box;
+	margin-right: 0.5em;
+	height: 1em;
+	width: 1em;
+	border: 1px solid var(--color-gray-20);
+}
+.method_cell {
+	display: flex;
+    background-color: var(--color-gray-f);
+    padding-bottom: 5px;
+    align-items: center;
+	color: var(--color-gray-8);
+}

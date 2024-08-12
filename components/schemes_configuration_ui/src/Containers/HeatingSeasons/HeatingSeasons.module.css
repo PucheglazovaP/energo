@@ -1,0 +1,514 @@
+.heating_seasons_container {
+	width: 100%;
+}
+
+.heating_seasons_header {
+	display: inline-flex;
+	height: 22px;
+	width: 100%;
+	justify-content: space-between;
+	background: linear-gradient(
+		180deg,
+		var(--color-gray-f-transparent) 73.44%,
+		var(--color-gray-21) 100%
+	);
+	padding-bottom: 10px;
+}
+
+.heating_seasons_header h3 {
+	margin: 0;
+	font-size: 14px;
+	position: relative;
+	top: -2px;
+}
+
+.heating_seasons_header .header_buttons {
+	display: inline-flex;
+	gap: 20px;
+}
+
+.heating_seasons_body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100% - 48px);
+	margin-top: 16px;
+	position: relative;
+	overflow: auto;
+}
+
+button.header_button {
+	border: 1px solid var(--color-gray-13);
+	padding: 4px 10px 4px 6px;
+	border-radius: 4px;
+	font-weight: 375;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	color: var(--color-gray-70);
+	gap: 6px;
+	background: var(--color-gray-2);
+	user-select: none;
+}
+
+button.header_button:hover {
+	background-color: var(--color-yellow-20);
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}
+
+button.button__active {
+	background-color: var(--color-yellow-40);
+}
+
+.icon_refresh {
+	height: 14px;
+	--icon-fill-color: var(--color-gray-70);
+}
+
+/* Buttons */
+
+.buttons_container {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.buttons_container .button {
+	display: flex;
+	opacity: 0;
+	align-items: center;
+	justify-content: center;
+	height: 22px;
+	width: 22px;
+	padding: 0;
+	transition: all 100ms ease-in-out;
+}
+
+.heating_seasons_body .add_season_button_container {
+	border-top: 1px solid var(--color-gray-14);
+	padding-top: 20px;
+	margin-top: 16px;
+}
+
+.heating_seasons_body .add_season_button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: 100%;
+	height: 30px;
+	border: 1px solid var(--color-yellow-40);
+}
+
+.table tbody :global([class*='row']):hover .button {
+	opacity: 1;
+}
+
+.button .icon path {
+	fill: var(--color-gray-0);
+}
+
+.button .icon {
+	width: 14px;
+	height: 14px;
+}
+
+/* Tooltip*/
+
+.tooltip {
+	--root-max-width: 260px;
+	width: 236px;
+}
+
+.tooltip div {
+	width: 100%;
+}
+
+.tooltip_container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.tooltip_body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.tooltip_body h4 {
+	color: var(--color-gray-60);
+	padding-bottom: 6px;
+	border-bottom: 1px solid var(--color-gray-80);
+}
+
+.tooltip_body p {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tooltip_body p span:last-child {
+	font-weight: 500;
+}
+
+.tooltip_body p span {
+	color: var(--color-gray-f);
+}
+
+.icon_info_container {
+	display: flex;
+}
+
+.icon_info path {
+	fill: var(--color-gray-20);
+}
+
+/* Table */
+
+.heating_seasons_body .table table {
+	border-spacing: 0 4px;
+	height: max-content;
+}
+
+.table table thead span {
+	color: var(--color-gray-70);
+	font-size: 13px;
+	font-weight: 375;
+	margin-bottom: 5px;
+}
+
+.table :global([class*='cell-data']) {
+	padding: 0 15px;
+}
+
+.table thead :global([class*='cell']) {
+	border: none;
+	padding: 0 15px;
+	line-height: 30px;
+}
+
+.table thead tr th:first-child > span {
+	margin-left: 2px;
+}
+
+.table thead tr th:nth-child(2) > span {
+	margin-left: 1px;
+}
+
+.table thead tr th:last-child {
+	text-align: end;
+}
+
+.table {
+	--heating-seasons-item-border: 1px solid var(--color-gray-14);
+	--heating-seasons-item-border-hover: 1px solid var(--color-vinous-15);
+	position: relative;
+}
+
+.table::-webkit-scrollbar {
+	width: 3px;
+	margin-left: 5px;
+}
+
+.table tbody p {
+	color: var(--color-gray-100);
+	font-size: 14px;
+	font-weight: 375;
+	line-height: 30px;
+}
+
+.table tbody tr {
+	height: min-content;
+}
+
+.table tbody :global([class*='cell-data']) {
+	border: none;
+	height: 30px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.table tbody td:nth-child(3) :global([class*='cell-data']) {
+	padding: 0 9px;
+}
+
+.table tbody tr {
+	background-color: var(--color-gray-1);
+}
+
+.table tbody tr:hover {
+	background-color: var(--color-vinous-10);
+}
+
+.table tbody tr td {
+	border-top: var(--heating-seasons-item-border);
+	border-bottom: var(--heating-seasons-item-border);
+	border-right: none;
+	border-left: none;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.table tbody tr:hover td {
+	border-top: var(--heating-seasons-item-border-hover);
+	border-bottom: var(--heating-seasons-item-border-hover);
+}
+
+.table tbody tr td:first-child {
+	border-left: var(--heating-seasons-item-border);
+	border-right: none;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.table tbody tr:hover td:first-child {
+	border-left: var(--heating-seasons-item-border-hover);
+}
+
+.table tbody tr td:last-child {
+	border-right: var(--heating-seasons-item-border);
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.table tbody tr:hover td:last-child {
+	border-right: var(--heating-seasons-item-border-hover);
+}
+
+.heating_seasons_body .cell p {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 16px;
+	padding: 0 5px;
+	width: 65px;
+}
+
+.table tbody tr td:last-child :global([class*='cell-data']) {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: -2px;
+}
+
+.heating_seasons_body .status {
+	user-select: none;
+}
+
+.heating_seasons_body .status__active p {
+	background: var(--color-green-11);
+	color: var(--color-gray-f);
+}
+
+/* Modal body */
+
+.modal_body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100% - 30px);
+}
+
+.modal_body .buttons {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	border-top: 2px solid var(--color-gray-14);
+}
+
+.modal_body .buttons button {
+	width: 120px;
+	border-color: var(--color-yellow-40);
+}
+
+.modal_body .buttons button:hover {
+	background-color: var(--color-yellow-50);
+	border-color: var(--color-yellow-50);
+}
+
+.modal_body .buttons button:last-child {
+	background-color: var(--color-yellow-40);
+}
+
+.modal_body .buttons button:last-child:hover {
+	background-color: var(--color-yellow-50);
+	border-color: var(--color-yellow-50);
+}
+
+.modal_body .calendars {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal_body .calendar_container {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 6px;
+	position: relative;
+}
+
+.modal_body .calendar_container:first-child {
+	padding-bottom: 30px;
+}
+
+.modal_body .calendar_container:last-child {
+	padding-bottom: 24px;
+}
+
+.calendar_container .error_message {
+	position: absolute;
+	bottom: 2px;
+	font-size: 12px;
+	font-weight: 375;
+	line-height: 14px;
+	color: var(--color-red-80);
+	max-width: 255px;
+}
+
+.calendar_container .calendar_body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.calendar_body .calendar_label {
+	font-size: 12px;
+	font-weight: 375;
+	line-height: 14px;
+	color: var(--color-gray-60);
+	margin-bottom: 2px;
+}
+
+.calendar_label span:last-child {
+	color: var(--color-red-4);
+	margin-left: 0.2em;
+}
+
+.calendar_container .calendar_with_checkbox {
+	display: flex;
+	width: 100%;
+	align-items: center;
+}
+
+.modal_body .calendar {
+	--button-background-color: var(--color-gray-f);
+	--button-background-color-hover: var(--color-gray-f);
+	padding: 0;
+	width: 238px;
+}
+
+.modal_body .checkbox {
+	padding: 0;
+	height: 16px;
+	width: 16px;
+}
+
+.calendar :global([class*='_open_pane_group']) {
+	width: 238px;
+	margin-right: 6px;
+}
+
+.calendar :global([class*='_open_pane_button']) {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid var(--color-gray-20);
+	width: 232px;
+	height: 26px;
+	font-weight: 375;
+}
+
+.calendar_error :global([class*='_open_pane_button']) {
+	border: 1px solid var(--color-red-80);
+}
+
+.calendar :global([class*='_open_pane_button']):focus {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_open_pane_button']):disabled {
+	background-color: var(--color-gray-1);
+}
+
+.calendar :global([class*='_open_pane_button']):disabled:hover {
+	border-color: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_button']):focus:hover {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_open_pane_button']) > span {
+	font-size: 13px;
+	line-height: 15px;
+	color: var(--color-gray-90);
+}
+
+.calendar :global([class*='_icon_calendar']) {
+	fill: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_group']) > button:hover {
+	border-color: var(--color-gray-50);
+}
+
+.calendar :global([class*='_vertical_divider']) {
+	display: none;
+}
+
+.modal_body .checkbox span {
+	height: 14px;
+	width: 16px;
+	border-radius: 3px;
+	background-color: var(--color-gray-f);
+	border-color: var(--color-gray-20);
+}
+
+.modal_body .checkbox span:after {
+	border-color: var(--color-gray-0);
+	border-width: 0 1px 1px 0;
+	top: 6px;
+}
+
+.modal_body .checkbox input:checked ~ span {
+	background-color: var(--color-yellow-40);
+	border-color: var(--color-yellow-40);
+}
+
+/* Delete modal */
+
+.modal_body .delete_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.delete_container .subtitle {
+	font-size: 18px;
+	font-weight: 375;
+	line-height: 21px;
+	color: var(--color-gray-70);
+	text-align: center;
+	margin: 20px 0 25px;
+}
+
+.delete_container .icon_delete {
+	height: 40px;
+	width: 40px;
+}
+
+.delete_container .icon_delete path {
+	fill: var(--color-red-100);
+}
+
+.spinner {
+	margin-top: 20px;
+	height: 30px;
+	width: 30px;
+}

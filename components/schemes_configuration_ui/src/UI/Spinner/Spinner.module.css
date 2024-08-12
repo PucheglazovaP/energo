@@ -1,0 +1,21 @@
+.root {
+	height: 1em;
+	width: 1em;
+}
+
+.spin {
+	animation: spin 1s linear infinite;
+	box-sizing: border-box;
+	border: 2px solid;
+	border-color: var(--color-orange-6) var(--color-orange-3)
+		var(--color-orange-3);
+	border-radius: 50%;
+	height: 100%;
+	width: 100%;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotateZ(360deg);
+	}
+}

@@ -1,0 +1,281 @@
+.visualization_groups {
+	display: flex;
+	flex-direction: column;
+	height: calc(90vh - 60px);
+}
+
+.visualization_groups_table {
+	--table-width: 100%;
+	position: relative;
+	font-size: 0.875em;
+	line-height: 1em;
+	font-weight: 400;
+	border-spacing: 3px;
+	margin-top: 5px;
+}
+
+.visualization_groups_table table {
+	border-spacing: 0 4px;
+	height: fit-content;
+}
+
+.visualization_groups_table::-webkit-scrollbar {
+	background: var(--color-gray-14);
+	width: 4px;
+	border-radius: 2px;
+}
+
+.visualization_groups_table :global([class*='header__cell']) {
+	color: var(--color-gray-70);
+	font-size: 0.875em;
+	padding: 0;
+}
+
+.visualization_groups_table :global([class*='cell-data']) {
+	border-left: 0;
+	border-right: 0;
+	border-radius: 3px;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.visualization_groups_table tr {
+	background-color: transparent;
+	height: min-content;
+}
+
+/* чтобы перебить "зебру" от родной таблицы */
+.visualization_groups_table tr:nth-child(odd) {
+	background-color: transparent;
+}
+
+.visualization_groups_table tr:hover td:not(:first-child) {
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.visualization_groups_table tr:hover td:first-child > div {
+	background-color: var(--color-vinous-10);
+	border-left: 1px solid var(--color-vinous-15);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.visualization_groups_table tr:hover td:last-child {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+.visualization_groups_table
+	tr.active__visualization_group
+	td:not(:first-child) {
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.visualization_groups_table
+	tr.active__visualization_group
+	td:first-child
+	> div {
+	background-color: var(--color-vinous-10);
+	border-left: 1px solid var(--color-vinous-15);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.visualization_groups_table tr.active__visualization_group td:last-child {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+.visualization_groups_table td:not(:first-child) {
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	background-color: var(--color-gray-1);
+	padding: 0 15px;
+}
+
+.visualization_groups_table tr td:first-child {
+	padding: 0;
+}
+
+.visualization_groups_table tr td:first-child > div {
+	background-color: var(--color-gray-1);
+	border-left: 1px solid var(--color-gray-14);
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	border-radius: 3px 0 0 3px;
+	/* important нужен чтобы перебить js подстановку margin-left от таблицы*/
+	margin-left: 12px !important;
+}
+
+.visualization_groups_table td:last-child {
+	border-right: 1px solid var(--color-gray-14);
+	border-radius: 0 3px 3px 0;
+}
+
+/* чтобы при оверфлоу было многоточие */
+.visualization_groups_table td:not(:first-child) div,
+.visualization_groups_table td:not(:first-child) div > span,
+.visualization_groups_table td:not(:first-child) div > div > span,
+.visualization_groups_table .radio_button_text p {
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.visualization_groups_table td:last-child div,
+.visualization_groups_table td:last-child div > span {
+	display: flex;
+	justify-content: center;
+}
+
+/* сдвигаем кнопку днд влево */
+.visualization_groups_table td:first-child div > div:first-child {
+	position: absolute;
+	left: 0;
+	cursor: pointer;
+}
+
+/* форматирование радиокнопки и текста */
+.visualization_groups_table td:first-child div > div:last-child {
+	display: flex;
+	align-items: center;
+	margin-left: 15px;
+}
+
+.radio_button_text p {
+	font-size: 14px;
+	font-weight: 400;
+	margin-left: 8px;
+}
+
+.header_searchable {
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0.5em;
+}
+
+.header_searchable input {
+	font-size: 0.923em;
+}
+
+.header_searchable :global([class*='MultiselectDropdown_input_container']) {
+	--input-static-padding: 5px 0px 5px 0px;
+}
+
+.sort_icon path {
+	fill: var(--color-gray-20);
+}
+
+.sort_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.header_comment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.comment_icon path:first-child {
+	fill: var(--color-gray-15);
+}
+
+.comment_icon path:last-child {
+	fill: var(--color-gray-f);
+}
+
+.comment_icon__active path {
+	fill: var(--color-yellow-40);
+}
+
+.comment_icon__active path:first-child {
+	fill: var(--color-yellow-40);
+}
+
+.comment_icon__active path:last-child {
+	fill: var(--color-yellow-40);
+}
+
+.comment:hover .comment_icon__active path {
+	fill: var(--color-yellow-50);
+}
+
+.comment {
+	display: flex;
+	align-items: center;
+}
+
+.info_icon path {
+	fill: var(--color-gray-20);
+}
+
+.info_icon:hover path {
+	fill: var(--color-gray-40);
+}
+
+.sort_icon path {
+	fill: var(--color-gray-16);
+}
+
+.sort_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.sort_icon_asc path:last-child {
+	fill: var(--color-yellow-7);
+}
+
+.sort_icon_desc path:first-child {
+	fill: var(--color-yellow-7);
+}
+
+.context_menu_item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.context_menu_item path {
+	fill: var(--color-violet-40);
+}
+
+.context_menu_icon {
+	--icon-fill-color: var(--color-violet-40);
+	width: 14px;
+}
+
+.footer_height {
+	--footer-height: 0;
+}
+
+.bottom_buttons {
+	border-top: 2px solid var(--color-gray-14);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px;
+}
+
+.button_apply {
+	margin-left: 1.25em;
+}
+
+.button_add {
+	display: flex;
+	align-items: center;
+}
+
+.icon_plus {
+	--icon-fill-color: var(--color-gray-0);
+	margin-right: 9px;
+}
+
+.additional_buttons {
+	display: flex;
+}

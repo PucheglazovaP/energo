@@ -1,0 +1,318 @@
+.root {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	padding: 0 1em;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+button.button {
+	border: 1px solid var(--color-gray-13);
+	padding: 4px 10px 4px 6px;
+	border-radius: 4px;
+	font-weight: 375;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	color: var(--color-gray-70);
+	gap: 6px;
+	background: var(--color-gray-2);
+	user-select: none;
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}
+
+.icon {
+	height: 14px;
+	--icon-fill-color: var(--color-gray-70);
+}
+
+.table {
+	--table-width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	font-size: 0.875em;
+	line-height: 1em;
+	font-weight: 400;
+	border-spacing: 3px;
+	margin-top: 5px;
+	border-bottom: 2px solid var(--color-gray-2);
+	padding-bottom: 10px;
+}
+
+.table table {
+	border-spacing: 0 4px;
+	height: fit-content;
+}
+
+.table>div {
+	position: relative;
+}
+
+.table>div>div:first-child {
+	--cell-min-width: 50px;
+	--header-z-index: 10;
+	position: sticky;
+	top: 0;
+}
+
+.table::-webkit-scrollbar {
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.table :global([class*='header__cell']) {
+	font-size: 0.929em;
+	font-weight: 400;
+	color: var(--color-gray-70);
+	padding: 0.5em 1em;
+}
+
+.table :global([class*='cell-data']) {
+	border-left: 0;
+	border-right: 0;
+	border-radius: 3px;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.table tr {
+	background-color: var(--color-gray-1);
+	height: min-content;
+}
+
+.table tr:hover,
+.table tr:focus {
+	background-color: var(--color-vinous-10);
+}
+
+.table td {
+	background-color: transparent;
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	cursor: pointer;
+}
+
+.table td:first-child {
+	border-left: 1px solid var(--color-gray-14);
+	border-radius: 3px 0 0 3px;
+}
+
+.table td:not(:last-child) {
+	padding: 0 5px;
+}
+
+.table td:nth-last-child(2) {
+	border-right: 1px solid var(--color-gray-14);
+	border-radius: 0 3px 3px 0;
+}
+
+.table td:last-child {
+	background: var(--color-gray-f);
+	border: none;
+}
+
+.table tr:hover td:not(:last-child),
+.table tr:focus td:not(:last-child) {
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.table tr:hover td:first-child,
+.table tr:focus td:first-child {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+.table tr:hover td:nth-last-child(2),
+.table tr:focus td:nth-last-child(2) {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+.table .table_text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+	display: block;
+	align-items: center;
+	color: var(--color-gray-90);
+	font-size: 1em;
+}
+
+.table .table_text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+	display: block;
+	align-items: center;
+	color: var(--color-gray-90);
+	font-size: 1em;
+}
+
+.table .row__active {
+	background-color: var(--color-vinous-15);
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+}
+
+.date {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.date .calendar {
+	--button-background-color: var(--color-gray-f);
+	--button-background-color-hover: var(--color-gray-f);
+	padding: 0;
+	width: 110px;
+}
+
+.date .checkbox {
+	padding: 0;
+	height: 16px;
+	width: 16px;
+}
+
+.calendar :global([class*='_open_pane_group']) {
+	width: 110px;
+	margin-right: 6px;
+}
+
+.calendar :global([class*='_open_pane_button']) {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid var(--color-gray-20);
+	width: 110px;
+	height: 26px;
+	font-weight: 375;
+}
+
+.calendar :global([class*='_open_pane_button']):focus {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_open_pane_button']):disabled {
+	background-color: var(--color-gray-1);
+}
+
+.calendar :global([class*='_open_pane_button']):disabled:hover {
+	border-color: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_button']):focus:hover {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_open_pane_button'])>span {
+	font-size: 13px;
+	line-height: 15px;
+	color: var(--color-gray-90);
+}
+
+.calendar :global([class*='_icon_calendar']) {
+	fill: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_group'])>button:hover {
+	border-color: var(--color-gray-50);
+}
+
+.calendar :global([class*='_vertical_divider']) {
+	display: none;
+}
+
+.date .checkbox span {
+	height: 14px;
+	width: 16px;
+	border-radius: 3px;
+	background-color: var(--color-gray-f);
+	border-color: var(--color-gray-20);
+}
+
+.date .checkbox span:after {
+	border-color: var(--color-gray-0);
+	border-width: 0 1px 1px 0;
+	top: 6px;
+}
+
+.date .checkbox input:checked~span {
+	background-color: var(--color-yellow-40);
+	border-color: var(--color-yellow-40);
+}
+
+.delete_button {
+	width: 50px;
+	height: 22px;
+	padding: 0;
+	background-color: var(--color-gray-f);
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.delete_button:hover .cross path {
+	fill: var(--color-gray-84);
+}
+
+.cross path {
+	height: 14px;
+	fill: var(--color-gray-80);
+}
+
+th.supheader_cell {
+	top: 0;
+	padding: 8px 10px;
+	position: -webkit-sticky;
+	position: sticky;
+	background-color: var(--color-gray-14);
+	color: var(--color-gray-70);
+	z-index: 11;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	box-sizing: border-box;
+	text-align: center;
+	font-weight: 375;
+	border-right: 2px solid var(--color-gray-f);
+}
+
+.btns {
+	display: flex;
+	padding-bottom: 0.5em;
+	background: linear-gradient(180deg,
+			var(--color-gray-f-transparent) 73.44%,
+			var(--color-gray-21) 100%);
+}
+
+.close {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	height: 22px;
+}
+
+.close p {
+	margin-left: 8px;
+}
+
+.root .calendar input {
+	width: 5em;
+}
+
+.root :global([class*='pane_float']) {
+	left: -40px;
+}

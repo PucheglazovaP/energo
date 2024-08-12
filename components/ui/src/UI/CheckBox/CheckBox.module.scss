@@ -1,0 +1,45 @@
+@import 'src/Styles/vars';
+
+.checkbox {
+	position: relative;
+	width: 18px;
+
+	input {
+		margin: 0;
+		display: none;
+		cursor: pointer;
+		&:checked {
+			& + label::before {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				content: url('../../Assets/images/CheckBoxMark.svg');
+				background: $yellow-60;
+				border: none;
+				width: 18px;
+				height: 18px;
+				transition: 0.2s;
+			}
+			& + label:hover::before {
+				background: $yellow-70;
+			}
+		}
+	}
+
+	label {
+		display: flex;
+		cursor: pointer;
+		&::before {
+			content: '';
+			border: 1px solid $gray-20;
+			border-radius: 3px;
+			width: 16px;
+			height: 16px;
+		}
+		&:hover {
+			&::before {
+				border-color: $gray-30;
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.root {
+	--list-width: 100%;
+	--list-height: auto;
+	--list-gap: 4px;
+	--list-item-height: 30px;
+	--list-item-font-size: 16px;
+	--list-item-padding: 7px 10px;
+	--list-item-background-color: var(--color-gray-2);
+	--list-item-background-color-active: var(--color-vinous-10);
+	--list-item-border-color: var(--color-gray-6);
+	--list-item-border-color-active: var(--color-vinous-10);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	gap: var(--list-gap);
+	width: var(--list-width);
+	height: var(--list-height);
+}
+
+.item {
+	background-color: var(--list-item-background-color);
+	border: 1px solid var(--list-item-border-color);
+	border-radius: 3px;
+	cursor: pointer;
+	text-decoration: none;
+	width: 100%;
+	height: var(--list-item-height);
+	font-size: var(--list-item-font-size);
+	text-align: start;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.item.item__active {
+	background-color: var(--list-item-background-color-active);
+	border: 1px solid var(--list-item-border-color-active);
+}
+
+.item:hover {
+	background-color: var(--list-item-background-color-active);
+	border: 1px solid var(--list-item-border-color-active);
+}

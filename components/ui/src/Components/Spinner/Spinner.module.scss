@@ -1,0 +1,32 @@
+//.spinner {
+//  height: 1em;
+//  width: 1em;
+//}
+//
+//.spinner__spin {
+//  animation: spin 1s linear infinite;
+//  box-sizing: border-box;
+//  border: 2px solid;
+//  border-color: var(--spinner-color-primary, var(--color-brand-yellow))
+//    var(--spinner-color-secondary, var(--color-gray-two))
+//    var(--spinner-color-secondary, var(--color-gray-two));
+//  border-radius: 50%;
+//  height: 100%;
+//  width: 100%;
+//}
+//
+//@keyframes spin {
+//  100% {
+//    transform: rotateZ(360deg);
+//  }
+//}
+
+
+.spinner {
+	display: flex;
+	align-items: center;
+	&__img {
+		width: 1.5em;
+		height: 1.5em;
+	}
+}

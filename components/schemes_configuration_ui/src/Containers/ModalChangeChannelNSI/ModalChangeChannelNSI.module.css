@@ -1,0 +1,53 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.nodes_block {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.field_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.field_label {
+	font-size: 12px;
+	color: var(--color-gray-60);
+}
+
+.field_value {
+	font-size: 14px;
+	padding-left: 0.775em;
+}
+
+.root .field_wrapper .select {
+	width: 100%;
+	--root-font-size: 14px;
+	--root-font-weight: 400;
+	position: relative;
+}
+
+.root .field_wrapper .select :global([class*='_options_']) {
+	width: 100%;
+}
+
+.root .divider {
+	height: 2px;
+}
+
+.buttons_row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.checkboxes_list {
+	max-height: 400px;
+	overflow: auto;
+}

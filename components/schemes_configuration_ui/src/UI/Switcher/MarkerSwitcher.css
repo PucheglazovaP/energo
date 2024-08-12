@@ -1,0 +1,43 @@
+.marker__switcher {
+	display: flex;
+	height: 0.875em;
+	padding: 0.188em;
+	position: relative;
+	border-radius: 0.5em;
+	width: 2.125em;
+	background-color: var(--color-gray-5);
+}
+
+.marker__switcher.marker--checked {
+	background-color: var(--color-yellow-7);
+}
+
+.marker__switcher::before {
+	border-radius: 0.4375em;
+	content: '';
+	display: block;
+	width: 100%;
+}
+
+.marker__switcher::after {
+	background-color: var(--color-gray-17);
+	border-radius: 50%;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.12),
+		0px 1px 1px rgba(97, 97, 97, 0.23);
+	content: '';
+	height: 1.25em;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1.25em;
+}
+
+.marker__switcher::after {
+	background-color: var(--color-gray-f);
+	left: 0;
+	transform: scale(0.8);
+}
+
+.marker--checked.marker__switcher::after {
+	transform: translateX(100%) scale(0.8);
+}

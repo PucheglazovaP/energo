@@ -1,0 +1,397 @@
+.linked_parameter_table::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.linked_parameter {
+	display: flex;
+	flex-direction: column;
+	height: calc(90vh - 60px);
+}
+
+.linked_parameter_table {
+	--table-width: 100%;
+	position: relative;
+}
+
+.linked_parameter_table table {
+	border-spacing: 0 4px;
+}
+
+.linked_parameter_table table thead {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	box-shadow: 0 -3px 0 0 var(--color-gray-f);
+}
+
+.linked_parameter_table :global([class*='header__cell']) {
+	font-size: 0.8125em;
+	font-weight: 375;
+	color: var(--color-gray-70);
+	position: relative;
+	z-index: unset;
+}
+
+.linked_parameter_table :global([class*='header__cell']) > span {
+	margin-left: 1.1em;
+}
+
+.linked_parameter_table :global([class*='cell']) {
+	padding: 0;
+}
+
+.linked_parameter_table :global([class*='cell-data']) {
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.linked_parameter_table td:first-child {
+	padding-left: 10px;
+}
+
+/* все, кроме последних ячеек с текстом, чтобы при схлопывании было многоточие и отступ справа/слева */
+.linked_parameter_table td:not(:last-child) div,
+.linked_parameter_table td:not(:last-child) div > span,
+.linked_parameter_table td:not(:last-child) div > div > span {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+	width: 100%;
+}
+
+.linked_parameter_table td:first-child div > div {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-gray-1);
+	border-left: 1px solid var(--color-gray-14);
+	border-radius: 3px 0 0 3px;
+	padding-left: 10px;
+}
+
+/* Отображение ячейки базовой точки учета */
+.linked_parameter_table td:not(:last-child) .base_point {
+	-webkit-box-orient: horizontal;
+}
+
+.linked_parameter_table :global([class*='cell-data']) p,
+.linked_parameter_table :global([class*='cell-data']) span {
+	word-break: break-all;
+	color: var(--color-gray-100);
+	font-family: GT Eesti Pro Text;
+	font-size: 0.875em;
+	font-style: normal;
+	font-weight: 375;
+}
+
+.linked_parameter_table tr {
+	background-color: transparent;
+	height: min-content;
+}
+
+/* чтобы перебить "зебру" от родной таблицы */
+.linked_parameter_table tr:nth-child(odd) {
+	background-color: transparent;
+}
+
+.linked_parameter_table td {
+	background-color: transparent;
+}
+
+.linked_parameter_table :global([class*='section_body']):hover {
+	background-color: var(--color-vinous-10);
+	border: 1px solid var(--color-vinous-15);
+}
+
+/* внутренние(разворачивающиеся) ряды таблицы */
+.linked_parameter_table tr td span,
+.linked_parameter_table tr td > div > div > button {
+	background-color: var(--color-gray-1);
+	padding-left: 10px;
+	height: 28px;
+}
+
+.linked_parameter_table tr td > div > div > button {
+	height: 29px;
+	position: relative;
+	top: -1px;
+}
+
+.linked_parameter_table tr td > div > div,
+.linked_parameter_table tr td > div > span {
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.linked_parameter_table tr td > div > div {
+	height: 28px;
+	display: flex;
+	align-items: center;
+}
+
+.linked_parameter_table tr td > div > div > button,
+.linked_parameter_table tr td > div > div > span {
+	border-top: none;
+	border-bottom: 1px solid var(--color-gray-14);
+}
+
+.linked_parameter_table tr td:global([class*='linked_cell']) div {
+	border-right: 1px solid var(--color-gray-14);
+	border-radius: 0 3px 3px 0;
+	background-color: var(--color-gray-1);
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	height: 29px;
+}
+
+/* ячейки ряда выбранного связанного параметра */
+.linked_parameter_table tr.parameter__active td > div > span,
+.linked_parameter_table tr.parameter__active td > div > div,
+.linked_parameter_table tr.parameter__active td > div > div > span,
+.linked_parameter_table tr.parameter__active td > div > div > button {
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.linked_parameter_table tr.parameter__active td > div > div > button,
+.linked_parameter_table tr.parameter__active td > div > div > span {
+	border-top: none;
+	border-bottom: none;
+}
+
+.linked_parameter_table
+	tr.parameter__active
+	td:global([class*='linked_cell'])
+	div {
+	border-right: 1px solid var(--color-vinous-15);
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.linked_parameter_table tr.parameter__active td:first-child div > div {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+/* внутренние(разворачивающиеся) ряды таблицы:ховер */
+.linked_parameter_table tr:hover td > div > span,
+.linked_parameter_table tr:hover td > div > div,
+.linked_parameter_table tr:hover td > div > div > span,
+.linked_parameter_table tr:hover td > div > div > button {
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.linked_parameter_table tr:hover td > div > div > button,
+.linked_parameter_table tr:hover td > div > div > span {
+	border-top: none;
+	border-bottom: none;
+}
+
+.linked_parameter_table tr:hover td:global([class*='linked_cell']) div {
+	border-right: 1px solid var(--color-vinous-15);
+	background-color: var(--color-vinous-10);
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.linked_parameter_table tr:hover td:first-child div > div {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+.linked_parameter_table .sort_icon_asc path:last-child {
+	fill: var(--color-yellow-7);
+}
+
+.linked_parameter_table .sort_icon_desc path:first-child {
+	fill: var(--color-yellow-7);
+}
+
+.spinner {
+	margin-top: 20px;
+	height: 30px;
+	width: 30px;
+}
+
+.filter_control :global([class*='filter_control_context_menu']) {
+	right: 0;
+	/* Пришлось применить !important, так как в ContextMenu
+  применяется инлайн-стилизация через js */
+	left: unset !important;
+	top: unset !important;
+}
+
+.filter_control :global([class*='filter_control_button']) {
+	padding: 0.539em 0;
+}
+
+.filter_control :global([class*='icon_path']) {
+	fill: var(--color-gray-16);
+}
+
+.linked_parameter_table .header_searchable {
+	padding: 0 0.92em 0.154em;
+	margin-bottom: 0.154em;
+	border-bottom: none;
+}
+
+.header_searchable :global([class*='MultiselectDropdown_input_container']) {
+	--input-static-padding: 5px 10px 5px 0px;
+}
+
+.search_icon path {
+	fill: var(--color-gray-20);
+}
+
+.linked_parameter_table .linked_cell p {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 1em;
+	padding: 1px 5px;
+	width: 30px;
+}
+
+.linked_cell {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 0.875em;
+	padding: 1px 5px;
+	width: 30px;
+}
+
+.linked_parameter_table td:not(:last-child) div > div > button {
+	padding: 0;
+	border-right: none;
+	border-left: none;
+}
+
+/* Modal */
+
+.modal_body {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.modal_body .buttons {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 1.25em;
+	border-top: 2px solid var(--color-gray-14);
+}
+
+.modal_body .confirm_button {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background: none;
+	border-color: var(--color-yellow-40);
+}
+
+.modal_body .confirm_button:hover {
+	background-color: var(--color-yellow-40);
+}
+
+.confirm_button .arrow_icon {
+	position: absolute;
+	right: 0.7em;
+}
+
+.linked_point_container {
+	background-color: var(--color-gray-1);
+	display: flex;
+	flex-direction: column;
+	gap: 0.625em;
+	padding: 0.625em 0.875em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.linked_point {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-weight: 375;
+	white-space: nowrap;
+}
+
+.linked_point .param_name {
+	font-size: 0.75em;
+	line-height: initial;
+	align-self: end;
+	color: var(--color-gray-50);
+}
+
+.linked_point .param_value {
+	display: inline-flex;
+	max-width: 80em;
+	min-width: max-content;
+	font-size: 0.8125em;
+	text-align: end;
+	line-height: initial;
+	align-self: end;
+	color: var(--color-gray-84);
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.linked_point .divider {
+	width: 100%;
+	border-bottom: 1px dotted var(--color-gray-15);
+	min-width: 5em;
+}
+
+.footer_height {
+	--footer-height: 0;
+}
+
+.bottom_buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 20px;
+	border-top: 2px solid var(--color-gray-14);
+}
+
+.linked_parameter_table tr td:first-child span {
+	height: 18px;
+}
+
+.linked_parameter_table::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.section_title {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-14);
+	border-radius: 3px;
+	padding: 2px 15px;
+	width: 100%;
+	display: flex;
+}
+
+.text {
+	color: var(--color-gray-40);
+	font-family: GT Eesti Pro Text;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 375;
+	line-height: normal;
+}

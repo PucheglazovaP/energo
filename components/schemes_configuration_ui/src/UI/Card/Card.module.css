@@ -1,0 +1,57 @@
+.card {
+	--card-background-color: var(--color-gray-1);
+	--card-padding: 10px 14px;
+	--card-title-border-bottom: 1px solid var(--color-gray-13);
+	--card-title-font-size: 12px;
+	--card-title-margin: 0;
+	--card-title-padding: 0 0 10px;
+	--card-body-padding: 10px 0;
+	box-sizing: border-box;
+	background-color: var(--card-background-color);
+	padding: var(--card-padding);
+}
+
+.card_title {
+	font-size: var(--card-title-font-size);
+	font-weight: 500;
+	width: 100%;
+	padding: var(--card-title-padding);
+	border-bottom: var(--card-title-border-bottom);
+	margin: var(--card-title-margin);
+}
+
+.card_body {
+	padding: var(--card-body-padding);
+}
+
+.item {
+	--item-empty-border: 1px dashed var(--color-gray-15);
+	--item-value-color: var(--color-gray-84);
+	--item-value-font-size: 0.813em;
+	--item-name-color: var(--color-gray-50);
+	--item-name-font-size: 0.75em;
+	--item-font-weight: 375;
+
+	display: flex;
+	flex-flow: row nowrap;
+	font-weight: var(--item-font-weight);
+}
+
+.item_name {
+	font-size: var(--item-name-font-size);
+	font-weight: inherit;
+	white-space: nowrap;
+	color: var(--item-name-color);
+}
+
+.item_empty {
+	width: 100%;
+	border-bottom: var(--item-empty-border);
+}
+
+.item_value {
+	font-size: var(--item-value-font-size);
+	color: var(--item-value-color);
+	font-weight: inherit;
+	white-space: nowrap;
+}

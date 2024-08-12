@@ -1,0 +1,22 @@
+.direction {
+	&__right {
+		transform: rotate(0deg);
+	}
+	&__left {
+		transform: rotate(180deg);
+	}
+	&__up {
+		transform: rotate(-90deg);
+	}
+	&__down {
+		transform: rotate(90deg);
+	}
+}
+
+.icon_button {
+	cursor: pointer;
+	outline: none;
+	height: 0;
+	border: none;
+	background-color: transparent;
+}

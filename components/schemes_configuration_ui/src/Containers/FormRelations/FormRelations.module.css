@@ -1,0 +1,31 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
+.tree {
+	padding-left: 0;
+}
+
+.body {
+	flex-grow: 1;
+	overflow-x: hidden;
+}
+
+.search {
+	margin: 5px 0;
+	padding: 10px 0;
+	border-top: 2px solid var(--color-gray-2);
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.modal_buttons {
+	border-top: 2px solid var(--color-gray-2);
+	display: flex;
+	padding-top: 1em;
+	width: 400px;
+	margin: 4px auto 0;
+	justify-content: center;
+}

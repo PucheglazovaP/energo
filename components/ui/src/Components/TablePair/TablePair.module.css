@@ -1,0 +1,210 @@
+.root {
+	--header-background-color: #fff;
+	--header-color: #595959;
+	--header-font-size: 0.813em;
+	--header-font-weight: 500;
+	--header-border-size: 0.154em;
+	--header-border-style: solid;
+	--header-border-color: #eaeaea;
+	--cell-background-color: #fafafa;
+	--cell-border-color: #f5f5f5;
+	--cell-border-color-active: #f7f5f5;
+	--cell-border: 0.063em solid;
+	--cell-font-size: 0.875em;
+	--cell-padding: 0.375rem 0.75rem;
+	--caption-font-size: 1em;
+	--caption-font-weight: 500;
+	--caption-margin: 0 0 0.625em;
+	overflow-y: hidden;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.body {
+	display: grid;
+	min-width: 0;
+}
+
+.caption_wrapper {
+	display: flex;
+	grid-column-start: 1;
+	grid-column-end: -1;
+	font-size: var(--caption-font-size);
+	font-weight: var(--caption-font-weight);
+	margin: var(--caption-margin);
+}
+
+.header:not(.first_cell) {
+	padding-left: 0.063em;
+}
+
+.header:not(.last_cell) {
+	padding-right: 0.063em;
+}
+
+.header {
+	align-items: flex-end;
+	background-color: var(--header-background-color);
+	margin-bottom: 0.313em;
+}
+
+.value {
+	font-size: var(--cell-font-size);
+	padding: var(--cell-padding);
+	line-height: 0.938rem;
+	overflow: hidden;
+	white-space: normal;
+}
+
+.header .value {
+	color: var(--header-color);
+	font-size: var(--header-font-size);
+	font-weight: var(--header-font-weight);
+	border-bottom-width: var(--header-border-size);
+	border-bottom-style: var(--header-border-style);
+	border-bottom-color: var(--header-border-color);
+}
+.cell {
+	max-width: 300px;
+	min-width: 100px;
+	display: flex;
+	column-gap: 1em;
+}
+
+.value {
+	flex-grow: 1;
+}
+.cell:not(.header) {
+	border-top: var(--cell-border);
+	border-bottom: var(--cell-border);
+	border-top-color: var(--cell-border-color);
+	border-bottom-color: var(--cell-border-color);
+	margin-top: 0.313em;
+}
+
+.cell:not(.header).first_cell {
+	border-left: var(--cell-border);
+	border-left-color: var(--cell-border-color);
+	border-radius: 0.25em 0 0 0.25em;
+}
+
+.cell:not(.header).last_cell {
+	border-right: var(--cell-border);
+	border-right-color: var(--cell-border-color);
+	border-radius: 0 0.25em 0.25em 0;
+}
+
+.caption {
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+}
+
+.last_row {
+	margin-bottom: 1.875em;
+}
+
+.cell:not(.header).selected {
+	--cell-background-color: #fff8ec;
+	--cell-border-color: #fdca75;
+}
+
+.span {
+	display: flex;
+	background-color: white;
+	padding-bottom: 5px;
+}
+
+/* search */
+.search_input {
+	display: flex;
+	width: 86px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+
+.search_input button {
+	margin-right: 2px;
+	border: none;
+	background: rgb(255, 255, 255);
+}
+.search_input input {
+	margin-left: 3px;
+	width: 90%;
+	height: 23px;
+	border: none;
+	outline: none;
+}
+.icon_arrows {
+	background: rgb(255, 255, 255);
+	border: none;
+	margin-top: 6px;
+}
+
+/* search_input_name */
+
+.search_input_name {
+	display: flex;
+	width: 240px;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+.search_input_name button {
+	margin-right: 2px;
+	border: none;
+	background: rgb(255, 255, 255);
+}
+.search_input_name input {
+	margin-left: 3px;
+	width: 90%;
+	height: 23px;
+	border: none;
+	outline: none;
+}
+.table_selection_search_name {
+	width: 250px;
+	background: rgb(255, 255, 255);
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	outline: none;
+}
+
+.table_selection_search_units {
+	height: 23px;
+	margin: 3px 0 0 0;
+}
+.table_selection_search_button {
+	width: 78px;
+	height: 22px;
+	background: var(--cell-background-color);
+	border: 1px solid #fdd58b;
+	border-radius: 4px;
+	margin-bottom: 4px;
+}
+.table_selection_search_button_choose {
+	width: 78px;
+	height: 22px;
+	background: var(--cell-background-color);
+	border: 1px solid #fdd58b;
+	border-radius: 4px;
+}
+.table_selection_search_button:active {
+	background: var(--cell-border-color-active);
+}
+.table_selection_search_button_choose:active {
+	background: var(--cell-border-color-active);
+}
+.table_selection_search_button_choose {
+	display: none;
+	/* background: var(--cell-background-color);
+	color: var(--cell-background-color);
+	border: none; */
+}
+
+.value:hover .table_selection_search_button_choose {
+	display: block;
+	background: var(--cell-background-color);
+	border: 1px solid #fdd58b;
+	border-radius: 4px;
+	color: rgb(0, 0, 0);
+}

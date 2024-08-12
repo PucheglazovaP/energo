@@ -1,0 +1,18 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25em;
+}
+
+.root .dropdown {
+	position: relative;
+	--root-width: 100%;
+}
+
+.buttons_row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 1.25em;
+	border-top: 0.125em solid var(--color-gray-14);
+}

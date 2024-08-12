@@ -1,0 +1,55 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
+.tree {
+	padding-left: 0;
+}
+
+.body {
+	flex-grow: 1;
+	overflow-x: hidden;
+}
+
+.search {
+	margin: 5px 0;
+	padding: 10px 0;
+	border-top: 2px solid var(--color-gray-2);
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.modal_buttons {
+	border-top: 2px solid var(--color-gray-2);
+	display: flex;
+	padding-top: 1em;
+	width: 400px;
+	margin: 4px auto 0;
+	justify-content: space-between;
+}
+.form_search {
+	z-index: 10;
+	position: sticky;
+	background-color: inherit;
+	/* element need to overlap tree items. 1% serves it */
+	padding: 0.357em 1%;
+	display: flex;
+	background: linear-gradient(
+		180deg,
+		var(--color-gray-f-transparent) 73.44%,
+		var(--color-gray-21) 100%
+	);
+}
+.search_input {
+	width: 100%;
+}
+
+.rollup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+}

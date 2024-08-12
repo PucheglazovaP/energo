@@ -1,0 +1,131 @@
+.healthiness {
+	box-sizing: border-box;
+}
+
+.healthiness_table {
+	--table-border-spacing: 0 4px;
+}
+
+.healthiness_table div:global([class*='cell-data']) {
+	border-left: none;
+	border-right: none;
+}
+
+button.section_expand {
+	padding: 0;
+	outline: none;
+	border-color: transparent;
+}
+
+button.section_expand:hover {
+	background-color: transparent;
+}
+
+button.section_expand_expanded {
+	transform: rotate(90deg);
+}
+
+svg.section_arrow {
+	--icon-fill-color: var(--color-gray-80);
+}
+
+.section {
+	width: 100%;
+}
+
+.section_header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding: 1em 0;
+}
+
+.section_body {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 10px;
+	height: 225px;
+	padding: 1em;
+}
+
+.section_chart {
+	display: flex;
+	width: 75%;
+}
+
+.section_chart::after {
+	content: '';
+	border: 1px solid var(--color-gray-13);
+}
+
+.section_table {
+	width: 25%;
+}
+
+.section_redirect {
+	padding: 0 0.5em;
+	text-decoration: none;
+	display: inline-flex;
+	gap: 5px;
+	align-items: center;
+	border: 1px solid var(--color-gray-13);
+	border-radius: 3px;
+	background-color: var(--color-gray-1);
+	color: var(--color-gray-70);
+}
+
+svg.section_arrow {
+	--icon-fill-color: var(--color-gray-40);
+	transform: rotate(-90deg);
+}
+
+svg.arrow_header {
+	--icon-fill-color: var(--color-gray-40);
+}
+
+tr:global([class*='Table_row']).row {
+	font-size: 0.875em;
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-14);
+	border-radius: 3px;
+	height: 30px;
+}
+
+tr:global([class*='Table_row']).row_expanded {
+	background-color: var(--color-vinous-10);
+	border: 1px solid var(--color-vinous-15);
+}
+
+.table_header {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: var(--color-gray-70);
+	font-size: 0.813em;
+	font-weight: 375;
+}
+
+.table_header_underline {
+	display: inline;
+	border-bottom: 1px dotted var(--color-gray-70);
+	width: fit-content;
+	width: -moz-fit-content;
+}
+
+svg.sort_icon {
+	--icon-fill-color: var(--color-gray-40);
+}
+
+svg.sort_icon_asc path:first-child {
+	--icon-fill-color: var(--color-yellow-60);
+}
+
+svg.sort_icon_desc path:last-child {
+	--icon-fill-color: var(--color-yellow-60);
+}
+
+.device_highlight {
+	width: fit-content;
+	width: -moz-fit-content;
+	padding: 0 0.357em;
+}

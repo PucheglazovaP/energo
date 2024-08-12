@@ -1,0 +1,38 @@
+.root {
+	height: calc(100vh - var(--header-height));
+}
+
+.panel {
+	height: calc(100% - 0.9em);
+}
+
+.body {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 1.25em;
+}
+
+.forms,
+.table,
+.settings {
+	flex-basis: 100%;
+}
+
+.forms {
+	padding-right: 1.25em;
+}
+.settings {
+	padding-left: 1.25em;
+	display: flex;
+}
+
+.table {
+	padding: 0 1.25em;
+}
+
+.table thead {
+	height: 2.5em;
+}

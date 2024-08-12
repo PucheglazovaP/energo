@@ -1,0 +1,14 @@
+.root {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.root .common {
+	width: 100%;
+}

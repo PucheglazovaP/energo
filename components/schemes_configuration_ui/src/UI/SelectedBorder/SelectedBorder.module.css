@@ -1,0 +1,13 @@
+.corner {
+    --corner-width: 6px;
+    --corner-height: 6px;
+    --corner-fill: white;
+    --corner-stroke: #9747ff;
+    --corner-stroke-width: 0.5;
+
+    width: var(--corner-width);
+    height: var(--corner-height);
+    fill: var(--corner-fill);
+    stroke: var(--corner-stroke);
+    stroke-width: var(--corner-stroke-width);
+}

@@ -1,0 +1,61 @@
+.container {
+	height: calc(100vh - var(--header-height));
+	box-sizing: border-box;
+}
+
+.panel {
+	--body-padding: 1.25em 1em 1em 1em;
+	height: calc(100% - 0.9em);
+	box-sizing: border-box;
+}
+
+.top_section {
+	display: flex;
+	height: 1.5em;
+	column-gap: 2em;
+	font-size: 1em;
+	align-items: center;
+}
+
+.sidebar_btn {
+	--accent-color: var(--color-gray-14);
+	background-color: var(--color-gray-1);
+	border-color: var(--color-gray-13);
+	position: relative;
+}
+
+.sidebar_btn::after {
+	position: absolute;
+	background-color: var(--color-gray-14);
+	width: 0.063em;
+	height: 100%;
+	top: 0;
+	left: calc(100% + 1em);
+	content: '';
+}
+
+.title {
+	display: flex;
+	align-items: center;
+}
+
+.title h2 {
+	font-size: 1em;
+	font-weight: 500;
+}
+
+.title h3 {
+	font-size: 1em;
+	font-weight: 375;
+	color: var(--color-gray-84);
+}
+
+.sidebar {
+	height: 100%;
+}
+
+.sidebar__hidden {
+	composes: sidebar;
+
+	overflow: hidden;
+}

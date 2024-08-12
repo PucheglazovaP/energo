@@ -1,0 +1,10 @@
+.scroll_area {
+	overflow: auto;
+	height: 100%;
+}
+
+.scroll_area_spinner {
+	display: flex;
+	justify-content: center;
+	width: -webkit-fill-available;
+}

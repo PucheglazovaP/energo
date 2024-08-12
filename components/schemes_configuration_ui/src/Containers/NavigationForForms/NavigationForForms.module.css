@@ -1,0 +1,47 @@
+.root {
+	height: 1.375em;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+}
+
+.icon {
+	--icon-fill-color: var(--color-gray-40);
+	width: 1em;
+	height: 1em;
+	padding: 0.2em;
+}
+
+.root .item {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	height: 1.7em;
+	width: 1.7em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	margin-right: 0.5em;
+	box-sizing: border-box;
+}
+.root .item:hover {
+	background-color: var(--color-gray-14);
+}
+.root .item:hover .icon {
+	--icon-fill-color: var(--color-gray-80);
+}
+.root .item:disabled {
+	background-color: var(--color-gray-f);
+	border: 1px solid var(--color-gray-13);
+}
+.root .item:disabled .icon {
+	--icon-fill-color: var(--color-gray-13);
+}
+.root .kit_tooltip {
+	height: 100%;
+}
+.tooltip {
+	--root-arrow-size: 3px;
+}

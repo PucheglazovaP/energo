@@ -1,0 +1,40 @@
+.root {
+	width: calc(100vw - 150px);
+	height: calc(100vh - 250px);
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	overflow: hidden;
+}
+
+.filters_row {
+	display: flex;
+	justify-content: space-between;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 73.44%,
+		#f8f8f8 100%
+	);
+	padding-bottom: 10px;
+}
+
+.left_side_content {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.root .switcher {
+	padding: 0;
+}
+.root .acknowledge_button {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 4px 10px 4px 6px;
+	--primary-background-color: var(--color-yellow-40);
+}
+.root .acknowledge_button:disabled {
+	background: var(--color-yellow-40);
+	opacity: 0.5;
+	color: var(--color-gray-0);
+}

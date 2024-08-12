@@ -1,0 +1,224 @@
+@import "src/Styles/vars";
+
+.content {
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: '';
+    right: -20px;
+    border: 1px solid #F5F5F5;
+    height: 100%;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  gap: 21px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  width: calc(65% - 41.5px);
+  div {
+    &:first-child {
+      width: 100%;
+    }
+  }
+}
+
+.radioButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+
+  &__text {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+  }
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.radioLogo {
+  width: 18px;
+  height: 18px;
+  background-image: url("../../Assets/images/InactiveRadio.svg");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: #FAFAFA;
+  }
+}
+
+.active {
+  background-repeat: no-repeat;
+  background-image: url("../../Assets/images/ActiveRadio.svg");
+  background-position: 0 50%;
+}
+
+
+.input {
+  padding: 3.5px 10px 3.5px 15px;
+  border-radius: 4px;
+  border: 1px solid #FAB82E;
+  display: flex;
+  align-items: center;
+  background-image: url("../../Assets/images/SearchLogo.svg");
+  cursor: default;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+  outline: none;
+
+  &::placeholder {
+    display: flex;
+    align-items: center;
+  }
+
+  &:first-child {
+    padding-right: 26px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) 50%;
+    width: 100%;
+  }
+
+  &:last-child:not(:first-child) {
+    padding-left: 31px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: -15px;
+    border: 1px solid #F5F5F5;
+  }
+}
+
+.contentHeader {
+  padding: 6px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #F5F5F5;
+  justify-content: space-between;
+
+  &__groups {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+    min-width: fit-content;
+  }
+
+  &__buttons_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+  }
+
+  &__title {
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+
+  &__updateBtn {
+    cursor: pointer;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  &__moreBtn {
+    cursor: pointer;
+    background: #F5F5F5;
+  }
+}
+
+.groups {
+  &__buttons {
+    display: flex;
+    padding: 3px;
+    background: #fff;
+    border-radius: 4px;
+    gap: 2px;
+  }
+
+  &__button {
+    padding: 5px 12px !important;
+    border: none !important;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 12px !important;
+    line-height: 14px;
+
+    &:hover {
+      background: $yellow-8 !important;
+    }
+
+  }
+
+  &__active {
+    border: none;
+    background: $yellow-7 !important;
+    border-radius: 4px !important;
+  }
+}
+
+.spinner__container {
+  margin-left: 10px;
+}
+
+.header {
+  &__menu {
+    right: 5px !important;
+    width: auto;
+    left: auto !important;
+    padding: 7px;
+  }
+}

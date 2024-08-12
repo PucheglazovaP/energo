@@ -1,0 +1,185 @@
+@import url(../node_modules/@evraz/ui-kit/dist/style.css);
+
+:root {
+	--default-global-background-color: #f0f0f0;
+
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+
+	background-color: var(--default-global-background-color);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	/* Colors */
+	--color-gray-0: #000000;
+	--color-gray-f: #ffffff;
+	--color-gray-1: #fafafa;
+	--color-gray-2: #f5f5f5;
+	--color-gray-3: #f0f0f0;
+	--color-gray-4: #f4f4f4;
+	/* 5 - corporate */
+  --color-gray-5: #d9dada;
+	--color-gray-6: #bfbfbf;
+	--color-gray-7: #8c8c8c;
+	--color-gray-8: #595959;
+	--color-gray-9: #434343;
+	--color-gray-10: #262626;
+	--color-gray-11: #1f1f1f;
+	--color-gray-12: #141414;
+	--color-gray-13: #eaeaea;
+	--color-gray-14: #efefef;
+	--color-gray-15: #e5e5e5;
+	--color-gray-20: #cccccc;
+	--color-gray-30: #bebebf;
+	--color-gray-40: #b1b1b2;
+	--color-gray-50: #9b9b9c;
+	--color-gray-60: #868686;
+	--color-gray-70: #6e6e6d;
+	--color-gray-80: #565655;
+	--color-gray-84: #444444;
+
+	--color-orange-1: #fde3cf;
+	--color-orange-2: #fbcba7;
+	--color-orange-3: #f9b583;
+	--color-orange-4: #f7a162;
+	--color-orange-5: #f68f44;
+	/* 6 - corporate */
+	--color-orange-6: #ed7817;
+	--color-orange-7: #e3660b;
+	--color-orange-8: #bc5509;
+	--color-orange-9: #9c4707;
+	--color-orange-10: #813b06;
+	--color-orange-11: #6b3105;
+
+	--color-yellow-1: #fff8ec;
+	--color-yellow-2: #fef0d8;
+	--color-yellow-3: #fee5ba;
+	--color-yellow-4: #fdd796;
+	--color-yellow-5: #fdca75;
+	--color-yellow-6: #fcbf57;
+	/* 7 - corporate */
+	--color-yellow-7: #fab82e;
+	--color-yellow-8: #fda610;
+	--color-yellow-9: #d38603;
+	--color-yellow-10: #af6f02;
+	--color-yellow-11: #915c02;
+	--color-yellow-12: #784c02;
+	--color-yellow-13: #fff8ec;
+	--color-yellow-20: #fef1db;
+	--color-yellow-40: #fdd58b;
+	--color-yellow-50: #fdc65f;
+	--color-yellow-60: #fab82e;
+	--color-yellow-80: #f69112;
+	--color-red-1: #fdf0ef;
+	--color-red-2: #f8b9b4;
+	--color-red-3: #f48981;
+	--color-red-4: #eb5757;
+	--color-red-5: #eb3333;
+	/*6 - corporate */
+	--color-red-6: #e32213;
+	--color-red-7: #bc1c10;
+	--color-red-8: #9c170d;
+	--color-red-9: #81130b;
+	--color-red-10: #6b1009;
+	--color-red-11: #590d07;
+	--color-red-80: #eb5835;
+	--color-red-100: #e32112;
+
+	--color-green-1: #e7fef0;
+	--color-green-2: #bce0cb;
+	--color-green-3: #8ccaa6;
+	--color-green-4: #5cb681;
+	--color-green-5: #08a652;
+	--color-green-6: #089045;
+	--color-green-7: #077b3b;
+	--color-green-8: #066932;
+	--color-green-9: #044d25;
+	--color-green-10: #02371b;
+
+	--color-blue-1: #eff2f6;
+	--color-blue-2: #ced7e7;
+	--color-blue-3: #b6c2d4;
+	--color-blue-4: #9eadc5;
+	--color-blue-5: #859bbf;
+	--color-blue-6: #7086a9;
+	--color-blue-7: #5e769c;
+	--color-blue-8: #54698b;
+	--color-blue-9: #4b5d7c;
+	--color-blue-10: #43536e;
+
+	--color-violet-40: #c7a6cd;
+
+	--header-height: 55px;
+
+	--color-vinous-10: #f5f0f4;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+	width: 0.25em;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #f5f5f5;
+	border-radius: 0.125em;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #eaeaea;
+	border-radius: 0.125em;
+}
+
+#root {
+	flex-grow: 1;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.kit_title_bar {
+	align-items: center;
+}
+
+.page {
+	height: calc(100vh - 64px);
+}
+button {
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+input {
+	font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	border: none;
+}
+a:visited {
+	text-decoration: none;
+}
+button {
+	border: none;
+	background: none;
+	padding: 0;
+}
+a:hover {
+	text-decoration: none;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+}

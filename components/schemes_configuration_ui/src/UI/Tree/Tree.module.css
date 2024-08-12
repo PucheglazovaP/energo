@@ -1,0 +1,66 @@
+.root:not(:first-child) {
+	padding-left: 16px;
+}
+
+.root .item {
+	background-color: var(--color-gray-2);
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	padding: 8px 0 8px 12px;
+	cursor: pointer;
+	flex-grow: 2;
+	border: none;
+	text-align: left;
+	font-size: 14px;
+	font-weight: 400;
+	border: 0.077em solid transparent;
+}
+
+.root .item--active {
+	border-color: var(--color-yellow-7);
+}
+
+.root .item:focus {
+	background: var(--color-yellow-4);
+}
+
+.wrapper {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	max-width: 99%;
+	gap: 0.4em;
+}
+
+.btn {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+	margin-bottom: 5px;
+}
+
+.btn .arrow {
+	transition: all 0.3s;
+	width: 0.875em;
+	height: 0.875em;
+	--icon-fill-color: var(--color-gray-80);
+	transform: rotate(-90deg);
+}
+
+.btn .arrow--down {
+	transform: rotate(0deg);
+}
+
+.dot {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+}

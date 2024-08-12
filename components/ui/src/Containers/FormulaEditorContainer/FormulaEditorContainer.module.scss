@@ -1,0 +1,44 @@
+
+.header {
+	display: flex;
+	justify-content: space-between;
+
+
+	&__switcher {
+		display: flex;
+		min-width: 200px;
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 23px;
+	}
+
+	&__subtitle {
+		font-weight: 375;
+		font-size: 14px;
+		line-height: 16px;
+	}
+
+}
+
+.switcher {
+	padding: 0;
+	display: flex;
+	gap: 10px;
+	background: none;
+	border: none;
+	width: auto;
+	justify-content: start;
+	flex-direction: row-reverse;
+	max-width: 141px;
+	font-weight: 375;
+	font-size: 13px;
+	line-height: 15px;
+
+	&:hover {
+		background: none;
+		border: none;
+	}
+}

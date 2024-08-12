@@ -1,0 +1,33 @@
+.table {
+	height: auto;
+	max-height: 100%;
+}
+
+.table :global([class*='Table_row']) {
+	scroll-margin-top: 3.125em;
+	height: 1.875em;
+	white-space: pre;
+}
+
+.table :global([class*='Table_header__cell']) {
+	color: var(--color-gray-70);
+	font-size: 0.8125em;
+	font-weight: 375;
+}
+
+.table :global([class*='Table_active_row']) {
+	background-color: var(--color-vinous-10);
+}
+
+.node__container {
+	display: flex;
+	gap: 0.25em;
+}
+
+.node__icon {
+	--icon-fill-color: var(--color-violet-40);
+}
+
+.table th:nth-child(2) span {
+	text-wrap: nowrap;
+}

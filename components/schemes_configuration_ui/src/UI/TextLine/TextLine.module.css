@@ -1,0 +1,15 @@
+.container {
+	--text-white-space: nowrap;
+	--container-max-width: 100%;
+	color: var(--color-gray-0);
+	max-width: var(--container-max-width);
+	margin: 0 0.357em;
+}
+
+.text {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: var(--text-white-space);
+	padding: 0;
+	margin: 0;
+}

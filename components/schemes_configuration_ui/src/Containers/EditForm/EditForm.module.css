@@ -1,0 +1,63 @@
+.root {
+	width: 100%;
+	height: 100%;
+}
+.scheme {
+	width: 100%;
+	height: calc(100% - 1.5em);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin-top: 0.938em;
+}
+
+.loading {
+	width: 10rem;
+	height: 10rem;
+}
+
+.loading div {
+	border-width: 0.8rem;
+}
+
+.wrapper {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
+.panel {
+	box-sizing: border-box;
+}
+
+.context_menu_item {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.context_menu_icon {
+	--icon-fill-color: var(--color-violet-40);
+}
+
+.reshape_rectangle {
+	stroke: var(--color-yellow-60);
+	stroke-width: 1;
+}
+
+.reshape_rectangle ~ rect {
+	--corner-fill: var(--color-yellow-60);
+	--corner-stroke: var(--color-yellow-60);
+}
+
+.corner__hidden + rect,
+.corner__hidden + rect + rect,
+.corner__hidden + rect + rect + rect,
+.corner__hidden + rect + rect + rect + rect {
+	visibility: hidden;
+}

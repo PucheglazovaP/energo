@@ -1,0 +1,49 @@
+.root {
+	width: 100%;
+	height: calc(100% - 2.5em);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.loading {
+	width: 10rem;
+	height: 10rem;
+}
+
+.loading div {
+	border-width: 0.8rem;
+}
+
+.context_menu_item {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.context_menu_icon {
+	--icon-fill-color: var(--color-violet-40);
+}
+
+.tooltip {
+	background-color: var(--color-gray-84);
+	position: absolute;
+	padding: 0.375em 0.625em;
+	color: var(--color-gray-f);
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 0.875em;
+}
+
+.tooltip_title {
+	border-bottom: 1px solid var(--color-gray-80);
+}
+
+.form {
+	width: 100%;
+}
+
+.form__proportions_saved {
+	width: auto;
+}

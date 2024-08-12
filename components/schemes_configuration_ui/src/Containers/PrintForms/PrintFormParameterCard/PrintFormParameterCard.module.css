@@ -1,0 +1,56 @@
+.parameter_card {
+	padding: 0.5em 0.5em 0.5em 0.8125em;
+	border-left: 0.1875em solid var(--color-red-2);
+	background: var(--color-gray-1);
+	border-radius: 0.25em;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25em;
+	font-size: 0.875em;
+	line-height: normal;
+}
+.parameter_card:hover,
+.parameter_card__selected {
+	border-color: var(--color-red-60);
+}
+.parameter_card__active {
+	border-color: var(--color-green-2);
+}
+.parameter_card__active:hover,
+.parameter_card__active.parameter_card__selected {
+	border-color: var(--color-green-11);
+}
+.parameter_card__selected {
+	background: var(--color-vinous-10);
+}
+
+.param_name {
+	font-size: 0.75em;
+	color: var(--color-gray-70);
+}
+
+.param_value {
+	font-size: 0.875em;
+	color: var(--color-gray-0);
+	margin-bottom: 0.25em;
+}
+
+.date_row {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--color-gray-80);
+	vertical-align: middle;
+}
+
+.icon {
+	width: auto;
+	height: 0.9375em;
+}
+
+.check_icon path {
+	fill: var(--color-green-11);
+}
+.cross_icon path {
+	fill: var(--color-gray-20);
+}

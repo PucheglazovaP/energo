@@ -1,0 +1,350 @@
+@import url(../node_modules/@evraz/ui-kit/dist/style.css);
+
+:root {
+	--default-global-background-color: #efefef;
+
+	--font-family: 'GT Eesti Pro Text', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-family: var(--font-family);
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+
+	background-color: var(--default-global-background-color);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+
+	/* Colors */
+	--color-gray-0: #000000;
+	--color-gray-f: #ffffff;
+	--color-gray-f-transparent: rgba(255, 255, 255, 0);
+	--color-gray-1: #fafafa;
+	--color-gray-2: #f5f5f5;
+	--color-gray-3: #f0f0f0;
+	--color-gray-4: #f4f4f4;
+	/* 5 - corporate */
+	--color-gray-5: #d9dada;
+	--color-gray-6: #bfbfbf;
+	--color-gray-7: #8c8c8c;
+	--color-gray-8: #595959;
+	--color-gray-9: #434343;
+	--color-gray-10: #262626;
+	--color-gray-11: #1f1f1f;
+	--color-gray-12: #141414;
+	--color-gray-13: #eaeaea;
+	--color-gray-14: #efefef;
+	--color-gray-15: #e5e5e5;
+	--color-gray-16: #d8d8d8;
+	--color-gray-17: #e2e2e2;
+	--color-gray-20: #cccccc;
+	--color-gray-21: #f8f8f8;
+	--color-gray-30: #bebebf;
+	--color-gray-40: #b1b1b2;
+	--color-gray-50: #9b9b9c;
+	--color-gray-60: #868686;
+	--color-gray-70: #6e6e6d;
+	--color-gray-80: #565655;
+	--color-gray-84: #444444;
+	--color-gray-90: #2b2b2a;
+	--color-gray-100: #000000;
+
+	--color-orange-1: #fde3cf;
+	--color-orange-2: #fbcba7;
+	--color-orange-3: #f9b583;
+	--color-orange-4: #f7a162;
+	--color-orange-5: #f68f44;
+	/* 6 - corporate */
+	--color-orange-6: #ed7817;
+	--color-orange-7: #e3660b;
+	--color-orange-8: #bc5509;
+	--color-orange-9: #9c4707;
+	--color-orange-10: #813b06;
+	--color-orange-11: #6b3105;
+
+	--color-yellow-1: #fff8ec;
+	--color-yellow-2: #fef0d8;
+	--color-yellow-3: #fee5ba;
+	--color-yellow-4: #fdd796;
+	--color-yellow-5: #fdca75;
+	--color-yellow-6: #fcbf57;
+	/* 7 - corporate */
+	--color-yellow-7: #fab82e;
+	--color-yellow-8: #fda610;
+	--color-yellow-9: #d38603;
+	--color-yellow-10: #af6f02;
+	--color-yellow-11: #915c02;
+	--color-yellow-12: #784c02;
+	--color-yellow-13: #fff8ec;
+	--color-yellow-14: #ebb94e;
+	--color-yellow-20: #fef1db;
+	--color-yellow-40: #fdd58b;
+	--color-yellow-50: #fdc65f;
+	--color-yellow-60: #fab82e;
+	--color-yellow-80: #f69112;
+	--color-yellow-90: #f9a823;
+	--color-red-1: #fdf0ef;
+	--color-red-2: #f8b9b4;
+	--color-red-3: #f48981;
+	--color-red-4: #eb5757;
+	--color-red-5: #eb3333;
+	/*6 - corporate */
+	--color-red-6: #e32213;
+	--color-red-7: #bc1c10;
+	--color-red-8: #9c170d;
+	--color-red-9: #81130b;
+	--color-red-10: #6b1009;
+	--color-red-11: #590d07;
+	--color-red-12: #e7e2e2;
+	--color-red-13: #c9c2c2;
+	--color-red-14: #f7f5f5;
+	--color-red-15: #f6f3f3;
+	--color-red-60: #f18863;
+	--color-red-80: #eb5835;
+	--color-red-100: #e32112;
+
+	--color-green-1: #e7fef0;
+	--color-green-2: #bce0cb;
+	--color-green-3: #8ccaa6;
+	--color-green-4: #5cb681;
+	--color-green-5: #08a652;
+	--color-green-6: #089045;
+	--color-green-7: #077b3b;
+	--color-green-8: #066932;
+	--color-green-9: #044d25;
+	--color-green-10: #02371b;
+	--color-green-11: #92bc8c;
+
+	--color-blue-1: #eff2f6;
+	--color-blue-2: #ced7e7;
+	--color-blue-3: #b6c2d4;
+	--color-blue-4: #9eadc5;
+	--color-blue-5: #859bbf;
+	--color-blue-6: #7086a9;
+	--color-blue-7: #5e769c;
+	--color-blue-8: #54698b;
+	--color-blue-9: #4b5d7c;
+	--color-blue-10: #43536e;
+	--color-blue-11: #919194;
+
+	--color-violet-40: #c7a6cd;
+
+	--header-height: 55px;
+	--report-table-header-height: 49px;
+
+	--color-vinous-10: #f5f0f4;
+	--color-vinous-15: #efe6ed;
+	--color-vinous-20: #deccdb;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	min-width: 320px;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 0.85em;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--color-gray-2);
+	border-radius: 0.125em;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-gray-13);
+	border-radius: 0.125em;
+}
+
+#root {
+	flex-grow: 1;
+	height: 100vh;
+}
+
+.kit_title_bar {
+	align-items: center;
+}
+
+.page {
+	overflow: hidden;
+	height: 100%;
+}
+
+.icon_button {
+	font-size: 1em;
+	line-height: 0;
+	padding: 0.3em;
+}
+
+.icon_button .icon {
+	--icon-size: 1.125em;
+}
+
+.icon_button:disabled .icon {
+	--path-fill: var(--color-gray-20);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+.highcharts-legend-item .highcharts-graph {
+	display: none;
+}
+
+.chart_table_row {
+	box-sizing: border-box;
+	background-color: var(--color-gray-2);
+	height: 1.875em;
+	margin: 0.313em 0;
+}
+
+button.button__empty {
+	text-decoration: none;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
+
+button.button__empty:hover {
+	background-color: transparent;
+	border: none;
+}
+
+@media print {
+	body * {
+		visibility: hidden;
+	}
+
+	#chart *,
+	#aggregate-info *,
+	.scheme_title,
+	.selector_discrete div button:first-child {
+		visibility: visible;
+	}
+
+	.highcharts-crosshair {
+		visibility: hidden !important;
+	}
+
+	#chart .highcharts-tooltip,
+	#chart .highcharts-tooltip-box {
+		display: none !important;
+	}
+
+	.chart_title_section_btns {
+		position: initial !important;
+		max-height: 40px;
+	}
+
+	.chart_title_section_btns * {
+		position: initial !important;
+	}
+
+	#chart,
+	#aggregate-info,
+	.scheme_title {
+		position: absolute;
+		left: 0;
+	}
+
+	#aggregate-info {
+		top: 10%;
+		width: 40%;
+		border: 1px solid var(--color-gray-70);
+	}
+
+	#aggregate-info > div {
+		border: 1px solid var(--color-gray-20);
+	}
+
+	.scheme_title {
+		top: 0;
+	}
+
+	.kit_calendar::after {
+		position: initial !important;
+	}
+
+	.kit_calendar span {
+		visibility: visible;
+		position: absolute !important;
+		top: 7%;
+		left: 3%;
+		width: 400px;
+		font-size: 1.5em;
+	}
+
+	.kit_calendar span::before {
+		visibility: visible;
+		position: absolute !important;
+		top: 0;
+		left: -7%;
+		width: 20px;
+		height: 10px;
+		content: 'Период';
+	}
+
+	.selector_discrete div button:first-child {
+		position: absolute !important;
+		left: 37%;
+		top: 7%;
+		font-size: 1.1em;
+		width: 26%;
+		padding-left: 1em;
+	}
+
+	.selector_discrete div button:first-child:before {
+		visibility: visible;
+		position: absolute !important;
+		top: 0;
+		width: 6em;
+		left: 0;
+		height: 10px;
+		content: 'Дискретность';
+	}
+
+	#chart {
+		top: 14%;
+		width: 1414px;
+		height: auto;
+	}
+
+	.kit_context_menu,
+	.highcharts-tooltip {
+		visibility: hidden;
+	}
+}
+
+.highcharts-legend-item .highcharts-point {
+	display: none;
+}
+
+.context_menu_item {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.context_menu_item__disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.context_menu_icon {
+	--icon-fill-color: var(--color-violet-40);
+}

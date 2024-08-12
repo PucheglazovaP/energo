@@ -1,0 +1,19 @@
+.switcher {
+	width: 100%;
+}
+
+.switcher > button {
+	width: 100%;
+}
+
+.controllers {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	width: 100%;
+}
+
+.divider {
+	display: block;
+	margin-top: 20px;
+}

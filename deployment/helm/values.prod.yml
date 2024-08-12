@@ -1,0 +1,40 @@
+app:
+  defaultImage: registry.ural.evraz.com:5005/ural-9505-prod/energy-management-server
+  defaultFrontImage: registry.ural.evraz.com:5005/ural-9505-prod/energy-management-front
+  defaultImageTag: latest
+  domain: energy-management-ural-9505-prod.apps.osp.ural.evraz.com
+  envs:
+    FRONT_PORT: "8081"
+
+    RABBITMQ_WS_URL: wss://energy-management-ural-9505-prod.apps.osp.ural.evraz.com/ws
+
+    KEYCLOAK_CONFIG_URL: "https://keycloak-ural-keycloak.apps.osp.ural.evraz.com/auth/"
+
+ingress:
+  enabled: true
+  annotations:
+    route.openshift.io/termination: edge
+  hosts:
+    - hostname: energy-management-ural-9505-prod.apps.osp.ural.evraz.com
+      paths:
+        - path: /
+          servicePort: http
+          serviceName: front
+        - path: /schemes/
+          servicePort: http
+          serviceName: schemes
+        - path: /ws
+          servicePort: web-stomp
+          serviceName: rabbit
+
+    - hostname: energy-management-ural-9505-prod-rabbit.apps.osp.ural.evraz.com
+      paths:
+        - path: /
+          servicePort: management
+          serviceName: rabbit
+
+deployments:
+  schemes:
+    containers:
+      schemes:
+        image: registry.ural.evraz.com:5005/ural-9505-prod/energy-management-schemes

@@ -1,0 +1,28 @@
+.root {
+	height: 100vh;
+}
+
+.root .title_bar {
+	grid-column: span 2;
+	height: 54px;
+	padding: 0 1.875em;
+}
+
+.aside {
+	align-items: center;
+	column-gap: 1em;
+	display: flex;
+	height: 100%;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.spinner {
+	margin: 5px;
+}
+
+.right_side_content {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}

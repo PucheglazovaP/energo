@@ -1,0 +1,56 @@
+.root {
+	margin-top: -20px;
+}
+
+.icon {
+	--icon-fill-color: var(--color-yellow-7);
+}
+
+.no_data {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+.no_data_message {
+	font-weight: 500;
+	font-size: 1.313em;
+	margin-top: 1em;
+}
+
+.title {
+	font-size: 1.125em;
+	font-weight: 375;
+	color: var(--color-gray-70);
+}
+
+.table {
+	margin-top: 1em;
+	max-height: 15.1em;
+	--table-border-spacing: 0 4px;
+}
+
+.table th {
+	font-weight: 375;
+	font-size: 1em;
+}
+
+.root .row {
+	height: 1.875em;
+	background-color: var(--color-gray-1);
+	border-radius: 3px;
+}
+button.link {
+	border: none;
+	background-color: transparent;
+	color: var(--ui-violet-60);
+	text-decoration: underline dotted var(--color-violet-40);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: auto;
+	padding: 0;
+}
+button.link:hover {
+	background-color: transparent;
+}

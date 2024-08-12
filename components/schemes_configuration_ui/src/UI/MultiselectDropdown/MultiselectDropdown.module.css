@@ -1,0 +1,125 @@
+.filter_control {
+	position: relative;
+	--button-border: unset;
+	--button-color: var(--color-gray-70);
+	--button-font-weight: 375;
+	--button-font-size: 13px;
+	--button-justify-content: space-between;
+	--button-gap: 8px;
+	--button-hover-background-color: transparent;
+}
+
+.filter_control_button:global(.kit_button) {
+	display: flex;
+	align-items: center;
+	gap: var(--button-gap);
+	border: var(--button-border);
+	color: var(--button-color);
+	font-weight: var(--button-font-weight);
+	font-size: var(--button-font-size);
+	justify-content: var(--button-justify-content);
+	position: relative;
+	width: -webkit-fill-available;
+}
+
+.filter_control_button:global(.kit_button):hover {
+	background-color: var(--button-hover-background-color);
+}
+
+.item_render {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 0 6px;
+	color: var(--color-gray-84);
+	font-weight: 375;
+}
+.item_render:not(:first-child) {
+	margin-top: 0.5em;
+}
+
+.item_render_checkbox {
+	padding: 0;
+	padding: 0 12px;
+}
+
+.filter_control_context_menu {
+	min-width: 200px;
+	max-height: 300px;
+	overflow: auto;
+	--context-menu-padding: 15px;
+	padding: 0;
+	overflow: visible;
+	padding-top: 12px;
+}
+
+.filter_control_context_menu :global([class*='ContextMenu_container']) {
+	display: contents;
+}
+
+.search_box_container {
+	padding-bottom: 12px;
+	margin-bottom: 6px;
+	border-bottom: 1px solid var(--color-gray-4);
+	background-color: var(--color-gray-f);
+	padding: 12px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding-top: 0;
+}
+
+.select_all {
+	padding: 0.438em;
+	padding: 12px 0.438em;
+	border-bottom: 1px solid var(--color-gray-4);
+	border-top: 1px solid var(--color-gray-4);
+}
+
+.apply_button_container {
+	text-align: center;
+	border-radius: 4px;
+	font-weight: 500;
+	background-color: var(--color-gray-f);
+	padding: 12px;
+}
+
+.no_data {
+	text-align: center;
+	padding: 12px;
+}
+
+.search_box_tooltip {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.items_list {
+	overflow: auto;
+	height: 100%;
+}
+
+.tooltip_icon {
+	--icon-fill-color: var(--color-gray-20);
+}
+
+.sort_button {
+	display: flex;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.input_container {
+	width: 100%;
+}
+
+.title {
+	color: var(--color-gray-70);
+	font-family: GT Eesti Pro Text;
+	font-size: 1em;
+	font-style: normal;
+	font-weight: 375;
+	line-height: 2.3em;
+}

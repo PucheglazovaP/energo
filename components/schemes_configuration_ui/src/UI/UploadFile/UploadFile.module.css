@@ -1,0 +1,11 @@
+.upload {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.input {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}

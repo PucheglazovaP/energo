@@ -1,0 +1,218 @@
+.root {
+	--header-background-color: var(--color-gray-f);
+	--header-color: var(--color-gray-8);
+	--header-font-size: 0.813em;
+	--header-font-weight: 500;
+	--header-border-size: 0.154em;
+	--header-border-style: solid;
+	--header-border-color: var(--color-gray-13);
+	--header-z-index: auto;
+	--cell-background-color: var(--color-gray-1);
+	--cell-border-color: var(--color-gray-2);
+	--cell-border-color-active: var(--color-red-14);
+	--cell-border: 0.063em solid;
+	--cell-font-size: 0.875em;
+	--cell-padding: 0.375rem 0.75rem;
+	--cell-min-width: 100px;
+	--cell-max-width: 310px;
+	--caption-font-size: 1em;
+	--caption-font-weight: 500;
+	--caption-margin: 0 0 0.625em;
+	--row-height: 30px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.body {
+	min-width: 0;
+}
+
+.caption_wrapper {
+	display: flex;
+	grid-column-start: 1;
+	grid-column-end: -1;
+	font-size: var(--caption-font-size);
+	font-weight: var(--caption-font-weight);
+	margin: var(--caption-margin);
+}
+
+.header:not(.first_cell) {
+	padding-left: 0.063em;
+}
+
+.header:not(.last_cell) {
+	padding-right: 0.063em;
+}
+
+.header {
+	z-index: var(--header-z-index);
+	align-items: flex-end;
+	background-color: var(--header-background-color);
+	margin-bottom: 0.313em;
+	position: sticky;
+	top: 0;
+}
+
+.value {
+	font-size: var(--cell-font-size);
+	padding: var(--cell-padding);
+	line-height: 0.938rem;
+	overflow: hidden;
+	white-space: normal;
+}
+
+.header .value {
+	color: var(--header-color);
+	font-size: var(--header-font-size);
+	font-weight: var(--header-font-weight);
+	border-bottom-width: var(--header-border-size);
+	border-bottom-style: var(--header-border-style);
+	border-bottom-color: var(--header-border-color);
+	height: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cell {
+	max-width: var(--cell-max-width);
+	min-width: var(--cell-min-width);
+	display: flex;
+	align-items: center;
+	column-gap: 1em;
+}
+
+.value {
+	flex-grow: 1;
+}
+.height {
+	height: var(--row-height);
+}
+.cell:not(.header) {
+	border-top: var(--cell-border);
+	border-bottom: var(--cell-border);
+	border-top-color: var(--cell-border-color);
+	border-bottom-color: var(--cell-border-color);
+	margin-top: 0.313em;
+}
+
+.cell:not(.header).first_cell {
+	border-left: var(--cell-border);
+	border-left-color: var(--cell-border-color);
+	border-radius: 0.25em 0 0 0.25em;
+}
+
+.cell:not(.header).last_cell {
+	border-right: var(--cell-border);
+	border-right-color: var(--cell-border-color);
+	border-radius: 0 0.25em 0.25em 0;
+}
+
+.caption {
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+}
+
+.last_row {
+	margin-bottom: 1.875em;
+}
+
+.cell:not(.header).selected {
+	--cell-background-color: var(--color-yellow-1);
+	--cell-border-color: var(--color-yellow-5);
+}
+
+.span {
+	display: flex;
+	background-color: var(--color-gray-f);
+	padding-bottom: 5px;
+}
+
+/* search */
+.search_input {
+	display: flex;
+	width: 86px;
+	border: 1px solid var(--color-gray-20);
+	border-radius: 4px;
+}
+
+.search_input button {
+	margin-right: 2px;
+	border: none;
+	background: var(--color-gray-f);
+}
+.search_input input {
+	margin-left: 3px;
+	width: 90%;
+	height: 22px;
+	border: none;
+	outline: none;
+}
+.icon_arrows {
+	background: var(--color-gray-f);
+	border: none;
+	margin-top: 6px;
+}
+
+/* search_input_name */
+
+.search_input_name {
+	display: flex;
+	width: 240px;
+	border: 1px solid var(--color-gray-20);
+	border-radius: 4px;
+}
+.search_input_name button {
+	margin-right: 2px;
+	border: none;
+	background: var(--color-gray-f);
+}
+.search_input_name input {
+	margin-left: 3px;
+	width: 90%;
+	height: 22px;
+	border: none;
+	outline: none;
+}
+.table_selection_search_name {
+	width: 270px;
+	background: var(--color-gray-f);
+	border: 1px solid var(--color-gray-20);
+	border-radius: 4px;
+	outline: none;
+}
+
+.table_selection_search_units {
+	height: 23px;
+	margin: 3px 0 0 0;
+}
+.table_selection_search_button {
+	width: 78px;
+	height: 22px;
+	background: var(--cell-background-color);
+	border: 1px solid var(--color-yellow-40);
+	border-radius: 4px;
+	margin-bottom: 4px;
+}
+.table_selection_search_button:active {
+	background: var(--cell-border-color-active);
+}
+
+.select_button {
+	width: 78px;
+	height: 22px;
+	background: var(--cell-background-color);
+	border: 1px solid var(--color-yellow-40);
+	border-radius: 4px;
+	color: rgb(0, 0, 0);
+	display: none;
+}
+.select_button:active {
+	background: var(--cell-border-color-active);
+}
+.hover {
+	background-color: var(--color-vinous-10);
+}
+.hover .select_button {
+	display: block;
+}

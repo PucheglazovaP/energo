@@ -1,0 +1,355 @@
+button.button {
+	border: 1px solid var(--color-gray-13);
+	padding: 4px 10px 4px 6px;
+	border-radius: 4px;
+	font-weight: 375;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	color: var(--color-gray-70);
+	gap: 6px;
+	background: var(--color-gray-2);
+	user-select: none;
+}
+
+button.button:hover {
+	background-color: var(--color-yellow-20);
+}
+
+.icon {
+	height: 14px;
+	--icon-fill-color: var(--color-gray-70);
+}
+
+.channels {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	position: relative;
+	height: 700px;
+}
+
+.channels_table {
+	--table-width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	font-size: 0.875em;
+	line-height: 1em;
+	font-weight: 400;
+	border-spacing: 3px;
+	margin-top: 5px;
+	border-bottom: 2px solid var(--color-gray-2);
+	padding-bottom: 10px;
+}
+
+.channels_table table {
+	border-spacing: 0 4px;
+	height: fit-content;
+}
+
+.channels_table > div {
+	position: relative;
+}
+
+.channels_table > div > div:first-child {
+	--cell-min-width: 50px;
+	--header-z-index: 10;
+	position: sticky;
+	top: 0;
+}
+
+.channels_table::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.channels_table :global([class*='header__cell']) {
+	font-size: 0.929em;
+	font-weight: 400;
+	color: var(--color-gray-70);
+	padding: 0.5em 1em;
+}
+
+.channels_table :global([class*='cell-data']) {
+	border-left: 0;
+	border-right: 0;
+	border-radius: 3px;
+	height: 30px;
+	padding: 0;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+}
+
+.channels_table tr {
+	background-color: var(--color-gray-1);
+	height: min-content;
+}
+
+.channels_table tr:hover:not(:last-child),
+.channels_table tr:focus:not(:last-child) {
+	background-color: var(--color-vinous-10);
+}
+
+.channels_table td {
+	background-color: transparent;
+	border-top: 1px solid var(--color-gray-14);
+	border-bottom: 1px solid var(--color-gray-14);
+	cursor: pointer;
+}
+
+.channels_table td:first-child {
+	border-left: 1px solid var(--color-gray-14);
+	border-radius: 3px 0 0 3px;
+}
+
+.channels_table td:not(:last-child) {
+	padding: 0 15px;
+}
+
+.channels_table td:nth-last-child(2) {
+	border-right: 1px solid var(--color-gray-14);
+	border-radius: 0 3px 3px 0;
+}
+
+.channels_table td:last-child {
+	background: var(--color-gray-f);
+	border: none;
+}
+
+.channels_table tr:hover td:not(:last-child),
+.channels_table tr:focus td:not(:last-child) {
+	border-top: 1px solid var(--color-vinous-15);
+	border-bottom: 1px solid var(--color-vinous-15);
+}
+
+.channels_table tr:hover td:first-child,
+.channels_table tr:focus td:first-child {
+	border-left: 1px solid var(--color-vinous-15);
+}
+
+.channels_table tr:hover td:nth-last-child(2),
+.channels_table tr:focus td:nth-last-child(2) {
+	border-right: 1px solid var(--color-vinous-15);
+}
+
+.channels_table .header_searchable {
+	margin-bottom: 0;
+}
+
+.channels_table .table_text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+	display: block;
+	align-items: center;
+	color: var(--color-gray-90);
+	font-size: 1em;
+}
+
+.channels_table .linked_cell p {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 1em;
+	padding: 1px 5px;
+	width: 30px;
+}
+
+.channels_table .table_text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+	display: block;
+	align-items: center;
+	color: var(--color-gray-90);
+	font-size: 1em;
+}
+
+.header_comment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.comment_icon path:first-child {
+	fill: var(--color-gray-15);
+}
+
+.comment_icon path:last-child {
+	fill: var(--color-gray-f);
+}
+
+.comment_icon__active path {
+	fill: var(--color-yellow-40);
+}
+
+.comment_icon__active path:first-child {
+	fill: var(--color-yellow-40);
+}
+
+.comment_icon__active path:last-child {
+	fill: var(--color-yellow-40);
+}
+
+.comment:hover .comment_icon__active path {
+	fill: var(--color-yellow-50);
+}
+
+.comment {
+	display: flex;
+	align-items: center;
+}
+
+.channels_table table .device_info {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.info_icon path {
+	fill: var(--color-gray-20);
+}
+
+.info_icon:hover path {
+	fill: var(--color-gray-40);
+}
+
+.link_button {
+	font-family: inherit;
+	font-size: inherit;
+	color: var(--ui-violet-60);
+	background: none;
+	border: none;
+	border-bottom: 1px dotted var(--ui-violet-60);
+	padding: 0;
+	cursor: pointer;
+}
+
+.link_button_text {
+	width: 270px;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+	text-overflow: ellipsis;
+}
+
+.channels_table .row__active {
+	background-color: var(--color-vinous-15);
+}
+
+.controls {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.date {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.date .calendar {
+	--button-background-color: var(--color-gray-f);
+	--button-background-color-hover: var(--color-gray-f);
+	padding: 0;
+	width: 110px;
+}
+
+.date .checkbox {
+	padding: 0;
+	height: 16px;
+	width: 16px;
+}
+
+.calendar :global([class*='_open_pane_group']) {
+	width: 110px;
+	margin-right: 6px;
+}
+
+.calendar :global([class*='_open_pane_button']) {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid var(--color-gray-20);
+	width: 110px;
+	height: 26px;
+	font-weight: 375;
+}
+
+.calendar :global([class*='_open_pane_button']):focus {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_open_pane_button']):disabled {
+	background-color: var(--color-gray-1);
+}
+
+.calendar :global([class*='_open_pane_button']):disabled:hover {
+	border-color: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_button']):focus:hover {
+	border: 1px solid var(--color-yellow-40);
+}
+
+.calendar :global([class*='_open_pane_button']) > span {
+	font-size: 13px;
+	line-height: 15px;
+	color: var(--color-gray-90);
+}
+
+.calendar :global([class*='_icon_calendar']) {
+	fill: var(--color-gray-20);
+}
+
+.calendar :global([class*='_open_pane_group']) > button:hover {
+	border-color: var(--color-gray-50);
+}
+
+.calendar :global([class*='_vertical_divider']) {
+	display: none;
+}
+
+.date .checkbox span {
+	height: 14px;
+	width: 16px;
+	border-radius: 3px;
+	background-color: var(--color-gray-f);
+	border-color: var(--color-gray-20);
+}
+
+.date .checkbox span:after {
+	border-color: var(--color-gray-0);
+	border-width: 0 1px 1px 0;
+	top: 6px;
+}
+
+.date .checkbox input:checked ~ span {
+	background-color: var(--color-yellow-40);
+	border-color: var(--color-yellow-40);
+}
+
+.delete_button {
+	width: 50px;
+	height: 22px;
+	padding: 0;
+	background-color: var(--color-gray-f);
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.delete_button:hover .cross path {
+	fill: var(--color-gray-84);
+}
+
+.cross path {
+	height: 14px;
+	fill: var(--color-gray-80);
+}

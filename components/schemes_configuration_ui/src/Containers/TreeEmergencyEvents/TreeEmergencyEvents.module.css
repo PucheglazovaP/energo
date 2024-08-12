@@ -1,0 +1,80 @@
+.form_search {
+	z-index: 10;
+	position: sticky;
+	background-color: inherit;
+	/* element need to overlap tree items. 1% serves it */
+	padding: 0.357em 1%;
+	display: flex;
+	background: linear-gradient(
+		180deg,
+		var(--color-gray-f-transparent) 73.44%,
+		var(--color-gray-21) 100%
+	);
+}
+
+.tree {
+	/* 37px - search height */
+	height: calc(100% - 3em);
+	overflow-y: auto;
+	margin-top: 1.5em;
+}
+
+.tree button:global(.kit_button) {
+	position: relative;
+}
+
+.tree .tree__icon {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -6px;
+	right: -6px;
+	background-color: var(--color-violet-40);
+	transform: scale(0.6);
+	border-radius: 2px;
+	padding: 5px;
+	--icon-fill-color: var(--color-gray-f);
+}
+
+.spinner {
+	position: relative;
+	top: 3em;
+	left: 1em;
+}
+
+.context_menu_item {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+
+.context_menu_item_name {
+	flex-grow: 2;
+}
+
+svg.icon {
+	--icon-fill-color: var(--color-violet-40);
+	width: 14px;
+}
+
+svg.icon_intermediate {
+	--icon-fill-color: var(--color-gray-70);
+}
+
+.no_forms {
+	position: relative;
+	top: 2em;
+}
+
+.rollup {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+}
+
+.search_input {
+	width: 100%;
+}

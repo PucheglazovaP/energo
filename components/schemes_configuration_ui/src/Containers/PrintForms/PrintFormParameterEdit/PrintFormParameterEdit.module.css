@@ -1,0 +1,112 @@
+.root {
+	font-size: 14px;
+	display: flex;
+	flex-direction: column;
+	max-height: calc(100vh - 250px);
+}
+.subtitle {
+	color: var(--color-gray-60);
+	font-size: 12px;
+}
+.value_table_body {
+	height: 300px;
+	overflow: auto;
+	padding-bottom: 200px;
+	box-sizing: border-box;
+}
+.param_name_row {
+	padding: 20px 0;
+	border-bottom: 2px solid var(--color-gray-2);
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.param_values_row {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0;
+	gap: 20px;
+	border-bottom: 2px solid var(--color-gray-2);
+	min-height: 0;
+}
+
+.param_values_title_row {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.title {
+	font-weight: 500;
+}
+.param_values_title_row .add_value_button,
+.root .param_values_title_row .add_value_button:disabled,
+.root .param_values_title_row .add_value_button:focus {
+	border: 0.0625em solid var(--color-gray-13);
+	padding: 0.3125em 0.75em;
+	border-radius: 0.25em;
+	font-size: 0.8125em;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-gray-70);
+	background: var(--color-gray-2);
+	gap: 5px;
+}
+
+.param_values_title_row .add_value_button:hover {
+	background-color: var(--color-gray-3);
+}
+.param_values_title_row .add_value_button:disabled {
+	opacity: 0.5;
+	pointer-events: none;
+}
+.icon_plus path {
+	fill: var(--color-gray-40);
+}
+
+.buttons_row {
+	padding-top: 20px;
+	position: sticky;
+	bottom: 0;
+	background: var(--color-gray-f);
+	display: flex;
+	justify-content: flex-end;
+}
+.values_table {
+	display: flex;
+	flex-direction: column;
+	gap: 7px;
+	min-height: 0;
+}
+
+.values_table_header {
+	display: flex;
+	width: 100%;
+	color: var(--color-gray-60);
+	font-size: 13px;
+	gap: 3px;
+}
+
+.values_table_header_cell {
+	padding: 7px 15px;
+	border-bottom: 2px solid var(--color-gray-2);
+	box-sizing: border-box;
+}
+.values_table_header_cell:nth-child(1) {
+	width: 290px;
+}
+.values_table_header_cell:nth-child(2) {
+	width: 60px;
+	text-align: center;
+	padding: 7px 0;
+}
+.values_table_header_cell:nth-child(3),
+.values_table_header_cell:nth-child(4) {
+	flex: 1;
+}
+.values_table_header_cell__empty {
+	width: 22px;
+	padding: 0;
+}

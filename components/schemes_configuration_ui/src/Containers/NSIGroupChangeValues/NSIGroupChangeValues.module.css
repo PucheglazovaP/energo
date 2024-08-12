@@ -1,0 +1,29 @@
+.container {
+	width: 100%;
+}
+
+.body {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid var(--color-gray-2);
+}
+
+.select {
+	position: relative;
+	width: 100%;
+	margin: 16px 0 0;
+}
+
+.select:not(:first-child) {
+	margin-top: 30px;
+}
+
+.warning_message {
+	margin-top: 16px;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}

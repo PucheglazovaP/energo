@@ -1,0 +1,239 @@
+app:
+  defaultImage: registry.ural.evraz.com:5003/ural-9505-dev/energy-management-server
+  defaultFrontImage: registry.ural.evraz.com:5003/ural-9505-dev/energy-management-front
+  defaultImageTag: latest
+  domain: energy-management-ural-9505-dev.apps.osd.ural.evraz.com
+  envs:
+    FRONT_PORT: "8081"
+    DATABASE_HOST: "ntmk-energy-001.ural.evraz.com"
+    DATABASE_INSTANCE: ""
+    DATABASE_NAME: "EMConfiguration"
+    DATABASE_INTEGRATEDSECURITY: "False"
+    DATABASE_USER: "svc_9505_db"
+    RABBITMQ_VHOST: "%2f"
+
+    RABBITMQ_PORT: "5672"
+    RABBITMQ_HOST: energy-management-rabbit
+    RABBITMQ_WS_URL: wss://energy-management-ural-9505-dev.apps.osd.ural.evraz.com/ws
+    RABBITMQ_QUEUE: "rpc_sql_queue"
+    RABBITMQ_WS_CHANNEL_NAME: "/reply-queue/rpc_sql_queue2"
+
+    KEYCLOAK_AUTH_ON: "true"
+    KEYCLOAK_CONFIG_URL: "https://keycloak-ural-keycloak.apps.osd.ural.evraz.com/auth/"
+    KEYCLOAK_CONFIG_REALM: "saml"
+    KEYCLOAK_TOKEN_MIN_VALIDITY: "59"
+    KEYCLOAK_FLOW: "implicit"
+
+vault:
+  enabled: true
+
+ingress:
+  enabled: true
+  annotations:
+    route.openshift.io/termination: edge
+  hosts:
+    - hostname: energy-management-ural-9505-dev.apps.osd.ural.evraz.com
+      paths:
+        - path: /
+          servicePort: http
+          serviceName: front
+        - path: /schemes/
+          servicePort: http
+          serviceName: schemes
+        - path: /ws
+          servicePort: web-stomp
+          serviceName: rabbit
+
+    - hostname: energy-management-ural-9505-dev-rabbit.apps.osd.ural.evraz.com
+      paths:
+        - path: /
+          servicePort: management
+          serviceName: rabbit
+
+services:
+  - name: front
+    ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8081
+    extraSelectorLabels:
+      app: front
+  - name: schemes
+    ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8081
+    extraSelectorLabels:
+      app: schemes
+  # - name: ampq
+  #   type: NodePort
+  #   ports:
+  #     - name: http
+  #       protocol: TCP
+  #       port: 5672
+  #       targetPort: 5672
+  #       nodePort: 32750
+  #   extraSelectorLabels:
+  #     app.kubernetes.io/name: energy-management-rabbit
+
+deployments:
+  # server:
+  #   extraSelectorLabels:
+  #     app: server
+  #   volumes:
+  #     - name: cache-volume
+  #       emptyDir: {}
+  #   containers:
+  #     server:
+  #       command: ["entrypoint_server.sh"] # !!! TODO Please change entrypoint name
+  #       resources:
+  #         requests:
+  #           memory: "64Mi"
+  #           cpu: "200m"
+  #         limits:
+  #           memory: "128Mi"
+  #           cpu: "1"
+  #       envsFromConfigmap:
+  #         envs:
+  #           - DATABASE_HOST
+  #           - DATABASE_INSTANCE
+  #           - DATABASE_NAME
+  #           - DATABASE_INTEGRATEDSECURITY
+  #           - DATABASE_USER
+  #           - RABBITMQ_PORT
+  #           - RABBITMQ_HOST
+  #           - RABBITMQ_QUEUE
+  #           - RABBITMQ_VHOST
+  #       envsFromSecret:
+  #         secret-envs:
+  #           - DATABASE_PASS
+  #         rabbit-default-user:
+  #           - RABBITMQ_USER: username
+  #           - RABBITMQ_PASSWORD: password
+  #       volumeMounts:
+  #         - name: cache-volume
+  #           mountPath: /var/cache/kinit
+  #     server-kinit:
+  #       command: ["entrypoint_kinit.sh"] # !!! TODO Please change entrypoint name
+  #       resources:
+  #         requests:
+  #           memory: "64Mi"
+  #           cpu: "15m"
+  #         limits:
+  #           memory: "64Mi"
+  #           cpu: "30m"
+  #       envsFromConfigmap:
+  #         envs:
+  #           - DATABASE_USER
+  #       envsFromSecret:
+  #         secret-envs:
+  #           - DATABASE_PASS
+  #       volumeMounts:
+  #         - name: cache-volume
+  #           mountPath: /var/cache/kinit
+
+  front:
+    extraSelectorLabels:
+      app: front
+    containers:
+      front:
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "15m"
+          limits:
+            memory: "64Mi"
+            cpu: "30m"
+        envsFromConfigmap:
+          envs:
+            - FRONT_PORT
+        volumeMounts:
+          - name: front-settings
+            mountPath: /var/www/settings.js
+            subPath: settings.js
+    volumes:
+      - name: front-settings
+        configMap:
+          name: front-settings
+          defaultMode: 420
+
+  schemes:
+    extraSelectorLabels:
+      app: schemes
+    containers:
+      schemes:
+        image: registry.ural.evraz.com:5003/ural-9505-dev/energy-management-schemes
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "15m"
+          limits:
+            memory: "64Mi"
+            cpu: "30m"
+        envsFromConfigmap:
+          envs:
+            - FRONT_PORT
+        volumeMounts:
+          - name: front-settings
+            mountPath: /var/www/settings.js
+            subPath: settings.js
+    volumes:
+      - name: front-settings
+        configMap:
+          name: front-settings
+          defaultMode: 420
+
+extraDeploy:
+  - |
+    ---
+    apiVersion: rabbitmq.com/v1beta1
+    kind: RabbitmqCluster
+    metadata:
+      name: {{ $.Values.app.envs.RABBITMQ_HOST }}
+      namespace: {{ $.Release.Namespace }}
+    spec:
+      image:
+      replicas: 1
+      resources:
+        requests:
+          memory: "0.5Gi"
+          cpu: "1"
+        limits:
+          memory: "1Gi"
+          cpu: "2"
+      service:
+        type: NodePort
+      persistence:
+        storageClassName: v7000-10
+        storage: 5Gi
+      rabbitmq:
+        additionalConfig: |
+          vm_memory_high_watermark.relative = 0.9
+          total_memory_available_override_value = 1GB
+          disk_free_limit.absolute = 50MB
+          management.disable_stats = false
+          management.enable_queue_totals = true
+        additionalPlugins:
+          - rabbitmq_web_stomp
+    ---
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: front-settings
+      namespace: {{ $.Release.Namespace }}
+    data:
+      settings.js: |+
+        window.appConfig = {
+          KEYCLOAK_AUTH_ON: '{{ $.Values.app.envs.KEYCLOAK_AUTH_ON }}',
+          KEYCLOAK_CONFIG_URL: '{{ $.Values.app.envs.KEYCLOAK_CONFIG_URL }}',
+          KEYCLOAK_CONFIG_REALM: '{{ $.Values.app.envs.KEYCLOAK_CONFIG_REALM }}',
+          KEYCLOAK_CONFIG_CLIENT_ID: '{{ $.Release.Namespace }}',
+          KEYCLOAK_TOKEN_MIN_VALIDITY: '{{ $.Values.app.envs.KEYCLOAK_TOKEN_MIN_VALIDITY }}',
+          KEYCLOAK_FLOW: '{{ $.Values.app.envs.KEYCLOAK_FLOW }}',
+          RABBIT_WS_CHANNEL_NAME: '{{ $.Values.app.envs.RABBITMQ_WS_CHANNEL_NAME }}',
+          RABBIT_WS_URL: '{{ $.Values.app.envs.RABBITMQ_WS_URL }}',
+          RABBIT_USER: '{{ $.Values.app.rabbit.RABBITMQ_USER }}',
+          RABBIT_PASS: '{{ $.Values.app.rabbit.RABBITMQ_PASS }}',
+        };

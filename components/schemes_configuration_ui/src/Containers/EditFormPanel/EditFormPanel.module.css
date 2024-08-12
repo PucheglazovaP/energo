@@ -1,0 +1,160 @@
+.root {
+	background-color: var(--color-gray-f);
+	background: linear-gradient(180deg,
+			var(--color-gray-f-transparent) 73.44%,
+			var(--color-gray-21) 100%);
+	position: relative;
+	border-radius: 5px;
+	display: flex;
+	height: 32px;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+/* добавление транспаранта */
+
+.root .btn_add {
+	align-items: center;
+	border-radius: 4px;
+	background: var(--color-gray-1);
+	border-color: var(--color-gray-4);
+	color: var(--color-gray-70);
+	display: flex;
+	font-size: 13px;
+	padding: 0.4em;
+	height: 22px;
+	margin-right: 10px;
+}
+
+.btn_add p {
+	margin-right: 4px;
+}
+
+.root .active_button {
+	background-color: var(--color-yellow-7);
+}
+
+.btn_add_icon {
+	margin: 0 8px 0 4px;
+}
+
+/* выделение всех и вызов модалки (Показать все траспаранты)*/
+
+.btn_selecting_elements,
+.btn_show_all_banners {
+	border-color: var(--color-gray-4);
+	background: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	border-radius: 4px;
+	width: 22px;
+	height: 22px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.btn_selecting_elements:active {
+	background-color: var(--color-yellow-7);
+}
+
+.btn_show_all_banners:active {
+	background-color: var(--color-yellow-7);
+}
+
+.selecting_elements_icon {
+	margin: 3px 0 0 -2px;
+}
+
+.show_all_banners_icon {
+	margin: 2px 0 0 -3px;
+}
+
+/* удаление транспаранта */
+.btn {
+	height: 22px;
+}
+
+.root .btn:disabled {
+	filter: invert(0%) sepia(12%) saturate(50%) hue-rotate(100deg) brightness(130%) contrast(83%);
+}
+
+/* вертикальная линия */
+.vertical_line {
+	width: 1px;
+	height: 22px;
+	background: var(--color-gray-14);
+	margin: 0 16px 0 6px;
+}
+
+.close {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	height: 22px;
+}
+
+.close p {
+	margin-left: 8px;
+}
+
+.root .menu {
+	right: 0 !important;
+	width: 14em;
+	left: auto !important;
+	padding: 7px;
+}
+
+.root .menu_item {
+	width: 100%;
+	border: none;
+	text-align: left;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 375;
+}
+
+.root .menu_item:hover {
+	background-color: var(--color-yellow-1);
+}
+
+.menu_icon {
+	filter: invert(83%) sepia(89%) saturate(563%) hue-rotate(193deg) brightness(85%) contrast(85%);
+	width: 1em;
+	height: 1em;
+	margin-right: 0.4375em;
+}
+
+.root .menu_btn {
+	background-color: var(--color-gray-1);
+	border: 1px solid var(--color-gray-13);
+	max-height: 100%;
+	height: 1.7em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.7em;
+	padding: 0;
+	position: relative;
+	margin-left: 8px;
+}
+
+.root .checkbox {
+	flex-direction: row-reverse;
+	padding: 0;
+	justify-content: start;
+	max-height: 1.375em;
+	box-sizing: border-box;
+}
+
+.root .checkbox span {
+	box-sizing: border-box;
+	margin-right: 0.5em;
+	height: 1em;
+	width: 1em;
+	border: 1px solid var(--color-gray-20);
+}
+
+.root :global([class*='ContextMenu_item']) {
+	padding: 0;
+}

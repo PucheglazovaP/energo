@@ -1,0 +1,37 @@
+.editor {
+	--heading-font-size: 12px;
+	--heading-font-weight: 375;
+	--heading-color: var(--color-gray-60);
+	--heading-height: 10px;
+	--title-font-size: 16px;
+	--title-color: var(--color-gray-0);
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	gap: 20px;
+}
+
+.editor__controllers {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	width: 100%;
+	gap: 20px;
+	padding-top: 22px;
+	border-top: 1px solid var(--color-gray-6);
+}
+
+.field {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 4px;
+}
+.field__heading {
+	font-size: var(--heading-font-size);
+	font-weight: var(--heading-font-weight);
+	color: var(--heading-color);
+	height: var(--heading-height);
+}
+.field__title {
+	font-size: var(--title-font-size);
+}

@@ -1,0 +1,80 @@
+.root {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.root .panel {
+	margin-top: 0.5em;
+	height: calc(100% - 1.875em - 0.9em);
+	box-sizing: border-box;
+	--body-padding: 1.25em 1em 1em 1em;
+}
+
+.root .common {
+	width: 100%;
+}
+
+.root .nsi {
+	width: 38em;
+}
+
+.root .btn {
+	background-color: var(--color-gray-f);
+	border-color: var(--color-gray-13);
+	position: relative;
+	margin-right: 2em;
+}
+
+.root .btn:after {
+	position: absolute;
+	background-color: var(--color-gray-14);
+	width: 0.063em;
+	height: 100%;
+	top: 0;
+	left: calc(100% + 1em);
+	content: '';
+}
+
+.top_section {
+	display: flex;
+	height: 1.5em;
+	font-size: 1em;
+	align-items: center;
+}
+
+.top_section h2 {
+	font-size: 1em;
+}
+
+.top_section h3 {
+	color: var(--color-gray-84);
+	font-weight: 375;
+}
+
+.slash {
+	padding-left: 0.5em;
+	color: var(--ui-gray-50);
+	font-weight: 375;
+	font-size: 1em;
+}
+.selector {
+	--select-border-color: none;
+	--select-body-background-color: inherit;
+	--select-border-color-active: none;
+	--select-border-color-inactive: none;
+}
+.selector :global([class*='select__toggle'])::before {
+	content: '';
+}
+.selector :global([class*='select__field']) {
+	width: max-content;
+	font-size: 1em;
+	color: var(--ui-gray-84);
+	padding: 0 0 0 0.5em;
+}

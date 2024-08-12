@@ -1,0 +1,68 @@
+app:
+  defaultImage: registry.ural.evraz.com:5004/ural-9505-test/energy-management-server
+  defaultFrontImage: registry.ural.evraz.com:5004/ural-9505-test/energy-management-front
+  defaultImageTag: latest
+  domain: energy-management-ural-9505-test.apps.osd.ural.evraz.com
+  envs:
+    FRONT_PORT: "8081"
+
+    RABBITMQ_WS_URL: wss://energy-management-ural-9505-test.apps.osd.ural.evraz.com/ws
+
+    KEYCLOAK_CONFIG_URL: "https://keycloak-ural-keycloak.apps.osd.ural.evraz.com/auth/"
+
+ingress:
+  enabled: true
+  annotations:
+    route.openshift.io/termination: edge
+  hosts:
+    - hostname: energy-management-ural-9505-test.apps.osd.ural.evraz.com
+      paths:
+        - path: /
+          servicePort: http
+          serviceName: front
+        - path: /schemes/
+          servicePort: http
+          serviceName: schemes
+        - path: /ws
+          servicePort: web-stomp
+          serviceName: rabbit
+
+    - hostname: energy-management-ural-9505-test-rabbit.apps.osd.ural.evraz.com
+      paths:
+        - path: /
+          servicePort: management
+          serviceName: rabbit
+
+services:
+  - name: front
+    ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8081
+    extraSelectorLabels:
+      app: front
+  - name: schemes
+    ports:
+      - name: http
+        protocol: TCP
+        port: 80
+        targetPort: 8081
+    extraSelectorLabels:
+      app: schemes
+  - name: ampq
+    type: NodePort
+    ports:
+      - name: http
+        protocol: TCP
+        port: 5672
+        targetPort: 5672
+        nodePort: 32751
+    extraSelectorLabels:
+      app: ampq
+
+deployments:
+  schemes:
+    containers:
+      schemes:
+        image: registry.ural.evraz.com:5004/ural-9505-test/energy-management-schemes

@@ -1,0 +1,52 @@
+.root {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.532);
+}
+.modal_window {
+	display: flex;
+	flex-direction: column;
+	margin: 20px auto;
+	background: rgb(255, 255, 255);
+}
+.title {
+	display: flex;
+	justify-content: space-between;
+}
+.title p {
+	color: #000000;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 23px;
+	margin: 15px 25px;
+}
+
+.modal_body {
+	flex-grow: 1;
+	overflow-x: hidden;
+}
+
+.icon_button_close {
+	margin: 20px 35px;
+	width: 20px;
+	height: 20px;
+	background: white;
+	border: 0;
+}
+.icon_button_close:active .icon_button_svg {
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+	background: #ffffff;
+}
+
+.icon_button_search {
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+.icon_button_search:active {
+	border-bottom: 2px solid #ffffff;
+}

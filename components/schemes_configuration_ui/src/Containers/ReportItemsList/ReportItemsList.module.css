@@ -1,0 +1,165 @@
+.report_items {
+	height: 100%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	padding: 5px 20px 5px 15px;
+	margin: 5px 0;
+	font-size: 0.813em;
+	border-bottom: 2px solid var(--color-gray-4);
+}
+
+.header span {
+	color: var(--color-gray-70);
+}
+
+.header .report_number {
+	width: 45px;
+}
+
+.search_icon path {
+	fill: var(--color-gray-20);
+}
+
+.search_icon:hover path {
+	fill: var(--color-gray-30);
+}
+
+.search_name {
+	flex-grow: 1;
+}
+
+.search_point {
+	width: 220px;
+}
+
+.root:not(:first-child) {
+	padding-left: 16px;
+	overflow: auto;
+	height: calc(100% - 45px);
+}
+
+.root:not(:first-child)::-webkit-scrollbar {
+	width: 4px;
+	background: var(--color-gray-14);
+	border-radius: 2px;
+}
+
+.root .item {
+	background-color: var(--color-gray-2);
+	box-sizing: border-box;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	padding: 8px 0 8px 12px;
+	cursor: pointer;
+	flex-grow: 2;
+	text-align: left;
+	font-size: 14px;
+	font-weight: 375;
+	border: 0.077em solid transparent;
+}
+
+.wrapper {
+	display: flex;
+	padding: 2px;
+	gap: 5px;
+	align-items: center;
+}
+
+.leaf_data {
+	display: flex;
+	background: var(--color-gray-1);
+	width: 100%;
+	align-items: center;
+	border: 1px solid var(--color-gray-14);
+	border-radius: 3px;
+	padding: 5px 15px;
+	font-size: 0.875em;
+	gap: 30px;
+}
+
+.leaf_data:hover,
+.leaf_data__active {
+	background: var(--color-vinous-10);
+	border: 1px solid var(--color-vinous-20);
+}
+
+.btn {
+	width: 20px;
+	height: 30px;
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.btn .arrow {
+	transition: all 0.3s;
+	width: 0.875em;
+	height: 0.875em;
+	--icon-fill-color: var(--color-gray-80);
+	transform: rotate(-90deg);
+}
+
+.btn .arrow--down {
+	transform: rotate(0deg);
+}
+
+.dot {
+	margin: 0 5px;
+}
+
+.position_name {
+	flex-grow: 1;
+}
+
+.report_number {
+	width: 45px;
+}
+
+.calculated {
+	width: 90px;
+	display: flex;
+	justify-content: center;
+}
+
+.calculated span,
+.point_name span {
+	background: var(--color-gray-15);
+	color: var(--color-gray-70);
+	border-radius: 2px;
+	text-align: center;
+	line-height: 1em;
+	font-size: 0.75em;
+	width: 30px;
+	height: 16px;
+	font-weight: 375;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.calculated__active span {
+	background: var(--color-green-11);
+	color: var(--color-gray-f);
+	width: 25px;
+}
+
+.point_name {
+	width: 210px;
+}
+
+.point_name p {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-all;
+}
+
+.coefficient {
+	width: 80px;
+}

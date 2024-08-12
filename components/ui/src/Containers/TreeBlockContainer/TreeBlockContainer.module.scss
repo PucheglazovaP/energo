@@ -1,0 +1,24 @@
+.tableContainer {
+  display: flex;
+  flex-direction: row;
+  width: calc(100vw - 32px);
+  height: 100%;
+  gap: 40px;
+}
+.noGap {
+  gap: 0
+}
+.contentBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+
+.active {
+  border: none;
+  background: #FAB82E;
+  border-radius: 4px;
+}
+
